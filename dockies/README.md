@@ -60,3 +60,35 @@ You will get kidcked out from the instance but that's ok. Log in after 2'.
 
 </details>
 
+## Ubuntu and no memory swap supported
+
+https://unix.stackexchange.com/questions/342735/docker-warning-no-swap-limit-support
+
+
+
+
+<details>
+<summary>
+If you get this error (macOS):
+  
+```
+Error saving credentials: error storing credentials - err: no credentials server URL, out: `no credentials server URL
+```
+Do the following (found [here](https://github.com/docker/for-mac/issues/1540)):
+</summary>
+
+Edit your `~/.docker/config.json`
+```
+{
+  "credSstore" : "",
+  "auths" : {
+    "https://index.docker.io/v1/" : {
+
+    }
+  },
+  "stackOrchestrator" : "swarm"
+}
+```
+
+</details>
+
