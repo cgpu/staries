@@ -1,6 +1,23 @@
 # tuxies
 Useful scripts, snippets and guidelines for common command line tasks
 
+- [To round the result of a `mathlib` supported operation (using `bc`):](https://askubuntu.com/questions/179898/how-to-round-decimals-using-bc-in-bash)
+
+
+```bash
+#!/bin/sh
+bcr()
+{
+    echo "scale=$2+1;t=$1;scale-=1;(t*10^scale+((t>0)-(t<0))/2)/10^scale" | bc -l
+}
+
+# Example usage:
+>_ bcr '0.666666+1' 0
+
+# Result:
+1
+```
+
 - [To count occurences of a character per line:](https://stackoverflow.com/questions/8629410/count-occurrences-of-character-per-line-field-on-unix)
 
 ```bash
