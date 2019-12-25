@@ -1,6 +1,13 @@
 # dockies
 Useful scripts, snippets and guidelines for common tasks related to docker
 
+## Mount Rstudio (rocker) images to have access to your data 
+
+```bash
+# https://stackoverflow.com/questions/48432299/mount-local-volume-accessible-to-r-rstudio-in-docker-tidyverse
+docker run -it -e PASSWORD=p@$$ -e ROOT=TRUE -p 8787:8787  -v "$PWD":"$PWD" -w "$PWD"  huber/image:v1
+```
+
 ## Include and export files to/from container
 
 <details>
