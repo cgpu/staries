@@ -9,7 +9,7 @@ Rmdies: A collection of utility functions for Rmarkdowns
 ```r
 library(dplyr)
 devtools::source_url('https://raw.githubusercontent.com/cgpu/xPanDaR/master/R/prepare_missingness_absence_presence_graph.R')
-prepare_missingness_absence_presence_graph(dplyr::filter_all(airquality, any_vars(is.na(.))) ,   ts_id = 'Month' )
+prepare_missingness_absence_presence_graph(dplyr::filter_all(naniar::riskfactors, any_vars(is.na(.))) ,   ts_id = 'sex' ) + coord_flip() + theme(axis.text.x = element_text(angle = 50, hjust = 1))
 ```
 
 ![](https://user-images.githubusercontent.com/38183826/71454544-45024180-2789-11ea-8840-5e10736c3ad0.png)
