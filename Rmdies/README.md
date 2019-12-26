@@ -4,6 +4,16 @@ Rmdies: A collection of utility functions for Rmarkdowns
 
 # Handy one-lineRs:
 
+## Check all the rows that contain missing values
+
+```r
+library(dplyr)
+devtools::source_url('https://raw.githubusercontent.com/cgpu/xPanDaR/master/R/prepare_missingness_absence_presence_graph.R')
+prepare_missingness_absence_presence_graph(dplyr::filter_all(airquality, any_vars(is.na(.))) ,   ts_id = 'Month' )
+```
+
+![](https://user-images.githubusercontent.com/38183826/71454544-45024180-2789-11ea-8840-5e10736c3ad0.png)
+
 ## `tree` the working directory and see the full path for it
 ```r 
 fs::dir_tree(here::here())
