@@ -3,7 +3,9 @@ Useful scripts, snippets and guidelines for common command line tasks
 
 - [To round the result of a `mathlib` supported operation (using `bc`):](https://askubuntu.com/questions/179898/how-to-round-decimals-using-bc-in-bash)
 
-
+```console
+wwooo! I am the console!
+```
 ```nextflow
 // time and mem errors are in the range 137-140
 { task.exitStatus >= 140 ? 'ignore' : 'terminate' }
