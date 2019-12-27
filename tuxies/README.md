@@ -7,6 +7,9 @@ Useful scripts, snippets and guidelines for common command line tasks
 ```nextflow
 // time and mem errors are in the range 137-140
 { task.exitStatus >= 140 ? 'ignore' : 'terminate' }
+
+// exponential backoff retry strategy 
+errorStrategy { sleep(Math.pow(2, task.attempt) * 200); return 'retry' }
 ```
 
 ```bash
