@@ -1,10 +1,10 @@
 sudo yum install -y \
 tree \
-openssl 
-openssl-devel 
-gcc-c++ 
-tmux 
-python34-pip 
+openssl \
+openssl-devel \
+gcc-c++ \
+tmux \
+python34-pip \
 htop && \
 curl -s https://get.nextflow.io | bash && \
 mv /home/ec2-user/nextflow /bin/ && \
