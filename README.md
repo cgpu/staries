@@ -8,3 +8,6 @@ The *ies. A series of &lt;star>-ies util snippets, scripts or templates that I u
 - <a href="https://github.com/cgpu/staries/tree/master/tuxies" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png?raw=true" alt="drawing" width="30"/></a>
 
 - <a href="https://github.com/cgpu/staries/tree/master/cloudies" target="_blank"><img src="https://luktom.net/wordpress/wp-content/uploads/2018/04/googlecloud.png?raw=true" alt="drawing" width="30"/></a>
+
+
+- <a href="https://github.com/cgpu/staries/tree/master/gities" target="_blank"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png?raw=true" alt="drawing" width="30"/></a>
