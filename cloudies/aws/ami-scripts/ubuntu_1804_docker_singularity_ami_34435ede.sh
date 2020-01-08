@@ -1,10 +1,10 @@
-sudo apt update && \
-# 
-# DEBIAN_FRONTEND=noninteractive \
-#   apt-get \
-#   -o Dpkg::Options::=--force-confold \
-#   -o Dpkg::Options::=--force-confdef \
-#   -y --allow-downgrades --allow-remove-essential --allow-chan
+cd ~ && sudo apt update && \
+
+DEBIAN_FRONTEND=noninteractive \
+  apt-get \
+  -o Dpkg::Options::=--force-confold \
+  -o Dpkg::Options::=--force-confdef \
+  -y --allow-downgrades --allow-remove-essential
 
 #The command will install a bunch of new packages including gcc, g++ and make.
 sudo apt install -y build-essential   && \
