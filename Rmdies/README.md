@@ -38,3 +38,12 @@ rstudioapi::terminalExecute("open -n /Applications/RStudio.app", show = FALSE)
 Because some people understand! This is the most awesome thing ever!
 
 ![](https://github.com/ThinkR-open/remedy/raw/master/reference/figures/align.gif)
+
+
+## Centers text, Rmd output 
+
+```css
+\begin{center} 
+... 
+\end{center}
+```
