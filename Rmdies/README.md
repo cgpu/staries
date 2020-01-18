@@ -42,6 +42,8 @@ Because some people understand! This is the most awesome thing ever!
 
 ## Centers text, Rmd output 
 
+source: https://stackoverflow.com/questions/40414270/r-how-to-center-output-in-r-markdown
+
 ```css
 \begin{center} 
 ... 
