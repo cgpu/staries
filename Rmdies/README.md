@@ -4,6 +4,16 @@ Rmdies: A collection of utility functions for Rmarkdowns
 
 # Handy one-lineRs:
 
+## Capture/Export R session dependencies into a Dockerfile
+
+```r
+sessionInfo <- sessionInfo()
+file        <- tempfile(tmpdir = tempdir(), fileext = ".RData")
+save(sessionInfo, file = file)
+my_dockerfile <- containerit::dockerfile(from = file)
+containerit::write(my_dockerfile, file = "Dockerfile")
+```
+
 ## Check all the rows that contain missing values
 
 ```r
