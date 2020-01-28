@@ -4,7 +4,9 @@ Rmdies: A collection of utility functions for Rmarkdowns
 
 # Handy one-lineRs:
 
-## Capture/Export R session dependencies into a Dockerfile
+## Using {containerit} to create Dockerfiles from R
+
+### `sessionInfo()`: Capture/Export R session dependencies into a Dockerfile
 
 ```r
 sessionInfo <- sessionInfo()
@@ -12,6 +14,24 @@ file        <- tempfile(tmpdir = tempdir(), fileext = ".RData")
 save(sessionInfo, file = file)
 my_dockerfile <- containerit::dockerfile(from = file)
 containerit::write(my_dockerfile, file = "Dockerfile")
+```
+
+### `load_package.R`: Capture/Export R session dependencies into a Dockerfile
+
+```r
+my_dockerfile <- containerit::dockerfile(from = "load_packages.R")
+containerit::write(my_dockerfile, file = "Dockerfile")
+```
+
+where `"load_packages.R"` looks like this:
+
+```
+$ cat load_packages.R
+library('topGO')
+.
+.
+.
+library('topGO')
 ```
 
 ## Check all the rows that contain missing values
