@@ -13,3 +13,9 @@ git pull --allow-unrelated-histories
 git reset HEAD^ # remove commit locally
 git push origin +HEAD # force-push the new HEAD commit
 ```
+
+- [Change remote repo](https://stackoverflow.com/questions/2432764/how-to-change-the-uri-url-for-a-remote-git-repository)
+
+```sh
+git remote set-url origin https://github.com/cgpu/staries.git
+```
