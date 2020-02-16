@@ -1,5 +1,40 @@
 # Rmdies
-Rmdies: A collection of utility functions for Rmarkdowns
+Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
+
+# No sudo? No problem! `--ubuntu`
+
+This one is really handy when building containers, or installing in a non-interactive manner in general (VMs or setting up environments).
+
+In `ubuntu` environments, the command `install.packages` of any flavour (eg. from `{devtools}`, `{remotes}`) might yield the following:
+
+
+```diff
+- devtools::install_github("devs-repo/neat-package") 
+  Downloading GitHub repo devs-repo/neat-package@master
+- sh: 1: /bin/gtar: not found
+- sh: 1: /bin/gtar: not found
+  Error: Failed to install 'neat-package' from GitHub:
+  error in running command
+  In addition: Warning messages:
+  1: In system(cmd) : error in running command
+- 2: In utils::untar(tarfile, ...) :
+-  ‘/bin/gtar -xf '/tmp/Rtmpefbfe6/file1106465cec01.tar.gz' -C '/tmp/Rtmpefbfe6/remotes110647b47776'’ returned error code 127
+  
+```
+
+Fear not, this is because of the `gtar` :guitar: quirk above - there's no such thing as `gtar`, it meant `tar`.
+I have found the fix [here](https://github.com/r-dbi/RPostgres/issues/110);
+
+**tl;dr** if you don't have `sudo`, execute the following before attempting to install packages:
+
+```r
+Sys.setenv(TAR = "/bin/tar")
+```
+or
+
+```bash
+export TAR="/bin/tar"
+```
 
 
 # Handy one-lineRs:
