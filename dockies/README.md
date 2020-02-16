@@ -1,6 +1,13 @@
 # dockies
 Useful scripts, snippets and guidelines for common tasks related to docker
 
+## Mount working directory for in/out
+
+```bash
+docker run -v $PWD:$PWD -w $PWD -it lifebitai/samtools bash 
+
+```
+
 ## Mount Rstudio (rocker) images to have access to your data 
 
 ```bash
