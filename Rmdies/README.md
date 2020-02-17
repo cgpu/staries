@@ -133,3 +133,21 @@ gg
 
 ```
 
+# Misc.
+
+Aka low priority swag.
+
+## Progress bar with % for forloops with [svMisc](https://github.com/SciViews/svMisc)::progress()
+
+source: https://medium.com/human-in-a-machine-world/displaying-progress-in-a-loop-or-function-r-664796782c24
+fork of [yahwes/print_progress.R](https://gist.github.com/cgpu/8a0e59f47c9c2b12778548d92f6b52a3)
+
+```r
+for (i in 0:101) {
+  svMisc::progress(i)
+  Sys.sleep(0.01)
+  if (i == 101) cat("Done!\n")
+}
+```
+
+![](https://miro.medium.com/max/1920/1*ub0fPkJnHYidpAkPSuPC1A.gif)
