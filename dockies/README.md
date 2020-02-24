@@ -12,7 +12,7 @@ docker run -v $PWD:$PWD -w $PWD -it lifebitai/samtools bash
 
 ```bash
 # https://stackoverflow.com/questions/48432299/mount-local-volume-accessible-to-r-rstudio-in-docker-tidyverse
-docker run -it -e PASSWORD=p@$$ -e ROOT=TRUE -p 8787:8787  -v "$PWD":"$PWD" -w "$PWD"  huber/image:v1
+docker run -it -e PASSWORD=p@$$ -e ROOT=TRUE -p 8787:8787  -v "$PWD":"$PWD" -w "$PWD"  rocker/r-ver:3.6.1
 ```
 
 ## Include and export files to/from container
