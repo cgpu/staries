@@ -1,6 +1,13 @@
 # dockies
 Useful scripts, snippets and guidelines for common tasks related to docker
 
+
+## Use Jupyter Notebooks (and Jupyter Lab) via Docker
+
+```bash
+docker run --rm -p 8888:8888  -e JUPYTER_ENABLE_LAB=yes -v "$PWD":"$PWD" -w "$PWD" jupyter/datascience-notebook
+```
+
 ## Mount working directory for in/out
 
 ```bash
