@@ -6,7 +6,13 @@ Useful scripts, snippets and guidelines for common tasks related to docker
 
 ```bash
 docker run --rm -p 8888:8888  -e JUPYTER_ENABLE_LAB=yes -v "$PWD":"$PWD" -w "$PWD" jupyter/datascience-notebook
+
+# or 
+
+```bash
+docker run --rm -p 8888:8888  -e JUPYTER_ENABLE_LAB=yes jupyter/datascience-notebook
 ```
+
 
 ## Mount working directory for in/out
 
