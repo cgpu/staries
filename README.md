@@ -16,3 +16,5 @@ The *ies. A series of &lt;star>-ies util snippets, scripts or templates that I u
 
 - <a href="https://github.com/cgpu/staries/tree/master/condies" target="_blank"><img src="https://paganresearch.io/images/anaconda.png?raw=true" alt="drawing" width="24"/></a>
 
+- <a href="https://github.com/cgpu/staries/tree/master/jupies" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/883px-Jupyter_logo.svg.png" alt="drawing" width="26"/></a>
+
