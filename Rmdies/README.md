@@ -1,7 +1,7 @@
 # Rmdies
 Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
 
-# Multiple Rmd rendered as one response
+# [Multiple Rmd rendered as one document](https://stackoverflow.com/questions/25824795/how-to-combine-two-rmarkdown-rmd-files-into-a-single-output)
 
 
 ```r
