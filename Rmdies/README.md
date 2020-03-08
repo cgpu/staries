@@ -1,6 +1,29 @@
 # Rmdies
 Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
 
+# Multiple Rmd rendered as one response
+
+
+```r
+---  
+title: My Report  
+output: 
+  pdf_document:
+    toc: yes 
+---
+
+```{r child = 'chapter1.Rmd'}
+``` `
+
+```{r child = 'chapter2.Rmd'}
+
+``` `
+
+```
+
+
+
+
 # No sudo? No problem! `--ubuntu`
 
 This one is really handy when building containers, or installing in a non-interactive manner in general (VMs or setting up environments).
