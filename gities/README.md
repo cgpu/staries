@@ -1,7 +1,14 @@
 # gities
 Useful snippets for dangerous git missions :sunglasses:
 
-- [ Change default color of ignored files](https://stackoverflow.com/questions/12255028/how-to-show-git-colors-on-zsh) 
+## Save yourself from :flushed: typos in commit messages
+
+```bash
+git commit -amend
+
+```
+
+## [ Change default color of ignored files](https://stackoverflow.com/questions/12255028/how-to-show-git-colors-on-zsh) 
 
 ### How my ~/.gitconfig looks like:
 
