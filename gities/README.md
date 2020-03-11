@@ -1,6 +1,12 @@
 # gities
 Useful snippets for dangerous git missions :sunglasses:
 
+## Save yourself from `emacs` :smiling_imp:
+
+```bash
+git config --global core.editor nano
+```
+
 ## Save yourself from :flushed: typos in commit messages
 
 ```bash
