@@ -1,6 +1,20 @@
 # dockies
 Useful scripts, snippets and guidelines for common tasks related to docker
 
+## Host your docker images on GitHub packages
+
+```bash
+# for this .PAT you will need package read permission too
+cat ~/.PAT | docker login docker.pkg.github.com -u cgpu --password-stdin
+docker build -t docker.pkg.github.com/cgpu/staries/alpinegit:v2.24.1 .
+docker push docker.pkg.github.com/cgpu/staries/alpinegit:v2.24.1
+```
+
+| preview|  <img src="https://user-images.githubusercontent.com/38183826/77017134-857cf000-6971-11ea-98e2-2a9f9e6f44cc.png" alt="drawing" width="600"> |
+|-----:|:-----|
+how-to  | <img src="https://user-images.githubusercontent.com/38183826/77017339-2bc8f580-6972-11ea-96ea-80847d4a40e2.png" alt="drawing" width="600"> |
+ 
+
 
 ## Use Jupyter Notebooks (and Jupyter Lab) via Docker
 
