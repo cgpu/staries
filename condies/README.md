@@ -7,6 +7,8 @@
 conda env export | grep -v "^prefix: " > environment.yml
 ```
 
+for a prettyfied nf-core env.yml use the flag `--no-builds`
+
 Why is it better than `conda list > requirements.txt` for reproducing environments?
 
 TLDR
