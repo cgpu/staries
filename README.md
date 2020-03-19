@@ -13,14 +13,12 @@ The *ies. A series of &lt;star>-ies util snippets, scripts or templates that I u
 
 - <a href="https://github.com/cgpu/staries/tree/master/tuxies" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png?raw=true" alt="drawing" width="30"/></a>
 
-- <a href="https://github.com/cgpu/staries/tree/master/cloudies" target="_blank"><img src="https://luktom.net/wordpress/wp-content/uploads/2018/04/googlecloud.png?raw=true" alt="drawing" width="30"/></a>
+- <a href="https://github.com/cgpu/staries/tree/master/swaggies" target="_blank"><img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" alt="drawing" width="26"/></a>
 
+- <a href="https://github.com/cgpu/staries/tree/master/cloudies" target="_blank"><img src="https://luktom.net/wordpress/wp-content/uploads/2018/04/googlecloud.png?raw=true" alt="drawing" width="30"/></a>
 
 - <a href="https://github.com/cgpu/staries/tree/master/gities" target="_blank"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png?raw=true" alt="drawing" width="30"/></a>
 
 - <a href="https://github.com/cgpu/staries/tree/master/nexties" target="_blank"><img src="https://avatars1.githubusercontent.com/u/6698688?s=280&v=4?raw=true" alt="drawing" width="20"/></a>
 
 - <a href="https://github.com/cgpu/staries/tree/master/condies" target="_blank"><img src="https://paganresearch.io/images/anaconda.png?raw=true" alt="drawing" width="24"/></a>
-
-- <a href="https://github.com/cgpu/staries/tree/master/jupies" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/883px-Jupyter_logo.svg.png" alt="drawing" width="26"/></a>
-
