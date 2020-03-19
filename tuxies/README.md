@@ -1,11 +1,19 @@
 # tuxies
 Useful scripts, snippets and guidelines for common command line tasks
 
+## [Keep the line after pattern match](https://stackoverflow.com/questions/5346896/print-everything-on-line-after-match)
+
+```bash
+# eg name: conda_env
+sed -n 's/name: //p' filename
+```
+
 - [To round the result of a `mathlib` supported operation (using `bc`):](https://askubuntu.com/questions/179898/how-to-round-decimals-using-bc-in-bash)
 
 ```console
 wwooo! I am the console!
 ```
+
 ```nextflow
 // time and mem errors are in the range 137-140
 { task.exitStatus >= 140 ? 'ignore' : 'terminate' }
