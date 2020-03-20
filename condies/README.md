@@ -1,5 +1,14 @@
 # Simple and nifty commands to manage with `conda`
 
+## [Disable automatic activation of `(base)` conda env upon terminal launch](https://stackoverflow.com/questions/54429210/how-do-i-prevent-conda-from-activating-the-base-environment-by-default)
+
+```bash
+conda config --describe | grep auto_activate_base
+```
+
+```bash
+conda config --set auto_activate_base false
+```
 
 ## [Export activated conda environment in a file](https://stackoverflow.com/questions/56472295/can-you-export-a-created-python-conda-environment-for-others-to-activate-on-thei)
 
