@@ -1,10 +1,16 @@
 # NextFlow snippets, patterns or groovy handy functions
 
 
+## if exit in one line without curlies
+
+```groovy
+if (!params.check) exit 1, 'You have successfully one-linered your way to if'
+```
 ## [containsKey()](https://www.tutorialspoint.com/groovy/groovy_containskey.htm)
 
 ```
 # https://github.com/cgpu/sarek/blob/501a5becfbc2f5f78e923aa02013c2739f3f4b17/create_pon.nf#L59
+
 `containsKey()`
 ```
 returns boolean
