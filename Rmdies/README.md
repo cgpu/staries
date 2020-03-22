@@ -1,6 +1,17 @@
 # Rmdies
 Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
 
+# [Set up your Rmd with  ` ```{r setup, include=FALSE}`](https://juliasilge.com/blog/intro-tidymodels/)
+
+```R
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(cache = TRUE, warning = FALSE, message = FALSE, 
+                      echo = TRUE, dpi = 300, cache.lazy = FALSE,
+                      tidy = "styler", fig.width = 8, fig.height = 5)
+` ``
+
+```
 
 # [Multiple Rmd rendered as one document](https://stackoverflow.com/questions/25824795/how-to-combine-two-rmarkdown-rmd-files-into-a-single-output)
 
