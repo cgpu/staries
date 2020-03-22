@@ -1,5 +1,13 @@
 # NextFlow snippets, patterns or groovy handy functions
 
+## Set threads pool
+> Dataflow threads pool get exhausted with a large number of tasks
+
+```
+-Dnxf.pool.type=sync -Dnxf.pool.maxThreads=2000
+
+```
+
 
 ## Fetch all avail cpus in config `Runtime.runtime.availableProcessors()`
 
