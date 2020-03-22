@@ -1,6 +1,12 @@
 # NextFlow snippets, patterns or groovy handy functions
 
 
+## Fetch all avail cpus in config `Runtime.runtime.availableProcessors()`
+
+```groovy
+Runtime.runtime.availableProcessors()
+```
+
 ## if exit in one line without curlies
 
 ```groovy
