@@ -1,6 +1,7 @@
 # Rmdies
 Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
 
+
 # [Multiple Rmd rendered as one document](https://stackoverflow.com/questions/25824795/how-to-combine-two-rmarkdown-rmd-files-into-a-single-output)
 
 
@@ -174,3 +175,5 @@ for (i in 0:101) {
 ```
 
 ![](https://miro.medium.com/max/1920/1*ub0fPkJnHYidpAkPSuPC1A.gif)
+
+# [{bsselect} x Rmd](https://walkerke.github.io/2016/12/rmd-dropdowns/)
