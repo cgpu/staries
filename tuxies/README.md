@@ -1,5 +1,12 @@
 # tuxies
+
 Useful scripts, snippets and guidelines for common command line tasks
+
+## zcat/gzcat works in linux, not on osx. 
+
+```bash
+zcat < foo.txt.gz 
+```
 
 ## [Keep the line after pattern match](https://stackoverflow.com/questions/5346896/print-everything-on-line-after-match)
 
