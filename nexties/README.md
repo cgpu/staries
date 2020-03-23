@@ -1,5 +1,29 @@
 # NextFlow snippets, patterns or groovy handy functions
 
+## Optional issues
+
+```
+# optional-input
+params.inputs = 'prots/*{1,2,3}.fa'
+params.filter = 'NO_FILE'
+
+prots_ch = Channel.fromPath(params.inputs)
+opt_file = file(params.filter)
+
+process foo {
+  input:
+  file seq from prots_ch
+  file opt from opt_file
+
+  script:
+  def filter = opt.name != 'NO_FILE' ? "--filter $opt" : ''
+  """
+  your_commad --input $seq $filter
+  """
+}
+```
+
+
 ## Set threads pool
 > Dataflow threads pool get exhausted with a large number of tasks
 
