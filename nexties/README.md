@@ -2,7 +2,7 @@
 
 ## Optional issues
 
-```
+```groovy
 # optional-input
 params.inputs = 'prots/*{1,2,3}.fa'
 params.filter = 'NO_FILE'
