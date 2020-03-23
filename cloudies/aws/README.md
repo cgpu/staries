@@ -5,7 +5,7 @@
 
 ```bash
 # [i]
- aws s3 ls s3://belinda-queenmary --recursive --human-readable --summarize | awk '{$1=$1}1' | tail -n 2
+ aws s3 ls s3://my-bucket/some-object/ --recursive --human-readable --summarize | awk '{$1=$1}1' | tail -n 2
 
 ```
 
