@@ -2,7 +2,7 @@
 
 Useful scripts, snippets and guidelines for common command line tasks
 
-## zcat/gzcat works in linux, not on osx. 
+## [zcat/gzcat works in linux, not on osx.](https://serverfault.com/questions/570024/zcat-gzcat-works-in-linux-not-on-osx-general-linux-osx-compatibility)
 
 ```bash
 zcat < foo.txt.gz 
