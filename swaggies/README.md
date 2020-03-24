@@ -4,7 +4,7 @@ Awesome markdown trix and misc. snippets for docs-writing swag.
 ## [List with oh so many Github markdowns emojis](https://gist.github.com/rxaviers/7360908)
 :bowtie: :neckbeard: :koala: :bug: :mushroom: :squirrel: :bamboo: :icecream:
 
-## `asciinema2gif`
+## Make a gif of your terminal actions with `asciinema2gif` and friends
 
 ```bash
 asciinema rec demo.json # ctrl+D
@@ -14,3 +14,5 @@ docker run --rm -v $PWD:/data asciinema/asciicast2gif https://asciinema.org/a/yx
 docker run --rm -v $PWD:/data asciinema/asciicast2gif demo.json demo.gif
 
 ```
+
+
