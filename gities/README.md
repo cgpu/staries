@@ -61,4 +61,5 @@ git remote set-url origin https://github.com/cgpu/staries.git
 |:----------:|:--------:|:--------:|
 | short hash |    `git log --oneline`|<img src="https://user-images.githubusercontent.com/38183826/77423232-bb353500-6dc6-11ea-9de7-f40aea92d614.png" alt="drawing" width="400"/></a> |
 |  full hash|`git log --pretty=oneline` |<img src="https://user-images.githubusercontent.com/38183826/77423274-cd16d800-6dc6-11ea-987d-7db50e128dbd.png" alt="drawing" width="400"/></a>|
+|  full hash|`git log --graph` |<img src="https://user-images.githubusercontent.com/38183826/77443201-d2821b80-6de2-11ea-8969-811d6a84515f.png" alt="drawing" width="400"/></a>|
 
