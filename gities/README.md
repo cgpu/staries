@@ -54,3 +54,11 @@ git push origin +HEAD # force-push the new HEAD commit
 ```sh
 git remote set-url origin https://github.com/cgpu/staries.git
 ```
+
+## Check the history of your commits 
+
+|what|command|showme|
+|:----------:|:--------:|:--------:|
+| short hash |    `git log --oneline`|<img src="https://user-images.githubusercontent.com/38183826/77423232-bb353500-6dc6-11ea-9de7-f40aea92d614.png" alt="drawing" width="400"/></a> |
+|  full hash|`git log --pretty=oneline` |<img src="https://user-images.githubusercontent.com/38183826/77423274-cd16d800-6dc6-11ea-987d-7db50e128dbd.png" alt="drawing" width="400"/></a>|
+
