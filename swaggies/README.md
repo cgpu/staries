@@ -15,4 +15,11 @@ docker run --rm -v $PWD:/data asciinema/asciicast2gif demo.json demo.gif
 
 ```
 
+## Capture a screenshot of your {iTerm, Terminal}
+
+```
+screencapture -l$(osascript -e 'tell app "iTerm" to id of window 1') test.png
+screencapture -l$(osascript -e 'tell app "Terminal" to id of window 1') test.png
+
+```
 
