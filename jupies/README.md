@@ -16,6 +16,9 @@ jupytext --update --to ipynb jupyter.Rmd
 
 ![](https://user-images.githubusercontent.com/38183826/77491131-d63e8e00-6e34-11ea-95c0-bb078ded18a4.png)
 
+## Diff .ipynb with `nbdiff` from `nbdime` lib
+
+![](https://user-images.githubusercontent.com/38183826/77492094-8ca37280-6e37-11ea-8da3-b8e77950eda8.png)
 
 # R 
 
