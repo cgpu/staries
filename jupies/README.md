@@ -1,5 +1,18 @@
 # Useful bits and snippets for the Jo·vy·ans of the universe
 
+## `font`:`Ayuthaya` :heart:
+
+```js
+# @JupyterLab: Settings > Terminal > User Preferences
+    // Font family
+    // The font family used to render text.
+    "fontFamily": "Ayuthaya",
+
+    // Font size
+    // The font size used to render text.
+    "fontSize": 15,    
+
+```
 
 ## Roundtripping an .ipynb to .Rmd and back
 
