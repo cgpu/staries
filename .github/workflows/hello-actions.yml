@@ -1,0 +1,21 @@
+# This is a basic workflow from the Actions template
+
+name: hello-actions
+
+# Controls when the action will run (here whenever README.md is modified in the remote repo)
+# 
+on:
+  push:
+    paths:
+    - 'README.md'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Check container
+        uses: docker.pkg.github.com/cgpu/staries/alpinegit:v2.24.1
+        with:
+          args: /bin/sh "echo 'Henlo GitHub Actions!'"
