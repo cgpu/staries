@@ -16,6 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Check container
-        uses: docker.pkg.github.com/cgpu/staries/alpinegit:v2.24.1
         with:
-          args: /bin/sh "echo 'Henlo GitHub Actions!'"
+          registry: docker.pkg.github.com
+          name: cgpu/staries/alpinegit
+          tags: v2.24.1
+          args:  /bin/sh "echo 'Henlo GitHub Actions!'"
