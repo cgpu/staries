@@ -18,4 +18,4 @@ jobs:
       - name: Check container
         uses: docker://cgpu/papermill:2.0.0
         with:
-          args: /bin/sh "echo 'Henlo GitHub Actions!'"
+          args: conda env export | grep -v "^prefix: "
