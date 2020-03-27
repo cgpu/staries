@@ -1,6 +1,6 @@
 # This is a basic workflow from the Actions template
 
-name: hello-actions
+name: export-conda-env
 
 # Controls when the action will run (here whenever README.md is modified in the remote repo)
 # 
@@ -20,4 +20,4 @@ jobs:
       - name: Check container
         uses: docker://cgpu/papermill:2.0.0
         with:
-          args: 'conda env export -n papermill'
+          args: 'conda env export -n base'
