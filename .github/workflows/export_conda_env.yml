@@ -1,6 +1,6 @@
 # This is a basic workflow from the Actions template
 
-name: hello-actions
+name: export-conda-env
 
 # Controls when the action will run (here whenever README.md is modified in the remote repo)
 # 
@@ -8,6 +8,8 @@ on:
   push:
     paths:
     - 'README.md'
+    - '.github/workflows/*.yml'
+    - '.github/workflows/*.yaml'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -16,8 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Check container
+        uses: docker://cgpu/staries:1.0
         with:
-          registry: docker.pkg.github.com
-          name: cgpu/staries/alpinegit
-          tags: v2.24.1
-          args:  /bin/sh "echo 'Henlo GitHub Actions!'"
+          args: 'conda env export -n base'
