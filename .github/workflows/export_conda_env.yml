@@ -18,6 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Check container
-        uses: docker://cgpu/papermill:2.0.0
+        uses: docker://cgpu/staries:1.0
         with:
           args: 'conda env export -n base'
