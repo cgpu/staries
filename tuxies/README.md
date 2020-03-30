@@ -2,6 +2,14 @@
 
 Useful scripts, snippets and guidelines for common command line tasks
 
+## Replace pattern of all filenames in directory
+
+```
+# replace foo with bar
+# SO: https://stackoverflow.com/questions/9393607/find-and-replace-filename-recursively-in-a-directory
+find -name "*foo*.filetype" -exec rename 's/foo/bar/' {} ";"
+```
+
 ## [zcat/gzcat works in linux, not on osx.](https://serverfault.com/questions/570024/zcat-gzcat-works-in-linux-not-on-osx-general-linux-osx-compatibility)
 
 ```bash
