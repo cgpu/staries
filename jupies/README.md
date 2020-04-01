@@ -1,5 +1,17 @@
 # Useful bits and snippets for the Jo·vy·ans of the universe
 
+## Conda package manager UI
+
+> *To install in the JupyterLab:*
+
+```
+conda install -c conda-forge jupyterlab=1 jupyter_conda
+jupyter labextension install jupyterlab_toastify jupyterlab_conda
+```
+
+![](http://g.recordit.co/mFSUPrTX0o.gif)
+
+
 ## `font`:`Ayuthaya` :heart:
 
 ```js
