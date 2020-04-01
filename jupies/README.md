@@ -1,4 +1,20 @@
-# Useful bits and snippets for the Jo·vy·ans of the universe
+# Useful bits and snippets for the Jo·vy·ans of the universe 
+
+
+## :pause_button: `WIP` 
+
+SO thread: [here](https://stackoverflow.com/questions/37433363/link-conda-environment-with-jupyter-notebook)
+
+```
+source activate myenv
+python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+```
+<img src="https://user-images.githubusercontent.com/38183826/78125183-906f6000-7408-11ea-8f01-2b01a0fb4439.png" width="500"/>
+
+
+Other suggestions:
+- SO thread on [`nb_conda`](https://stackoverflow.com/questions/52913748/how-to-choose-your-conda-environment-in-jupyter-notebook)
+- SO thread on [`nb_conda_kernels`](https://stackoverflow.com/questions/39604271/conda-environments-not-showing-up-in-jupyter-notebook)
 
 ## Conda package manager UI
 
