@@ -1,5 +1,13 @@
 # Simple and nifty commands to manage with `conda`
 
+
+## Create an empty env 
+
+```
+conda create -n zero_env
+```
+:warning: **NOTE** the difference between `conda create` vs `conda env create`
+
 ## [Disable automatic activation of `(base)` conda env upon terminal launch](https://stackoverflow.com/questions/54429210/how-do-i-prevent-conda-from-activating-the-base-environment-by-default)
 
 ```bash
