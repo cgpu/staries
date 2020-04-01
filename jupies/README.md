@@ -24,9 +24,7 @@ Other suggestions:
 conda install -c conda-forge jupyterlab=1 jupyter_conda
 jupyter labextension install jupyterlab_toastify jupyterlab_conda
 ```
-
-![](http://g.recordit.co/mFSUPrTX0o.gif)
-
+<img src="http://g.recordit.co/mFSUPrTX0o.gif" width="500"/>
 
 ## `font`:`Ayuthaya` :heart:
 
