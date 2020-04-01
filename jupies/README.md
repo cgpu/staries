@@ -3,7 +3,7 @@
 
 ## :pause_button: `WIP` 
 
-SO thread: [here](https://stackoverflow.com/questions/37433363/link-conda-environment-with-jupyter-notebook)
+SO thread: [here](https://stackoverflow.com/questions/39604271/conda-environments-not-showing-up-in-jupyter-notebook)
 
 ```
 source activate myenv
