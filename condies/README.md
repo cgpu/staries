@@ -7,6 +7,11 @@ conda config --add channels conda-forge
 conda config --append channels bioconda
 ```
 
+## Remove a channel
+```
+conda config --remove channels bioconductor
+```
+
 ## Create an empty env 
 
 ```
