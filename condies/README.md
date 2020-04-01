@@ -1,5 +1,11 @@
 # Simple and nifty commands to manage with `conda`
 
+## Add a channel
+
+```
+conda config --add channels conda-forge
+conda config --append channels bioconda
+```
 
 ## Create an empty env 
 
