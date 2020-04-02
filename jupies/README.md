@@ -1,6 +1,15 @@
 # Useful bits and snippets for the Jo·vy·ans of the universe 
 
+## jupyter-theme (thy only one!) in JupyterLab 
 
+- [x] Step 1: Install [Stylish](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe/related) Chrome extension
+- [x] Step 2: Install [JupyterLab theme with Stylish](https://userstyles.org/styles/178898/jupyter-lab-legos-light?utm_campaign=stylish_stylepage)
+
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="30"/> Check documentation at [dunovank/jupyter-themes](https://github.com/dunovank/jupyter-themes#themes-for-jupyter-lab)
+
+<img src="http://g.recordit.co/XvNPTxzlU1.gif" width="600"/>
+
+```
 ## :pause_button: `WIP` 
 
 SO thread: [here](https://stackoverflow.com/questions/39604271/conda-environments-not-showing-up-in-jupyter-notebook)
