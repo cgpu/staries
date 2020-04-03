@@ -1,5 +1,21 @@
 # Simple and nifty commands to manage with `conda`
 
+## [Mystery conda menu `-tipsy`](https://github.com/jupyter/notebook/issues/1892#issuecomment-414032985)
+
+```bash
+conda clean -tipsy
+```
+```console
+WARNING: 'conda clean --source-cache' is deprecated.
+    Use 'conda build purge-all' to remove source cache files.
+Cache location: 
+There are no tarballs to remove
+WARNING: /opt/conda/pkgs does not exist
+WARNING: /home/jovyan/.conda/pkgs does not exist
+Cache location: 
+There are no unused packages to remove
+```
+
 ## Add a channel
 
 ```
