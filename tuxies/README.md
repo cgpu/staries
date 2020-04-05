@@ -2,6 +2,12 @@
 
 Useful scripts, snippets and guidelines for common command line tasks
 
+## Sum of file size in directory
+
+```
+du -ch *.txt | grep total
+```
+
 ## Replace pattern of all filenames in directory
 
 ```
