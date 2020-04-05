@@ -2,6 +2,16 @@
 
 Useful scripts, snippets and guidelines for common command line tasks
 
+## Replace with sed
+
+```
+# replace \n with ,
+sed -z 's/\n/,/g'
+
+# replace , with \n
+sed 's/,/\'$'\n''/g' 
+```
+
 ## Sum of file size in directory
 
 ```
