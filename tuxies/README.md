@@ -2,11 +2,12 @@
 
 Useful scripts, snippets and guidelines for common command line tasks
 
-## Replace with sed
+## Replace with sed and friends
 
 ```
 # replace \n with ,
 sed -z 's/\n/,/g'
+paste -s -d ',' 
 
 # replace , with \n
 sed 's/,/\'$'\n''/g' 
