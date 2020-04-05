@@ -31,6 +31,7 @@ find -name "*foo*.filetype" -exec rename 's/foo/bar/' {} ";"
 
 ```bash
 zcat < foo.txt.gz 
+gzcat file.gz | head
 ```
 
 ## [Keep the line after pattern match](https://stackoverflow.com/questions/5346896/print-everything-on-line-after-match)
