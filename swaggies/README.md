@@ -23,3 +23,14 @@ screencapture -l$(osascript -e 'tell app "Terminal" to id of window 1') test.png
 
 ```
 
+## Use a github repo to reference https:// links of assets (for docs etc_
+
+Concept: https://github.com/mwouts/jupytext-screenshots
+
+
+```bash
+![](https://github.com/mwouts/jupytext-screenshots/raw/master/IntroducingJupytext/JupyterPyCharm.gif)
+```
+
+
+
