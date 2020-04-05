@@ -12,11 +12,11 @@ npm install --package-lock-only url-parse
 ```
 
 ```console
-# Example output
-# + url-parse@1.4.7
-# added 60 packages and audited 60 packages in 2.152s
-# found 24 vulnerabilities (23 low, 1 moderate)
-#  run `npm audit fix` to fix them, or `npm audit` for details
+Example output
++ url-parse@1.4.7
+added 60 packages and audited 60 packages in 2.152s
+found 24 vulnerabilities (23 low, 1 moderate)
+ run `npm audit fix` to fix them, or `npm audit` for details
 ```
 
 ```bash
@@ -35,3 +35,7 @@ git status
 git add package-lock.json package.json
 git commit -m ' ' ... etc
 ```
+
+Recap:
+
+![](https://github.com/cgpu/staries/raw/master/assets/Rmdies/blogdown/fix.gif)
