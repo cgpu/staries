@@ -1,6 +1,12 @@
 # Rmdies
 Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
 
+# Check if TRUE (aka both TRUE and logical)
+
+```r
+((( isTRUE(arg) && is.logical(arg)))
+```
+
 # [Set up your Rmd with  ` ```{r setup, include=FALSE}`](https://juliasilge.com/blog/intro-tidymodels/)
 
 ```R
