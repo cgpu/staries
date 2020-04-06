@@ -2,6 +2,14 @@
 
 Useful scripts, snippets and guidelines for common command line tasks
 
+## Print header as single column in csv
+
+```
+# print  |  1st row | replace , with \n     | first few rows
+cat file |  head -1 | sed 's/,/\'$'\n''/g'  | head 
+```
+
+
 ## Replace with sed and friends
 
 ```
