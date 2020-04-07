@@ -1,6 +1,13 @@
 # Rmdies
 Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
 
+
+# `lintr::lint` your R script:
+
+```
+# devtools::install_github("jimhester/lintr")
+lintr::lint("script.R")
+```
 # Check if TRUE (aka both TRUE and logical)
 
 ```r
