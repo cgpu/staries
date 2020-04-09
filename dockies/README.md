@@ -1,6 +1,12 @@
 # dockies
 Useful scripts, snippets and guidelines for common tasks related to docker
 
+## Thou shalt lint thy Dockerfile with hadolint 
+
+```
+docker run --rm -i hadolint/hadolint < Dockerfile
+```
+
 ## Host your docker images on GitHub packages
 
 ```bash
