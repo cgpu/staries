@@ -1,7 +1,24 @@
 # dockies
 Useful scripts, snippets and guidelines for common tasks related to docker
 
-## Thou shalt lint thy Dockerfile with hadolint 
+## Check if image woth tag exists 
+
+exit: 0 if exists, 1 if not exists
+
+```
+# experimental mode on required
+echo '{"experimental": "enabled"}' >> ~/.docker/config.json
+docker manifest inspect $IMGNAME:$IMGTAG > /dev/null ; echo $?
+
+
+if DOCKER_CLI_EXPERIMENTAL=enabled docker manifest inspect $image:$tag >/dev/null; then
+  echo  'Do nothing'
+else
+  echo 'Build and push docker image with that tag'
+fi
+```
+
+## Thou shalt [lint thy Dockerfile with hadolint](https://github.com/cgpu/staries/blob/master/.github/workflows/hadolint_dockerfile.yml) 
 
 ```
 docker run --rm -i hadolint/hadolint < Dockerfile
