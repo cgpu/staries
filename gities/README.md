@@ -13,6 +13,14 @@ git config --global core.editor nano
 git commit -amend
 
 ```
+## Sync your fork with upstream
+
+```
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+
+# to catch up with latest changes:
+git pull upstream master
+```
 
 ## [ Change default color of ignored files](https://stackoverflow.com/questions/12255028/how-to-show-git-colors-on-zsh) 
 
