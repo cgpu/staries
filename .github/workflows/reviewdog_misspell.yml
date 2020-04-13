@@ -1,5 +1,5 @@
 # From here: https://github.com/reviewdog/action-misspell
-name: reviewdog
+name: reviewdog misspell
 on: [pull_request]
 jobs:
   misspell:
@@ -13,4 +13,4 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           locale: "UK"
-          reporter: github-pr-review # Available:  github-pr-review adds comments in PR conversation
+          reporter: github-pr-check # Available:  github-pr-review adds comments in PR conversation

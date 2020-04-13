@@ -1,5 +1,5 @@
 # From here: https://github.com/reviewdog/action-hadolint
-name: reviewdog
+name: reviewdog hadolint
 on: [pull_request]
 jobs:
   hadolint:
