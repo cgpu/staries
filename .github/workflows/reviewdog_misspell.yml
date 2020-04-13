@@ -14,3 +14,4 @@ jobs:
           github_token: ${{ secrets.github_token }}
           locale: "UK"
           reporter: github-pr-check # Available:  github-pr-review adds comments in PR conversation
+          level: error
