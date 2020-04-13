@@ -85,9 +85,9 @@ is.grob(grobTree(vennPlot))
 ggtitle_custom = "Overlap between genes where cites reside \nfound from Systematic Review, Somatic Variant Calling and Differential Methylation"
 #ggsubtitle_custom = "Indepedent of number of hits per gene"
 ggcaption_custom = "(N = 25 CIN3 cases, 25 matched controls)"
-ggtitle_custom_color = "#8A8A8A"
-ggsubtitle_custom_color = "#A5A5A5"
-ggsubtitle_custom_color = "#A5A5A5"
+ggtitle_custom_colour = "#8A8A8A"
+ggsubtitle_custom_colour = "#A5A5A5"
+ggsubtitle_custom_colour = "#A5A5A5"
 
 ggplotify::as.ggplot(grobbed_plot) + 
   theme_gray(base_family = "sans") +
@@ -102,9 +102,9 @@ ggplotify::as.ggplot(grobbed_plot) +
 
   # Controlling font face, font colour and font size of labs. Also centering with hjust 
   theme(
-      plot.title    = element_text(color = ggtitle_custom_color   , size = 16, face = "bold" , hjust = 0.5),
-  #    plot.subtitle = element_text(color = ggsubtitle_custom_color, size = 12                , hjust = 0.9),
-      plot.caption  = element_text(color = ggsubtitle_custom_color, size = 12, face = "italic"                       ) )  +  
+      plot.title    = element_text(colour = ggtitle_custom_colour   , size = 16, face = "bold" , hjust = 0.5),
+  #    plot.subtitle = element_text(colour = ggsubtitle_custom_colour, size = 12                , hjust = 0.9),
+      plot.caption  = element_text(colour = ggsubtitle_custom_colour, size = 12, face = "italic"                       ) )  +  
 
   theme(
       legend.position="bottom") +

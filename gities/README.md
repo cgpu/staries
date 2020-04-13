@@ -14,18 +14,18 @@ git commit -amend
 
 ```
 
-## [ Change default color of ignored files](https://stackoverflow.com/questions/12255028/how-to-show-git-colors-on-zsh) 
+## [ Change default colour of ignored files](https://stackoverflow.com/questions/12255028/how-to-show-git-colours-on-zsh) 
 
 ### How my ~/.gitconfig looks like:
 
 ```console
 
-[color]
+[colour]
   diff = auto
   status = auto
   branch = auto
   
-[color "status"]
+[colour "status"]
   changed = yellow
   added = green
   untracked = red

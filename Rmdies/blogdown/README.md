@@ -1,5 +1,5 @@
 # Rmdies > blogdown
-A collection of utility functions for blogdown deployment and maintenace
+A collection of utility functions for blogdown deployment and maintenance
 
 # [Update security risks](https://stackoverflow.com/questions/53115859/how-to-update-a-dependency-in-package-lock-json)
 
