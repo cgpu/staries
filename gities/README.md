@@ -1,7 +1,7 @@
 # gities
 Useful snippets for dangerous git missions :sunglasses:
 
-## Savie yourself from `emacs` :smiling_imp:
+## Save yourself from `emacs` :smiling_imp:
 
 ```bash
 git config --global core.editor nano
@@ -14,18 +14,18 @@ git commit -amend
 
 ```
 
-## [ Change default colour of ignored files](https://stackoverflow.com/questions/12255028/how-to-show-git-colours-on-zsh) 
+## [ Change default color of ignored files](https://stackoverflow.com/questions/12255028/how-to-show-git-colors-on-zsh) 
 
 ### How my ~/.gitconfig looks like:
 
 ```console
 
-[colour]
+[color]
   diff = auto
   status = auto
   branch = auto
   
-[colour "status"]
+[color "status"]
   changed = yellow
   added = green
   untracked = red

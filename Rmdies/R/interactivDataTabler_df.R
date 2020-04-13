@@ -44,8 +44,8 @@ interactivDataTabler_df <- function(df                    = df,
                   initComplete = JS(
                     "function(settings, json) {",
                     "$(this.api().table().header()).css({
-                      'background-colour': '#00cd9a',
-                      'colour': '#000000',
+                      'background-color': '#00cd9a',
+                      'color': '#000000',
                       'font-family': 'verdana',
                       'background-image': 'url(http://texturetaddka.com/wp-content/uploads/2011/09/DSC871.jpg)',
                       'background-size': 'cover'
