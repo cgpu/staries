@@ -4,7 +4,7 @@ Awesome markdown trix and misc. snippets for docs-writing swag.
 ## [List with oh so many Github markdowns emojis](https://gist.github.com/rxaviers/7360908)
 :bowtie: :neckbeard: :koala: :bug: :mushroom: :squirrel: :bamboo: :icecream:
 
-## Make a gif of your terminal actions with `asciinema2gif` and friends
+## Make a gif of your terminal actions with `asciinema2gif` and fwriends
 
 ```bash
 asciinema rec demo.json # ctrl+D
