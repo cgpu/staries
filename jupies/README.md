@@ -1,5 +1,11 @@
 # Useful bits and snippets for the Jo·vy·ans of the universe 
 
+
+## Research website from jupyter notebooks (workflowr, packagedown etc concept)
+
+https://github.com/stephenslab/ipynb-website
+
+
 ## jupyter-theme (thy only one!) in JupyterLab 
 
 - [x] Step 1: Install [Stylish](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe/related) Chrome extension
