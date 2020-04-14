@@ -7,10 +7,10 @@ Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
 ---
 output: html_document
 params:
-  pres_title: "R Markdown Presentation"
   pres_author: "Me"
-title: "`r params$pres_title`"
+  pres_subject:  "doggos!"
 author: "`r params$pres_author`"
+title: "`r paste0('R Markdown Presentation for ', params$pres_subject)`"
 ---
 ```
 
