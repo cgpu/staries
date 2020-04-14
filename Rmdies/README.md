@@ -1,6 +1,18 @@
 # Rmdies
 Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
 
+# [Parameterised Rmd with title from param value](https://stackoverflow.com/questions/31861569/setting-document-title-in-rmarkdown-from-parameters)
+
+```Rmd
+---
+output: html_document
+params:
+  pres_title: "R Markdown Presentation"
+  pres_author: "Me"
+title: "`r params$pres_title`"
+author: "`r params$pres_author`"
+---
+```
 
 # `lintr::lint` your R script:
 
