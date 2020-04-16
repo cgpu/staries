@@ -1,7 +1,7 @@
 # gities
 Useful snippets for dangerous git missions :sunglasses:
 
-## Save yourself from `emacs` :smiling_imp:
+## Save yourself from `emacs` and/or [`vim`](https://twitter.com/aarondjents/status/1152994105875714048) :smiling_imp:
 
 ```bash
 git config --global core.editor nano
