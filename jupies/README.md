@@ -88,3 +88,4 @@ options(repr.plot.width=6.5, repr.plot.height=4)
 # Python 
 
 
+- [ ] [Plots and interactive data tables](http://www.programmersought.com/article/7873512203/)
