@@ -1,6 +1,24 @@
 # Rmdies
 Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
 
+
+
+# [Center a la blog Rmd title courtesy of Pimp My Rmd](https://github.com/holtzy/R-Markdown-Parallax/blob/e0af56699819532ab26d5b8295a6796da1097d6c/index.Rmd#L1-L10)
+
+```Rmd
+---
+title: "<center><div class='mytitle'>R Markdown output with parallax</div></center>"
+author: "<center><div class='mysubtitle'>See the code on [github](https://github.com/holtzy/R-Markdown-Parallax). This tip is part of my [Pimp my RMD](https://holtzy.github.io/Pimp-my-rmd/) project.</div></center>"
+output:
+  html_document:
+      css: style.css
+      toc: FALSE
+      includes: 
+        before_body: header.html
+---
+
+```
+
 # [Parameterised Rmd with title from param value](https://stackoverflow.com/questions/31861569/setting-document-title-in-rmarkdown-from-parameters)
 
 ```Rmd
