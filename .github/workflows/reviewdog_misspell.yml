@@ -1,5 +1,4 @@
-# From here: https://github.com/reviewdog/action-misspell
-name: reviewdog misspell
+name: reviewdog
 on: [pull_request]
 jobs:
   misspell:
@@ -7,11 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code.
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
       - name: misspell
-        uses: cgpu/action-misspell@v2
+        uses: reviewdog/action-misspell@master
         with:
           github_token: ${{ secrets.github_token }}
           locale: "UK"
-          reporter: github-pr-review # Available:  github-pr-review adds comments in PR conversation
-          level: error
