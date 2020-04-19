@@ -66,3 +66,49 @@ def ternaryOutput = (sampleText != null) ? sampleText : 'Hello Groovy!'
 // sampleText to elvisOuput, otherwise assign 'Viva Las Vegas!' to elvisOutput.
 def elvisOutput = sampleText ?: 'Viva Las Vegas!'
 ```
+
+## Fetch .png image from url and save as local file in current workdir
+
+### [1. `.withOutputStream` ](https://stackoverflow.com/questions/4674995/groovy-download-image-from-url)
+```groovy
+public void download_img(def address) {
+  new File("${address.tokenize('/')[-1]}").withOutputStream { out ->
+      new URL(address).withInputStream { from ->  out << from; }
+  }
+}
+
+
+download_img("https://raw.githubusercontent.com/groovy/artwork/master/medium.png") 
+```
+
+### [2. `.guessContentTypeFromStream`](https://stackoverflow.com/questions/4674995/groovy-download-image-from-url)
+
+```groovy
+def download_img (String url, String filename) {
+    content = url.toURL().getBytes()
+    ext=URLConnection.guessContentTypeFromStream(new ByteArrayInputStream(content)).replaceFirst("^image/","")
+    new File(filename+"."+ext).setBytes(content)
+}
+
+download_img("https://raw.githubusercontent.com/groovy/artwork/master/medium.png", "groovy_logo") 
+```
+
+## [Fetch text file from url and save as local file in current workdir](https://gist.github.com/cgpu/0c041b39708a7c9d1cfe1fcd859a4687)
+
+```
+new File("output.txt") << new URL ("http://some.url/some/path.txt").getText()
+```
+
+
+## [Execute shell command from groovy](https://stackoverflow.com/questions/2701547/how-to-make-system-command-calls-in-java-groovy)
+
+
+```shell
+groovy -e 'print "touch file_made_from_groovy_using_shell.txt".execute()'
+```
+
+or 
+
+```groovy
+"touch file_made_from_groovy_using_shell.txt".execute()
+```
