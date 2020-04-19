@@ -2,6 +2,13 @@
 
 Useful scripts, snippets and guidelines for common command line tasks
 
+## For loop to subsample
+```
+n_reads=10000
+
+for fastq in ls *fastq ; seqtk sample -s12345 $fastq $n_reads  > head_${n_reads}_$fastq; done
+```
+
 ## Print header as single column in csv
 
 ```
