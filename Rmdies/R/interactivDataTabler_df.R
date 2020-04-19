@@ -12,7 +12,7 @@ interactivDataTabler_df <- function(df                    = df,
   # > READING FILE INTO DF; DF TRANSFORMATIONS:
   # Read file
   
-  # > Customize interactive DT::datatable
+  # > Customise interactive DT::datatable
   DT::datatable(df, 
                 filter     = "bottom",
                 caption    = table_caption,

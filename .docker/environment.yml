@@ -2,7 +2,9 @@ name: staries
 channels:
   - conda-forge
   - defaults
+  - r
 dependencies:
   - papermill=2.0.0
   - jupytext=1.4.1
   - nbdime=2.0.0
+  - r-purrr=0.3.2

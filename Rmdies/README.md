@@ -206,7 +206,7 @@ library(ggfortify)
 library(ggplot2)
 
 df <- iris[c(1, 2, 3, 4)] # omitting categorical variable
-gg <- ggplot2::autoplot(prcomp(df), data = iris, colour = 'Species')
+gg <- ggplot2::autoplot(prcomp(df), data = iris, color = 'Species')
 gg
 
 ```

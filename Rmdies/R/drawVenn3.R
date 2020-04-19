@@ -100,7 +100,7 @@ ggplotify::as.ggplot(grobbed_plot) +
       caption    = ggcaption_custom)   +
 
 
-  # Controlling font face, font colour and font size of labs. Also centering with hjust 
+  # Controlling font face, font color and font size of labs. Also centering with hjust 
   theme(
       plot.title    = element_text(color = ggtitle_custom_color   , size = 16, face = "bold" , hjust = 0.5),
   #    plot.subtitle = element_text(color = ggsubtitle_custom_color, size = 12                , hjust = 0.9),

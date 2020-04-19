@@ -1,0 +1,15 @@
+# From here: https://github.com/reviewdog/action-hadolint
+name: reviewdog hadolint
+on: [pull_request]
+jobs:
+  hadolint:
+    name: runner / hadolint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: hadolint
+        uses: reviewdog/action-hadolint@master
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review # Available:  github-pr-review adds comments in PR conversation
