@@ -74,6 +74,5 @@ git remote set-url origin https://github.com/cgpu/staries.git
 
 # Bonus edition: TIL
 
-## [TIL what a foxtrot merge is (and why one shouldn't do it)](https://bit-booster.blogspot.com/2016/02/no-foxtrots-allowed.html
-)
+## [TIL what a foxtrot merge is (and why one shouldn't do it)](https://bit-booster.blogspot.com/2016/02/no-foxtrots-allowed.html)
 
