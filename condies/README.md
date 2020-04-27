@@ -1,4 +1,4 @@
-# Simple and nifty commands to manage with `conda`
+# Simple and nifty commands to manage with `conda` _(deprecated)_
 
 ## [Mystery conda menu `-tipsy`](https://github.com/jupyter/notebook/issues/1892#issuecomment-414032985)
 
@@ -66,4 +66,13 @@ TLDR
 
 ```
 conda remove --name ENVNAME --all
+```
+
+## After installation cannot find command `conda`
+
+https://github.com/conda/conda/issues/7980#issuecomment-441358406
+
+```console
+source ~/anaconda3/etc/profile.d/conda.sh
+conda activate my_env
 ```
