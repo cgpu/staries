@@ -156,3 +156,9 @@ Edit your `~/.docker/config.json`
 
 </details>
 
+
+## Add alias to miniconda based container
+
+```
+RUN echo "alias ontologizer=java -jar /opt/conda/envs/base/Ontologizer.jar" >> ~/.bashrc
+```
