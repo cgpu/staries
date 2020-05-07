@@ -1,5 +1,10 @@
 # NextFlow snippets, patterns or groovy handy functions
 
+
+## `publishDir` : `copyNoFollow` 
+
+see `nextflow/issues/592`
+
 ## Optional issues
 
 ```groovy
