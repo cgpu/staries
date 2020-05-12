@@ -1,6 +1,6 @@
 # Simple and nifty commands to manage with `conda`
 
-## Remove all packages from *`(base)`* <img src=../assets/Rmdies/blogdown/this-is-fine-fire.gif width=30>
+## [Remove all packages from *`(base)`*](https://stackoverflow.com/questions/52830307/conda-remove-all-installed-packages-from-base-root-environment) <img src=../assets/Rmdies/blogdown/this-is-fine-fire.gif width=30>
 
 ```console
 # Not generally recommended!
