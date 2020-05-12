@@ -1,4 +1,4 @@
-# Simple and nifty commands to manage with `conda` _(deprecated)_
+# Simple and nifty commands to manage with `conda`
 
 ## Remove all packages from *`(base)`* <img src=../assets/Rmdies/blogdown/this-is-fine-fire.gif width=30>
 
@@ -7,7 +7,7 @@
 conda install --revision 0
 ```
 
-## [Mystery conda menu `-tipsy`](https://github.com/jupyter/notebook/issues/1892#issuecomment-414032985)
+## [Mystery conda menu `-tipsy`](https://github.com/jupyter/notebook/issues/1892#issuecomment-414032985)  _(deprecated)_
 
 ```bash
 conda clean -tipsy
