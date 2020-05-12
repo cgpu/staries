@@ -76,3 +76,7 @@ git remote set-url origin https://github.com/cgpu/staries.git
 
 ## [TIL what a foxtrot merge is (and why one shouldn't do it)](https://bit-booster.blogspot.com/2016/02/no-foxtrots-allowed.html)
 
+
+## [Update origin with branches created in upstream after forking](https://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches)
+
+
