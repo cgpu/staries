@@ -89,3 +89,12 @@ https://github.com/conda/conda/issues/7980#issuecomment-441358406
 source ~/anaconda3/etc/profile.d/conda.sh
 conda activate my_env
 ```
+
+
+## [Install specific commit python library in env.yml](https://berkeley-stat159-f17.github.io/stat159-f17/lectures/06-conda-pip-environments..html)
+
+```
+dependencies:
+- pip:
+    git+git://github.com/aladagemre/django-notification.git@2927346f4c513a217ac8ad076e494dd1adbf70e1
+```
