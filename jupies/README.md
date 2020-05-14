@@ -89,3 +89,9 @@ options(repr.plot.width=6.5, repr.plot.height=4)
 
 
 - [ ] [Plots and interactive data tables](http://www.programmersought.com/article/7873512203/)
+
+
+
+# General Utils
+
+- Comment out multiple lines of code: <kbd>⌘</kbd>+<kbd>/</kbd>
