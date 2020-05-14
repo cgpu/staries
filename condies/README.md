@@ -91,10 +91,14 @@ conda activate my_env
 ```
 
 
-## [Install specific commit python library in env.yml](https://berkeley-stat159-f17.github.io/stat159-f17/lectures/06-conda-pip-environments..html)
+## [Install specific commit python library in env.yml](https://berkeley-stat159-f17.github.io/stat159-f17/lectures/06-conda-pip-environments..html) and [here](https://stackoverflow.com/questions/13685920/install-specific-git-commit-with-pip)
 
 ```
 dependencies:
 - pip:
     git+git://github.com/aladagemre/django-notification.git@2927346f4c513a217ac8ad076e494dd1adbf70e1
+    git+git://github.com/aladagemre/django-notification.git@cool-feature-branch
+    https://github.com/aladagemre/django-notification/archive/cool-feature-branch.tar.gz
+    git+git://github.com/aladagemre/django-notification.git@v2.1.0
+    
 ```
