@@ -231,3 +231,15 @@ for (i in 0:101) {
 ![](https://miro.medium.com/max/1920/1*ub0fPkJnHYidpAkPSuPC1A.gif)
 
 # [{bsselect} x Rmd](https://walkerke.github.io/2016/12/rmd-dropdowns/)
+
+
+# Compare dataframes
+
+```r
+dplyr::all_equal(d1, d2)
+janitor::compare_df_cols(d1,d2 , return = "mismatch") # no mismatch
+vetr::alike(d1,d2)
+testthat::expect_equal(d1,d2)
+diffdf::diffdf(d1,d2)
+visdat::vis_compare(d1, d2)
+```
