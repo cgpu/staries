@@ -233,7 +233,7 @@ for (i in 0:101) {
 # [{bsselect} x Rmd](https://walkerke.github.io/2016/12/rmd-dropdowns/)
 
 
-# Compare dataframes
+# [Compare dataframes by @sharlagelfand](https://sharla.party/post/comparing-two-dfs/)
 
 ```r
 dplyr::all_equal(d1, d2)
