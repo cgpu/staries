@@ -15,7 +15,7 @@ jobs:
         Rscript -e "install.packages('devtools', repos = 'https://cloud.r-project.org'); devtools::install_github('ropensci/Rclean')"
       shell:
         bash
-    - name: Running Rclean::
+    - name: Run get_libs
       run: |
         Rscript -e "scripts <- list.files('.', pattern = '.R|.Rmd|.ipynb', recursive = TRUE); cat(unique(unlist(lapply(scripts, Rclean::get_libs))), sep = '\n')"
       shell:
