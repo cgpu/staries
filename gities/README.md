@@ -1,6 +1,14 @@
 # gities
 Useful snippets for dangerous git missions :sunglasses:
 
+
+## Peek :eyes: branch creation date
+
+```console
+git checkout my-branch-of-interest
+git log  --no-walk --decorate
+```
+
 ## Save yourself from `emacs` and/or [`vim`](https://twitter.com/aarondjents/status/1152994105875714048) :smiling_imp:
 
 ```bash
