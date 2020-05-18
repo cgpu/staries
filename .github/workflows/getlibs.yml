@@ -1,4 +1,4 @@
-name: Rclean
+name: rclean::get_libs()
 on: pull_request
 jobs:
   linux:
