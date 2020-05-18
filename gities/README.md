@@ -2,9 +2,9 @@
 Useful snippets for dangerous git missions :sunglasses:
 
 
-## Peek :eyes: branch creation date
+## [Peek :eyes: branch creation date](https://stackoverflow.com/questions/2255416/how-to-determine-when-a-git-branch-was-created)
 
-```console
+```shell
 git checkout my-branch-of-interest
 git log  --no-walk --decorate
 ```
