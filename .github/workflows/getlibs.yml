@@ -17,6 +17,6 @@ jobs:
         bash
     - name: Running Rclean::
       run: |
-        Rscript -e "scripts <- list.files(".", pattern = ".R|.Rmd|.ipynb", recursive = TRUE); cat(unique(unlist(lapply(scripts, Rclean::get_libs))), sep = '\n')"
+        Rscript -e "scripts <- list.files('.', pattern = '.R|.Rmd|.ipynb', recursive = TRUE); cat(unique(unlist(lapply(scripts, Rclean::get_libs))), sep = '\n')"
       shell:
         bash
