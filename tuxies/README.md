@@ -2,6 +2,13 @@
 
 Useful scripts, snippets and guidelines for common command line tasks
 
+
+## vscode: regex everything after =
+
+```
+\=(.*)
+```
+
 ## For loop to subsample
 ```
 n_reads=10000
