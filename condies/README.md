@@ -62,6 +62,8 @@ conda config --set auto_activate_base false
 
 ```bash
 conda env export | grep -v "^prefix: " > environment.yml
+conda env export --no-builds | grep -v "^prefix: " > environment.yml
+conda env export --from-history | grep -v "^prefix: " > environment.yml
 ```
 
 for a prettyfied nf-core env.yml use the flag `--no-builds`
