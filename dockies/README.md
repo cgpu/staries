@@ -50,6 +50,11 @@ docker run --rm -p 8888:8888  -e JUPYTER_ENABLE_LAB=yes -v "$PWD":"$PWD" -w "$PW
 docker run --rm -p 8888:8888  -e JUPYTER_ENABLE_LAB=yes jupyter/datascience-notebook
 ```
 
+## Build jupyter notebook images
+```
+# FROM jupyter/datascience-notebook:f9c990eb6295
+docker build --rm -t cgpu/sci-note . 
+```
 
 ## Mount working directory for in/out
 
