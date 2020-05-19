@@ -1,7 +1,12 @@
 # Rmdies
 Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
 
+# [Load many packages with `lapply()`](https://stackoverflow.com/questions/8175912/load-multiple-packages-at-once)
 
+```R
+x <- c("Rfast", "Rclean")
+lapply(x, require, character.only = TRUE)
+```
 
 # [Center a la blog Rmd title courtesy of Pimp My Rmd](https://github.com/holtzy/R-Markdown-Parallax/blob/e0af56699819532ab26d5b8295a6796da1097d6c/index.Rmd#L1-L10)
 
