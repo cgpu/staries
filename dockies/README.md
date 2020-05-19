@@ -1,7 +1,7 @@
 # dockies
 Useful scripts, snippets and guidelines for common tasks related to docker
 
-## Check if image woth tag exists 
+## Check if image with tag exists 
 
 exit: 0 if exists, 1 if not exists
 
