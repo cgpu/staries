@@ -6,6 +6,11 @@
 
 https://github.com/stephenslab/ipynb-website
 
+## List jupyterlab extensions
+
+```
+jupyter labextension list
+```
 
 ## jupyter-theme (thy only one!) in JupyterLab 
 
