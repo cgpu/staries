@@ -1,6 +1,19 @@
 # dockies
 Useful scripts, snippets and guidelines for common tasks related to docker
 
+## [Change from USER root to USER 500 from intermediate builds](https://github.com/WASdev/ci.docker/issues/194#issuecomment-433519379)
+
+```Dockerfile
+FROM websphere-liberty:webProfile7
+ARG SSL_KEYSTORE_PASSWORD
+USER root
+RUN apt-get update && 
+    apt-get install -y 
+    curl
+USER 1001
+```
+
+
 ## Check if image with tag exists 
 
 exit: 0 if exists, 1 if not exists
