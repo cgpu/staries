@@ -6,6 +6,9 @@
 conda list -n base -r
 ```
 
+## [How to stop the numpy openblas/mkl dance #108](https://github.com/conda-forge/numpy-feedstock/issues/108)
+
+
 ## [Remove all packages from *`(base)`*](https://stackoverflow.com/questions/52830307/conda-remove-all-installed-packages-from-base-root-environment) <img src=../assets/Rmdies/blogdown/this-is-fine-fire.gif width=30>
 
 ```console
