@@ -1,5 +1,15 @@
 # Simple and nifty commands to manage with `conda`
 
+
+# [`==` vs `=` in `conda install`](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications)
+
+```
+# exact equality
+libspatialindex==1.9.3
+
+# flex equality
+libspatialindex=1.9
+```
 ## Similar to `git log` but for package installation revisions
 
 ```
