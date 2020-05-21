@@ -1,7 +1,7 @@
 # Simple and nifty commands to manage with `conda`
 
 
-# [`==` vs `=` in `conda install`](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications)
+## [`==` vs `=` in `conda install`](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications)
 
 ```
 # exact equality
@@ -10,6 +10,27 @@ libspatialindex==1.9.3
 # flex equality
 libspatialindex=1.9
 ```
+
+<details>
+<summary>
+The following are all valid match specifications for numpy-1.8.1-py27_0:
+</summary>
+```
+numpy
+numpy 1.8*
+numpy 1.8.1
+numpy >=1.8
+numpy ==1.8.1
+numpy 1.8|1.8*
+numpy >=1.8,<2
+numpy >=1.8,<2|1.9
+numpy 1.8.1 py27_0
+numpy=1.8.1=py27_0
+```
+</details>
+
+
+
 ## Similar to `git log` but for package installation revisions
 
 ```
