@@ -1,5 +1,6 @@
 # Simple and nifty commands to manage with `conda`
 
+## [Conda solver slowdown FAQ and recommendations #13774](https://github.com/bioconda/bioconda-recipes/issues/13774)
 ## [`conda-metachannel` for faster installs](https://github.com/regro/conda-metachannel)
 
 ## [Use a requirements.txt inside an environment.yml]()
