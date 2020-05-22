@@ -1,5 +1,7 @@
 # Simple and nifty commands to manage with `conda`
 
+## [`conda-metachannel` for faster installs](https://github.com/regro/conda-metachannel)
+
 ## [Use a requirements.txt inside an environment.yml]()
 
 ```
