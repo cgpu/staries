@@ -1,5 +1,17 @@
 # Simple and nifty commands to manage with `conda`
 
+## [Use a requirements.txt inside an environment.yml]()
+
+```
+name: test-env
+dependencies:
+  - python>=3.5
+  - anaconda
+  - pip
+  - pip:
+    - -r file:requirements.txt
+    - http://www.lfd.uci.edu/~gohlke/pythonlibs/bofhrmxk/opencv_python-3.1.0-cp35-none-win_amd64.whl
+```
 
 ## [`==` vs `=` in `conda install`](https://docs.conda.io/projects/conda-build/en/latest/resources/package-spec.html#package-match-specifications)
 
