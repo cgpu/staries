@@ -9,6 +9,12 @@ Useful scripts, snippets and guidelines for common command line tasks
 \=(.*)
 ```
 
+## vscode: regex everything after the last =
+
+```
+x=[^=]*$
+```
+
 ## For loop to subsample
 ```
 n_reads=10000
