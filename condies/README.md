@@ -153,3 +153,11 @@ dependencies:
     git+git://github.com/aladagemre/django-notification.git@v2.1.0
     
 ```
+
+
+## Avoid conda activate/conda init+close terminal
+
+```
+# datasci-notebook
+source /opt/conda/etc/profile.d/conda.sh && conda activate base
+```
