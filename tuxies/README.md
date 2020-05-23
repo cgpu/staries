@@ -2,7 +2,7 @@
 
 Useful scripts, snippets and guidelines for common command line tasks
 
-## Match row that contains `name`
+## [Match row that contains `name`](https://stackoverflow.com/questions/31745545/regex-match-line-containing-string)
 
 ```
 .*name.*\n
