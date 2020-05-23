@@ -1,6 +1,14 @@
 # Simple and nifty commands to manage with `conda`
 
 ## [Conda solver slowdown FAQ and recommendations #13774](https://github.com/bioconda/bioconda-recipes/issues/13774)
+
+```yml
+  # Use recommendations from https://github.com/bioconda/bioconda-recipes/issues/13774
+  conda install pycryptosat
+  conda config --set sat_solver pycryptosat
+  conda config --set channel_priority strict
+```
+
 ## [`conda-metachannel` for faster installs](https://github.com/regro/conda-metachannel)
 
 ## [Use a requirements.txt inside an environment.yml]()
