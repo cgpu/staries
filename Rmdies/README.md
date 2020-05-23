@@ -1,6 +1,12 @@
 # Rmdies
 Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
 
+# Detach a package
+
+```R
+detach("package:babynames", unload=TRUE)
+```
+
 # [Load many packages with `lapply()`](https://stackoverflow.com/questions/8175912/load-multiple-packages-at-once)
 
 ```R
