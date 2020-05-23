@@ -2,7 +2,11 @@
 
 Useful scripts, snippets and guidelines for common command line tasks
 
+## Match row that contains `name`
 
+```
+.*name.*\n
+```
 ## vscode: regex everything after =
 
 ```
