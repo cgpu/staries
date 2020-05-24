@@ -1,5 +1,10 @@
 # Simple and nifty commands to manage with `conda`
 
+## [Demystifying `pinned spec x conflicts with explicit specs.`](https://github.com/conda/conda/issues/9016#issuecomment-516592922)
+
+```diff
+- WARNING conda.core.solve:_add_specs(601): pinned spec python=3.7 conflicts with explicit specs.  Overriding pinned spec.
+```
 ## [Conda solver slowdown FAQ and recommendations #13774](https://github.com/bioconda/bioconda-recipes/issues/13774)
 
 ```yml
