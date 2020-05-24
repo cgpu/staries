@@ -1,6 +1,13 @@
 # Simple and nifty commands to manage with `conda`
 
 
+## [Resolve (? 🤔)RemoveError: 'requests' is a dependency of conda ]()
+
+```
+RemoveError: 'requests' is a dependency of conda and cannot be removed from
+conda's operating environment.
+```
+
 ## Find where pinned libs+versions live
 
 ```
