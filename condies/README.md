@@ -1,6 +1,15 @@
 # Simple and nifty commands to manage with `conda`
 
 
+## Find where pinned libs+versions live
+
+```
+find / -iname pinned
+
+# for datasci notebook will most likely be here
+cat /opt/conda/conda-meta/pinned
+```
+
 ## [Don't confuse _env.yml_ use with `conda create`, `conda install` commands:](https://github.com/conda/conda/issues/6827#issuecomment-365614464)
 
 > _[..] environment.yml doesn't work with `conda install --file`. You need to use `conda env` commands with environment.yml._
