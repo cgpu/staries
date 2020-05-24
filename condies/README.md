@@ -1,5 +1,17 @@
 # Simple and nifty commands to manage with `conda`
 
+
+## [Don't confuse _env.yml_ use with `conda create`, `conda install` commands:](https://github.com/conda/conda/issues/6827#issuecomment-365614464)
+
+> _[..] environment.yml doesn't work with `conda install --file`. You need to use `conda env` commands with environment.yml._
+
+```diff
+- conda create --name hael --file hail.yml
+# CondaValueError: could not parse 'name: hail' in: hail.yml
+
++ conda env create --name hail --file hail.yml 
+```
+
 ## [Demystifying `pinned spec x conflicts with explicit specs.`](https://github.com/conda/conda/issues/9016#issuecomment-516592922)
 
 ```diff
