@@ -1,5 +1,10 @@
 # Simple and nifty commands to manage with `conda`
 
+## [Do _not_ install obsolete `tensorflow-tensorboard`, `tensorboard`](https://github.com/conda/conda/issues/8149#issuecomment-602010480)
+
+```
+conda update -n base -c defaults conda --force
+```
 
 ## [Resolve (? 🤔)RemoveError: 'requests' is a dependency of conda ]()
 
