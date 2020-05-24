@@ -72,6 +72,7 @@ conda list -n base -r
 
 ```console
 # Not generally recommended!
+conda list --revisions
 conda install --revision 0
 ```
 
