@@ -1,5 +1,12 @@
 # Simple and nifty commands to manage with `conda`
 
+## [Digress just a little :ok_hand: from `channel_priority:strict`](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html)
+
+```
+conda config --set channel_priority false
+```
+
+
 ## [Do _not_ install obsolete `tensorflow-tensorboard`, `tensorboard`](https://github.com/conda/conda/issues/8149#issuecomment-602010480)
 
 ```
