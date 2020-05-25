@@ -215,3 +215,31 @@ dependencies:
 # datasci-notebook
 source /opt/conda/etc/profile.d/conda.sh && conda activate base
 ```
+
+## [JupyterLab (semi)approved unofficial extensions](https://github.com/jupyterlab/team-compass/issues/52#issuecomment-618073188)
+
+<details>
+<summary>
+The following are all unofficial jupyter labextensions:
+</summary>
+
+https://github.com/jupyterlab/jupyter-renderers
+https://github.com/jupyterlab/jupyterlab_app
+https://github.com/jupyterlab/jupyterlab_pygments
+https://github.com/jupyterlab/jupyterlab-celltags
+https://github.com/jupyterlab/jupyterlab-commenting
+https://github.com/jupyterlab/jupyterlab-data-explorer
+https://github.com/jupyterlab/jupyterlab-git
+https://github.com/jupyterlab/jupyterlab-github
+https://github.com/jupyterlab/jupyterlab-google-drive
+https://github.com/jupyterlab/jupyterlab-hdf5
+https://github.com/jupyterlab/jupyterlab-latex
+https://github.com/jupyterlab/jupyterlab-metadata-service
+https://github.com/jupyterlab/jupyterlab-monaco
+https://github.com/jupyterlab/jupyterlab-mp4
+https://github.com/jupyterlab/jupyterlab-shortcutui
+https://github.com/jupyterlab/jupyterlab-telemetry
+https://github.com/jupyterlab/jupyterlab-toc
+https://github.com/jupyterlab/pull-requests
+
+</details>
