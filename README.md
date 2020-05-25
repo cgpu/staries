@@ -22,3 +22,5 @@ The *ies. A series of &lt;star>-ies util snippets, scripts or templates that I u
 - <a href="https://github.com/cgpu/staries/tree/master/nexties" target="_blank"><img src="https://avatars1.githubusercontent.com/u/6698688?s=280&v=4?raw=true" alt="drawing" width="20"/></a>
 
 - <a href="https://github.com/cgpu/staries/tree/master/condies" target="_blank"><img src="https://paganresearch.io/images/anaconda.png?raw=true" alt="drawing" width="24"/></a>
+
+- <a href="https://github.com/cgpu/staries/tree/master/tfies" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/957px-Tensorflow_logo.svg.png?raw=true" alt="drawing" width="24"/></a>
