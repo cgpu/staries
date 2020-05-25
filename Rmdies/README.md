@@ -254,3 +254,34 @@ testthat::expect_equal(d1,d2)
 diffdf::diffdf(d1,d2)
 visdat::vis_compare(d1, d2)
 ```
+
+## [Try to install SAIGE with conda:](https://github.com/weizhouUMICH/SAIGE/issues/118#issue-514008206)
+
+```
+conda create -n RSAIGE8 r-essentials r-base=3.6.1 python=2.7
+conda activate RSAIGE8
+conda install -c anaconda cmake
+conda install -c conda-forge gettext lapack r-matrix
+conda install -c r r-rcpp  r-rcpparmadillo r-data.table r-bh
+conda install -c conda-forge r-spatest r-rcppeigen r-devtools  r-skat
+conda install -c bioconda r-rcppparallel r-optparse
+conda install -c anaconda boost zlib
+pip install cget click
+
+FLAGPATH=`which python | sed 's|/bin/python$||'`
+export LDFLAGS="-L${FLAGPATH}/lib"
+export CPPFLAGS="-I${FLAGPATH}/include"
+
+# Using method 3
+# Open R and install package MetaSKAT
+> install.packages('MetaSKAT')
+# exit R and run bellow command
+src_branch=master
+repo_src_url=https://github.com/weizhouUMICH/SAIGE
+git clone --depth 1 -b $src_branch $repo_src_url
+R CMD INSTALL SAIGE
+
+# Using by method 2
+# open R and run (choose 3 no update any packages): 
+devtools::install_github("weizhouUMICH/SAIGE") 
+```
