@@ -243,3 +243,14 @@ https://github.com/jupyterlab/jupyterlab-toc
 https://github.com/jupyterlab/pull-requests
 
 </details>
+
+
+## [`pip/issues/5599`](https://github.com/pypa/pip/issues/5599)
+
+```diff
+- WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+- Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+```
+```sh
+python -m pip  install docker
+```
