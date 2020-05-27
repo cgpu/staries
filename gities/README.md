@@ -1,6 +1,11 @@
 # gities
 Useful snippets for dangerous git missions :sunglasses:
 
+## Hash of latest commit
+
+```
+git rev-parse HEAD
+```
 
 ## [Peek :eyes: branch creation date](https://stackoverflow.com/questions/2255416/how-to-determine-when-a-git-branch-was-created)
 
