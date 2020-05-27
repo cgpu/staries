@@ -1,5 +1,5 @@
 # Rmdies
-Rmdies: A collection of utility functions for Rmarkdowns and R in geneRal.
+A collection of utility functions for Rmarkdowns and R in geneRal.
 
 # [Hack to only recompile R code in Rccppackages](https://discourse.mc-stan.org/t/devtools-install-local-true-always-re-compiles/10083)
 
@@ -289,4 +289,11 @@ R CMD INSTALL SAIGE
 # Using by method 2
 # open R and run (choose 3 no update any packages): 
 devtools::install_github("weizhouUMICH/SAIGE") 
+```
+
+
+## Get libs
+
+```R
+Rscript -e "scripts <- list.files('.', pattern = '.R|.Rmd|.ipynb', recursive = TRUE); dput(unique(unlist(lapply(scripts, Rclean::get_libs))))"
 ```
