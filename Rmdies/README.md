@@ -298,3 +298,19 @@ devtools::install_github("weizhouUMICH/SAIGE")
 Rscript -e "scripts <- list.files('.', pattern = '.R|.Rmd|.ipynb', recursive = TRUE); dput(unique(unlist(lapply(scripts, Rclean::get_libs))))"
 Rscript -e "scripts <- list.files('.', pattern = '.R$ |.Rmd$', recursive = TRUE); dput(unique(unlist(lapply(scripts, Rclean::get_libs))))"
 ```
+
+
+## IQR filtering the elbow grease way
+
+```
+# This is a matrix with rownames
+h <- read.csv("IQR.csv", header = TRUE, sep = ",")
+h <- as.matrix(h)
+h
+# Here we calculate the standard deviation across rows (1 for rows in apply)
+vars <- apply(h, 1, sd)
+vars
+# Here we apply elbow grease quantile filtering
+filtered <- h[vars > quantile(vars, 0.75, na.rm = TRUE), ] 
+filtered
+```
