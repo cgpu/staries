@@ -93,7 +93,7 @@ git remote set-url origin https://github.com/cgpu/staries.git
 ## [Update origin with branches created in upstream after forking](https://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches)
 
 
-## [Ultra shallow git clone (1 commit)](https://linuxhint.com/git-shallow-clone-and-clone-depth/)
+## [Ultra shallow git clone (1 commit)](https://www.techiedelight.com/clone-git-repository-with-specific-revision/)
 
 ```
 mkdir staries-shallow
