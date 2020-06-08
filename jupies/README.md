@@ -1,5 +1,7 @@
 # Useful bits and snippets for the Jo·vy·ans of the universe 
 
+## ["Conda envs with JupyterLab notebooks"](https://dwflanagan.github.io/2018-04-20-conda-envs-in-jupyter/)
+
 ## [Parse .ipynb for deps and export in env.yml](https://github.com/cgat-developers/conda-deps)
 
 ## Research website from jupyter notebooks (workflowr, packagedown etc concept)
