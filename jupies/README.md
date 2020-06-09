@@ -1,6 +1,15 @@
 # Useful bits and snippets for the Jo·vy·ans of the universe 
 
-## ["Conda envs with JupyterLab notebooks"](https://dwflanagan.github.io/2018-04-20-conda-envs-in-jupyter/)
+## [Which environment is your notebook running on?](https://stackoverflow.com/questions/37085665/in-which-conda-environment-is-jupyter-executing)
+
+Type the following commands in the notebook shell:
+
+```python
+import sys
+print(sys.executable)
+```
+
+## [Conda envs with JupyterLab notebooks via `nb_conda_kernels`](https://dwflanagan.github.io/2018-04-20-conda-envs-in-jupyter/)
 
 ## [Parse .ipynb for deps and export in env.yml](https://github.com/cgat-developers/conda-deps)
 
