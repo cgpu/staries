@@ -112,3 +112,8 @@ options(repr.plot.width=6.5, repr.plot.height=4)
 # General Utils
 
 - Comment out multiple lines of code: <kbd>⌘</kbd>+<kbd>/</kbd>
+
+
+# What's this? :thinking:
+
+- https://github.com/jupyterhub/nbgitpuller
