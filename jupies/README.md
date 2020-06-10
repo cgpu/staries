@@ -1,5 +1,7 @@
 # Useful bits and snippets for the Jo·vy·ans of the universe 
 
+## [Is there a way to specify a jupyter lab extension in a conda env?](https://stackoverflow.com/questions/54186373/is-there-a-way-to-specify-a-jupyter-lab-extension-in-a-conda-env)
+
 ## [Which environment is your notebook running on?](https://stackoverflow.com/questions/37085665/in-which-conda-environment-is-jupyter-executing)
 
 Type the following commands in the notebook shell:
