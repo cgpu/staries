@@ -1,5 +1,9 @@
 # tuxies
 
+
+## [CLI script with `-` flags](https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash/21128172)
+
+
 Useful scripts, snippets and guidelines for common command line tasks
 
 ## [Match row that contains `name`](https://stackoverflow.com/questions/31745545/regex-match-line-containing-string)
