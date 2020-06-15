@@ -295,7 +295,7 @@ devtools::install_github("weizhouUMICH/SAIGE")
 ## Get libs
 
 ```R
-Rscript -e "scripts <- list.files('.', pattern = '.R|.Rmd|.ipynb', recursive = TRUE); dput(unique(unlist(lapply(scripts, Rclean::get_libs))))"
+Rscript -e "scripts <- list.files('.', pattern = '.R|.Rmd', recursive = TRUE); dput(unique(unlist(lapply(scripts, Rclean::get_libs))))"
 Rscript -e "scripts <- list.files('.', pattern = '.R$ |.Rmd$', recursive = TRUE); dput(unique(unlist(lapply(scripts, Rclean::get_libs))))"
 ```
 
