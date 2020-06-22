@@ -103,3 +103,12 @@ git remote add origin https://github.com/cgpu/staries.git
 git fetch origin a4e25b0cd7c0382400d1d37d9283dfca9027564d
 git reset --hard FETCH_HEAD
 ```
+
+
+## Follow specific files git history
+
+```
+git log --pretty=oneline  --follow -- jupyter/figure3.ipynb  
+#or  
+git log  --follow -- jupyter/figure3.ipynb
+```
