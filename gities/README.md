@@ -112,6 +112,7 @@ git log --pretty=oneline  --follow -- jupyter/figure3.ipynb
 #or  
 git log  --follow -- jupyter/figure3.ipynb
 
-# or ninja style:
+# or ninja style 
+# from here: https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date
 git log --date=short --pretty="%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an : %C(reset)%s" --follow -- jupyter/figure3.ipynb
 ```
