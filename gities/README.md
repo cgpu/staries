@@ -113,5 +113,5 @@ git log --pretty=oneline  --follow -- jupyter/figure3.ipynb
 git log  --follow -- jupyter/figure3.ipynb
 
 # or ninja style:
-git log --pretty="%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an : %C(reset)%s" --follow -- jupyter/figure3.ipynb
+git log --date=short --pretty="%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an : %C(reset)%s" --follow -- jupyter/figure3.ipynb
 ```
