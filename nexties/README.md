@@ -5,6 +5,13 @@
 
 see `nextflow/issues/592`
 
+## [publishDir](https://github.com/nextflow-io/nextflow/issues/256#issuecomment-285087760)
+
+```groovy
+ publishDir '.', saveAs: { it == "foo.*" ? "foos/$it" : "bars/$it" }
+
+```
+
 ## Optional output
 
 ```groovy
