@@ -5,7 +5,14 @@
 
 see `nextflow/issues/592`
 
-## Optional issues
+## Optional output
+
+```groovy
+output:
+    file("foo") optional true into ch_ontologizer_a3ss
+```
+
+## Optional input
 
 ```groovy
 # optional-input
