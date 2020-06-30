@@ -18,3 +18,6 @@ gcloud init
 ```bash
 gcloud auth login
 ```
+
+
+## [NF x gcloud docs](http://andersenlab.org/dry-guide/pipeline-GCPconfig/)
