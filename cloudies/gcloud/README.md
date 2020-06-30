@@ -21,3 +21,7 @@ gcloud auth login
 
 
 ## [NF x gcloud docs](http://andersenlab.org/dry-guide/pipeline-GCPconfig/)
+
+API needed
+
+## [Custom GCE VM](https://medium.com/@lynnlangit/cloud-native-hello-world-for-bioinformatics-7831aecc8d1a)
