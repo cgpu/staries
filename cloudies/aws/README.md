@@ -9,8 +9,18 @@
 
 ```
 
+## 
+
+```
+aws ec2 describe-vpcs 
+aws iam list-access-keys --region eu-west-1 --profile potent
+```
+
+
 ```
 # [o]
 Total Objects: 2328
 Total Size: 47.3 MiB
 ```
+
+
