@@ -25,3 +25,9 @@ gcloud auth login
 API needed
 
 ## [Custom GCE VM](https://medium.com/@lynnlangit/cloud-native-hello-world-for-bioinformatics-7831aecc8d1a)
+
+
+# Error messages and potential cause
+
+If: `Unknow cloud driver name: google`
+Maybe: echo $GOOGLE_APPLICATION_CREDENTIALS is empty, aka has not been set up
