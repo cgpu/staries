@@ -1,5 +1,11 @@
 # Simple and nifty commands to manage with `conda`
 
+## List available conda channels and friends
+
+```bash
+conda config --show-sources
+```
+
 ## [Digress just a little :ok_hand: from `channel_priority:strict`](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html)
 
 ```
