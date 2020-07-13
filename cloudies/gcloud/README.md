@@ -31,3 +31,12 @@ API needed
 
 If: `Unknow cloud driver name: google`
 Maybe: echo $GOOGLE_APPLICATION_CREDENTIALS is empty, aka has not been set up
+
+# 
+
+
+## Go back in time (if your [gcloud SDK gives you attitude](https://issuetracker.google.com/issues/160074681))
+
+```
+ gcloud components update --version 280.0.0
+```
