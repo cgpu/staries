@@ -1,6 +1,14 @@
 # tuxies
 
 
+## [Best practices shebang](https://stackoverflow.com/questions/10376206/what-is-the-preferred-bash-shebang)
+
+```sh
+#!/usr/bin/env bash
+
+ls -l
+```
+
 ## [CLI script with `-` flags](https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash/21128172)
 
 
