@@ -1,5 +1,10 @@
 # NextFlow snippets, patterns or groovy handy functions
 
+## gcloud errorStrategy for preemptible machines
+
+```groovy
+     errorStrategy = { task.exitStatus in [3,8,10,14] ||  task.attempt <=  6 ? 'retry' : 'ignore' }
+```
 
 ## `publishDir` : `copyNoFollow` 
 
