@@ -1,6 +1,31 @@
 # dockies
 Useful scripts, snippets and guidelines for common tasks related to docker
 
+## Using `--build-arg` to pass parameters in docker builds
+
+The `ARG`, `ENV` combination has been used to enable using persistent between stages environmental variables in multi-stage docker builds.
+In this case, it enables us to leverage the predictable beagle archive names, thanks to semantic versioning being utilised by the developers of `atool` to
+be able to build different versions of `atool` without updating the files of this repo. 
+
+The functionality of using the ARG-ENV combo is officially documented [here <sup>1</sup>](https://docs.docker.com/develop/develop-images/multistage-build/). Also, a nice and simple tutorial can be also found [here <sup>2</sup>](https://vsupalov.com/docker-arg-vs-env/), but note! that the syntax in this tutorial is a bit outdated. The correct syntax for Docker >= 18.09 is using `=` and not whitespace to seperate key-value ARG pairs, see below the correct syntax:
+
+```Dockerfile
+ARG TOOL_BUILD_LABEL="iamthedefaultvalue"
+ENV TOOL_BUILD_VERSION=$TOOL_BUILD_LABEL
+```
+
+The value `iamthedefaultvalue` is the default value but this can be overriden during the build by using the flag `--build-arg` as follows:
+
+```bash
+cd Docker-containers/beagle
+docker build --build-arg TOOL_BUILD_VERSION="custom-version"  -t cgpu/awesome-image:1.0
+```
+
+**References:**
+
+1. [_"Use multi-stage builds"_](https://docs.docker.com/develop/develop-images/multistage-build/), Docker official documentation
+2. [_"Docker ARG vs ENV"_](https://vsupalov.com/docker-arg-vs-env/), Blogpost from  https://vsupalov.com/
+
 ## [Change from USER root to USER 500 from intermediate builds](https://github.com/WASdev/ci.docker/issues/194#issuecomment-433519379)
 
 ```Dockerfile
