@@ -1,5 +1,18 @@
 # NextFlow snippets, patterns or groovy handy functions
 
+## Linux dependencies for alpine images
+
+```
+awk
+bash
+ps # procps
+date
+sed
+grep
+egrep
+tail
+```
+
 ## gcloud errorStrategy for preemptible machines
 
 ```groovy
