@@ -27,6 +27,7 @@ Total Size: 47.3 MiB
 # Useful AWS console links
 
 - https://aws.amazon.com/well-architected-tool/
+= https://aws.amazon.com/big-data/datalakes-and-analytics/
 - https://console.aws.amazon.com/billing/
 - https://aws.amazon.com/solutions/case-studies/
 - https://aws.amazon.com/solutions/consulting-offers/
