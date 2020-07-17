@@ -1,0 +1,9 @@
+set -ex
+
+invoke build --env-name=root --no-kernel
+jupytext --to ipynb **/*.md
+rm **/*.md
+jupyter lab clean
+
+# Setup a workspace
+jupyter lab workspaces import binder/workspace.json

@@ -1,6 +1,8 @@
 # The Staries :sparkles:
 The *ies. A series of &lt;star>-ies util snippets, scripts or templates that I use day to day.
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cgpu/staries/binder?urlpath=lab)
+
 <br>
 
 > ##  <a href="https://www.yodaspeak.co.uk/index.php" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUV7eB7H6rROCZSd8pAj353ramq-c-4puIuPSIvq3sCznS_aEb" alt="drawing" width="70"/></a>  [_Remain undocumented, nothing should._](http://starlogs.net/#cgpu/staries)
