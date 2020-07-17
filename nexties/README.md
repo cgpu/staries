@@ -13,6 +13,9 @@ egrep
 tail
 ```
 
+## If ecr container needed
+https://github.com/nextflow-io/nextflow/issues/45#issuecomment-498549201
+
 ## gcloud errorStrategy for preemptible machines
 
 ```groovy
