@@ -24,7 +24,7 @@ Total Size: 47.3 MiB
 ```
 
 
-# Usefull AWS console links
+# Useful AWS console links
 
 - https://console.aws.amazon.com/billing/
 - https://aws.amazon.com/solutions/case-studies/
@@ -34,3 +34,4 @@ Total Size: 47.3 MiB
 - https://aws.amazon.com/quickstart/biotech-blueprint/nextflow/
 - https://github.com/aws-quickstart/quickstart-nextflow
 - https://github.com/aws-samples/aws-genomics-workflows/blob/master/src/templates/nextflow/nextflow-aio.template.yaml
+- https://aws.amazon.com/architecture/icons/
