@@ -40,3 +40,16 @@ Maybe: echo $GOOGLE_APPLICATION_CREDENTIALS is empty, aka has not been set up
 ```
  gcloud components update --version 280.0.0
 ```
+
+
+## Verify preemptible status for all running instances
+
+```
+# set project first:
+gcloud config set project one-project-id
+
+# list all running instances and grab their name
+# use their name to fetch preemptibility info
+
+for instance in `gcloud compute instances list | awk '{print $1}' | grep -v NAME` ; do gcloud compute instances describe $instance  | grep preemptible; done
+```
