@@ -41,6 +41,12 @@ Maybe: echo $GOOGLE_APPLICATION_CREDENTIALS is empty, aka has not been set up
  gcloud components update --version 280.0.0
 ```
 
+## Unset specific zone to list all VMs in region
+
+```
+gcloud config list
+gcloud config unset compute/zone
+```
 
 ## Verify preemptible status for all running instances
 
