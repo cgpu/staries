@@ -35,3 +35,5 @@ Total Size: 47.3 MiB
 - https://github.com/aws-quickstart/quickstart-nextflow
 - https://github.com/aws-samples/aws-genomics-workflows/blob/master/src/templates/nextflow/nextflow-aio.template.yaml
 - https://aws.amazon.com/architecture/icons/
+- https://aws.amazon.com/architecture/?solutions-all.sort-by=item.additionalFields.sortDate&solutions-all.sort-order=desc&whitepapers-main.sort-by=item.additionalFields.sortDate&whitepapers-main.sort-order=desc&reference-architecture.sort-by=item.additionalFields.sortDate&reference-architecture.sort-order=desc
+- https://aws.amazon.com/solutions/implementations/genomics-tertiary-analysis-and-data-lakes-using-aws-glue-and-amazon-athena/?did=sl_card&trk=sl_card
