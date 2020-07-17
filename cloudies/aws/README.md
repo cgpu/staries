@@ -24,3 +24,6 @@ Total Size: 47.3 MiB
 ```
 
 
+# Usefull AWS console links
+
+- https://console.aws.amazon.com/billing/
