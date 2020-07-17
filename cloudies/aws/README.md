@@ -28,3 +28,9 @@ Total Size: 47.3 MiB
 
 - https://console.aws.amazon.com/billing/
 - https://aws.amazon.com/solutions/case-studies/
+- https://aws.amazon.com/solutions/consulting-offers/
+- https://aws.amazon.com/solutions/
+- https://aws.amazon.com/quickstart/
+- https://aws.amazon.com/quickstart/biotech-blueprint/nextflow/
+- https://github.com/aws-quickstart/quickstart-nextflow
+- https://github.com/aws-samples/aws-genomics-workflows/blob/master/src/templates/nextflow/nextflow-aio.template.yaml
