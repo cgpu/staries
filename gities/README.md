@@ -1,6 +1,8 @@
 # gities
 Useful snippets for dangerous git missions :sunglasses:
 
+## [Visualise git diff range .. or ...](https://stackoverflow.com/questions/7251477/what-are-the-differences-between-double-dot-and-triple-dot-in-git-dif/7256391#7256391)
+
 ## Hash of latest commit
 
 ```
