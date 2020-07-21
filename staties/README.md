@@ -1,6 +1,6 @@
 # staties
 
-## Maximum Likelihood Estimation (MLE) and Maximum A Posteriori (MAP)
+## [Maximum Likelihood Estimation (MLE) and Maximum A Posteriori (MAP)](https://wiseodd.github.io/techblog/2017/01/01/mle-vs-map/)
 
 How are these two connected?
 
