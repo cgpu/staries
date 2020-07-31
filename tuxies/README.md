@@ -188,3 +188,10 @@ which looks like a table:
 |& tee -a ||   yes    |   yes    ||   yes    |   yes    ||  append
 
 ```
+
+
+## [Reset default Java version if 2 or more avail in system on CentOS](https://www.liquidweb.com/kb/install-java-8-on-centos-7/)
+
+```shell
+update-alternatives --config java
+```
