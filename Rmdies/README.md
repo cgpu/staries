@@ -5,6 +5,11 @@ A collection of utility functions for Rmarkdowns and R in geneRal.
 
 > You can use `devtools::document()` to recompile the R side of the code: this should not trigger a recompilation (you can use `devtools::clean_dll()` followed by `devtools::load_all()` to recompile the Stan/C++ code without installing the package).
 
+# Rmd watermark
+
+```css
+<div class="watermark">DRAFT</div>
+```
 
 # Detach a package
 
