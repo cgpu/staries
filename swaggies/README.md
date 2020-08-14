@@ -1,6 +1,11 @@
 # <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" alt="drawing" width="26"/>  swaggies
 Awesome markdown trix and misc. snippets for docs-writing swag. 
 
+## Random badgies
+
+[![GitHub issues](https://img.shields.io/github/issues/cgpu/staries?color=green)](https://github.com/cgpu/staries/issues/new) <a href="https://hits.seeyoufarm.com"/><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FYinLiLin%2FCMplot"/></a>
+=========
+
 ## Markdown swag, click & expand section
 
 <details>
