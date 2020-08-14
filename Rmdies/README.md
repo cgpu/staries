@@ -1,6 +1,13 @@
 # Rmdies
 A collection of utility functions for Rmarkdowns and R in geneRal.
 
+
+# Install `XML`
+
+```r
+install.packages("XML", repos = "http://www.omegahat.net/R")
+```
+
 # [Hack to only recompile R code in Rccppackages](https://discourse.mc-stan.org/t/devtools-install-local-true-always-re-compiles/10083)
 
 > You can use `devtools::document()` to recompile the R side of the code: this should not trigger a recompilation (you can use `devtools::clean_dll()` followed by `devtools::load_all()` to recompile the Stan/C++ code without installing the package).
