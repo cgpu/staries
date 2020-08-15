@@ -4,8 +4,8 @@ Useful scripts, snippets and guidelines for common tasks related to docker
 ## List docker images, descending order by size]
 
 ```zsh
-docker images --format "{{.ID}}\t{{.Size}}\t{{.Repository}}" | sort -k 2 -rh
-```
+ docker images --format "{{.ID}}\t{{.Size}}\t{{.Repository}}:{{.Tag}}" | sort -k 2 -rh
+ ```
 
 ## Using `--build-arg` to pass parameters in docker builds
 
