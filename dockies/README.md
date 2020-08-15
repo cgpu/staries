@@ -1,6 +1,12 @@
 # dockies
 Useful scripts, snippets and guidelines for common tasks related to docker
 
+## List docker images, descending order by size]
+
+```
+docker images --format "{{.ID}}\t{{.Size}}\t{{.Repository}}" | sort -k 2 -rh
+```
+
 ## Using `--build-arg` to pass parameters in docker builds
 
 The `ARG`, `ENV` combination has been used to enable using persistent between stages environmental variables in multi-stage docker builds.
