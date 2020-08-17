@@ -5,6 +5,7 @@ Useful scripts, snippets and guidelines for common tasks related to docker
 
 ```zsh
  docker images --format "{{.ID}}\t{{.Size}}\t{{.Repository}}:{{.Tag}}" | sort -k 2 -rh
+ alias dockerls=' docker images --format "{{.ID}}\t{{.Size}}\t{{.Repository}}:{{.Tag}}" | sort -k 2 -rh'
  ```
 
 ## Using `--build-arg` to pass parameters in docker builds
