@@ -10,7 +10,7 @@ jobs:
     container: cgpu/ropensci-rclean@sha256:42465d86c9ed21b7473dcbaf198b5947c76b346658ce8394f9e734395f534043
     steps:
     - uses: actions/checkout@v2
-    - name: Run get_froms
+    - name: Run get_from
       run: |
         grep -R "FROM" $(pwd)
       shell:
