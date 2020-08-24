@@ -12,6 +12,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run get_from
       run: |
-        grep -R "FROM" $(pwd)
+        grep -R "FROM" .
       shell:
         bash
