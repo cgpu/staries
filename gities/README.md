@@ -3,6 +3,16 @@ Useful snippets for dangerous git missions :sunglasses:
 
 ## [Visualise git diff range .. or ...](https://stackoverflow.com/questions/7251477/what-are-the-differences-between-double-dot-and-triple-dot-in-git-dif/7256391#7256391)
 
+## [Delete local and remote branch](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
+
+```
+# local
+git branch -d feature-branch-name
+
+# remote
+git push origin --delete feature-branch-name
+```
+
 ## Hash of latest commit
 
 ```
