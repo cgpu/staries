@@ -21,4 +21,15 @@ if __name__ == '__main__':
 
 ## [Convert html to ipynb](https://stackoverflow.com/questions/28972614/ipython-notebook-convert-an-html-notebook-to-ipynb)
 
-See [here](pythies/py/html2ipynb.py) 
+See [here](pythies/py/html2ipynb.py)
+
+
+## [Fix: AtributeError: 'module' object has no attribute 'plt' - Seaborn](https://stackoverflow.com/questions/45070959/atributeerror-module-object-has-no-attribute-plt-seaborn)
+
+```diff
+
++ import matplotlib.pyplot as plt
+
+- sns.plt.show()
++ plt.show()ss
+```
