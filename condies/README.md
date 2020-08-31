@@ -1,5 +1,10 @@
 # Simple and nifty commands to manage with `conda`
 
+## Try QuantStack mamba 
+
+- https://medium.com/@QuantStack/open-software-packaging-for-science-61cecee7fc23
+- https://twitter.com/QuantStack/status/1299669693813358592
+
 ## List available conda channels and friends
 
 ```bash
