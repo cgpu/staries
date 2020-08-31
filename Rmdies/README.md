@@ -326,3 +326,6 @@ vars
 filtered <- h[vars > quantile(vars, 0.75, na.rm = TRUE), ] 
 filtered
 ```
+
+## [Custom palettes for ggplot](https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2)
+
