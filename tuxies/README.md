@@ -1,5 +1,10 @@
 # tuxies
 
+## [List all directories sorted by size in descending order](https://stackoverflow.com/questions/51443182/list-all-directories-sorted-by-size-in-descending-order)
+
+```sh
+du -h * | sort -nr
+```
 
 ## [Best practices shebang](https://stackoverflow.com/questions/10376206/what-is-the-preferred-bash-shebang)
 
