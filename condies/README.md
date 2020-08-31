@@ -1,9 +1,16 @@
 # Simple and nifty commands to manage with `conda`
 
+
 ## Try QuantStack mamba 
 
 - https://medium.com/@QuantStack/open-software-packaging-for-science-61cecee7fc23
 - https://twitter.com/QuantStack/status/1299669693813358592
+
+Use mamba to search for which packages depend on package X eg. jupytext:
+
+```bash
+mamba repoquery whoneeds jupytext
+```
 
 ## List available conda channels and friends
 
