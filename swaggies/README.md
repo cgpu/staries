@@ -22,6 +22,22 @@ TaDa!
     
 </details>
 
+```
+<details>
+<summary>
+This is what you see as description before expanding
+</summary>
+These
+are
+all
+the
+hidden
+details.
+TaDa!
+    
+</details>
+```
+
 ## [List with oh so many Github markdowns emojis](https://gist.github.com/rxaviers/7360908)
 :bowtie: :neckbeard: :koala: :bug: :mushroom: :squirrel: :bamboo: :icecream:
 
