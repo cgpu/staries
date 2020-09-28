@@ -1,5 +1,13 @@
 # Day to day gcloud commands
 
+## [Sync gs with s3 (interoperability)](https://cloud.google.com/storage/docs/gsutil/commands/rsync)
+
+Mirror objects present in s3 bucket in gs cloud storage bucket
+
+```
+gsutil -m  rsync -r s3://my-bucket/this-object gs://my-bucket/this-object
+```
+
 ## Util public container image
 
 gcr.io/cloud-genomics-pipelines/tools
