@@ -1,5 +1,9 @@
 # Day to day gcloud commands
 
+## Util public container image
+
+gcr.io/cloud-genomics-pipelines/tools
+
 ## [Install](https://cloud.google.com/storage/docs/gsutil_install#linux)
 
 ```
