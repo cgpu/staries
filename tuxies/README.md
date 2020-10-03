@@ -1,5 +1,11 @@
 # tuxies
 
+## [List recursively and retrieve full absolut path of all files](https://superuser.com/questions/595697/recursively-list-full-absolute-path-of-files-with-permissions-in-linux)
+
+```bash
+tree -ifpugDs dir/
+```
+
 ## [List all directories sorted by size in descending order](https://stackoverflow.com/questions/51443182/list-all-directories-sorted-by-size-in-descending-order)
 
 ```sh
