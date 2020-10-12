@@ -1,5 +1,16 @@
 # NextFlow snippets, patterns or groovy handy functions
 
+## Keep a certain percent of entries, shuffled in the channel
+
+```groovy
+x = ch_vcf_to_count.count().val
+x = x * params.percent_chunks_to_keep.toInteger() / 100
+number_chunks_to_keep = Math.ceil(x).toInteger()
+
+ch_aggfiles_random_fraction = ch_vcf_names.randomSample(number_chunks_to_keep)
+```
+
+
 ## Linux dependencies for alpine images
 
 ```
