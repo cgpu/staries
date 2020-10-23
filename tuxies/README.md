@@ -1,5 +1,17 @@
 # tuxies
 
+## [Redirect both stdout and stderr in files]()
+
+```bash
+# If you want to log to the same file:
+
+command1 >> log_file 2>&1
+
+# If you want different files:
+
+command1 >> log_file 2>> err_file
+```
+
 ## [List recursively and retrieve full absolut path of all files](https://superuser.com/questions/595697/recursively-list-full-absolute-path-of-files-with-permissions-in-linux)
 
 ```bash
