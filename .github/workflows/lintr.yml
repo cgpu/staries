@@ -16,7 +16,7 @@ jobs:
         apt-get install git ssh curl bzip2 -y
     - name: Install lintr
       run: |
-        Rscript -e "install.packages('lintr', repos = 'https://cloud.r-project.org')"
+        Rscript -e 'remotes::install_version("lintr", version = "2.0.1", repos = "https://cloud.r-project.org")'
       shell:
         bash
     - name: Running lintr
