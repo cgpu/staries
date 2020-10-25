@@ -1,4 +1,4 @@
-library(VennDiagram)
+library(VennDiagram
 library(ggplot2)
 library(ggplotify)
 library(showtext)
@@ -6,7 +6,7 @@ library(gridGraphics)
 library(gridExtra)
 library(dplyr)
 
-intersect_genes_based_on_systemReview_snps <- intersect(snps, system_review_snps)
+intersect_genes_based_on_systemReview_snps < - intersect(snps, system_review_snps)
 
 # filter(!is.na(name)) equiv to drop_na("name") %>% (removes rows from the df that have NA values in col "name")
 SystematicReview %>% 
@@ -97,7 +97,7 @@ ggplotify::as.ggplot(grobbed_plot) +
   # Setting annotation for title, subtitle, caption
   labs(title     = ggtitle_custom,
    #   subtitle   = ggsubtitle_custom,
-      caption    = ggcaption_custom)   +
+      caption    = ggcaption_custom)   
 
 
   # Controlling font face, font color and font size of labs. Also centering with hjust 
@@ -110,7 +110,7 @@ ggplotify::as.ggplot(grobbed_plot) +
       legend.position="bottom") +
   
   theme(axis.title.x=element_blank(),
-        axis.text.x=element_blank(),
+        axis.text.x=element_blank()
         axis.ticks.x=element_blank(),
         axis.title.y=element_blank(),
         axis.text.y=element_blank(),
