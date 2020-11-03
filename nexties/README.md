@@ -1,5 +1,14 @@
 # NextFlow snippets, patterns or groovy handy functions
 
+
+## [Get substring from filename](lifebit-ai/simulate)
+
+```groovy
+  .map { file -> 
+       def key = file.name.toString().tokenize('-').get(0)
+       return tuple(key, file)
+```
+
 ## Keep a certain percent of entries, shuffled in the channel
 
 ```groovy
