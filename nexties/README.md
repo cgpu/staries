@@ -7,6 +7,9 @@
   .map { file -> 
        def key = file.name.toString().tokenize('-').get(0)
        return tuple(key, file)
+       
+# or
+  chr=bfile_name.split("-")[0]
 ```
 
 ## Keep a certain percent of entries, shuffled in the channel
