@@ -1,5 +1,36 @@
 # Day to day awscli commands
 
+## Get info for the instance from the command line
+
+```
+AWS_INSTANCE_TYPE=`curl -s http://169.254.169.254/latest/meta-data/instance-type`
+AWS_INSTANCE_ID=`curl -s http://169.254.169.254/latest/meta-data/instance-id`
+
+hostname
+ami-id
+instance-type
+
+ami-launch-index
+ami-manifest-path
+instance-id
+instance-life-cycle
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+reservation-id
+security-groups
+services/
+block-device-mapping/ 
+events/
+identity-credentials/
+```
+
 
 ## List a sum of objects in bucket sub-area
 
