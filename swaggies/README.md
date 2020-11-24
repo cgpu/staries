@@ -86,7 +86,7 @@ Concept: https://github.com/mwouts/jupytext-screenshots
   <img src="https://brandslogos.com/wp-content/uploads/thumbs/docker-logo-vector.svg" width="100" />
 </p>
 
-```
+```html
 <p float="left"; align="middle">
   <img src="https://pythonforfinance.net/wp-content/uploads/2019/07/Jupyter.jpg" width="165" />
   <img src="https://brandslogos.com/wp-content/uploads/thumbs/docker-logo-vector.svg" width="100" />
