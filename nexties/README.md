@@ -1,5 +1,21 @@
 # NextFlow snippets, patterns or groovy handy functions
 
+
+## [Weird but noice pattern "repeat until deplete" (ctrl+F `file a from A`)](https://gitter.im/nextflow-io/nextflow?at=5788f40b196179690ede6853)
+
+```
+process foo {
+  input:
+    file a from A
+    file b from B.first()
+
+  """
+  cat $a
+  cat $B
+  """
+}
+```
+
 ## [Use within the process data from the container](https://www.nextflow.io/docs/latest/process.html#containeroptions)
 
 
