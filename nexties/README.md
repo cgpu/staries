@@ -1,5 +1,21 @@
 # NextFlow snippets, patterns or groovy handy functions
 
+## [Use within the process data from the container](https://www.nextflow.io/docs/latest/process.html#containeroptions)
+
+
+```groovy
+process runThisWithDocker {
+
+    container 'busybox:latest'
+    containerOptions '--volume /data/db:/db'
+
+    output: file 'output.txt'
+
+    '''
+    your_command --data /db > output.txt
+    '''
+}
+```
 
 ## [Get substring from filename](lifebit-ai/simulate)
 
