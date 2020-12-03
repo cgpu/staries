@@ -1,5 +1,11 @@
 # tuxies
 
+## [Kill task running in a specific port](https://stackoverflow.com/questions/11583562/how-to-kill-a-process-running-on-particular-port-in-linux)
+
+```
+kill -9 $(lsof -t -i tcp:8888)
+```
+
 ## [Redirect both stdout and stderr in files]()
 
 ```bash
