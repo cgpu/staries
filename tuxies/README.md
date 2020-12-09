@@ -1,5 +1,13 @@
 # tuxies
 
+## [Rename files](https://unix.stackexchange.com/questions/33279/how-can-i-rename-multiple-files-by-removing-a-character-or-string)
+
+```bash
+for file in *unwanted-substring-from-filename*; do
+    mv "$file" "${file/unwanted-substring-from-filename/}"
+done
+```
+
 ## [Kill task running in a specific port](https://stackoverflow.com/questions/11583562/how-to-kill-a-process-running-on-particular-port-in-linux)
 
 ```
