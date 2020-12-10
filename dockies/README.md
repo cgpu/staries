@@ -216,3 +216,15 @@ Edit your `~/.docker/config.json`
 ```Dockerfile
 RUN echo "alias ontologizer=java -jar /opt/conda/envs/base/Ontologizer.jar" >> ~/.bashrc
 ```
+
+## Reduce image size for conda based containers
+
+- Official miniconda alpine image: 
+```
+continuumio/miniconda3         4.9.2-alpine        63fc92789da9        2 days ago          175MB
+continuumio/miniconda3         4.8.2               b4adc22212f1        9 months ago        429MB
+fat-bgenix                     revision-0-alpine   b138bc04b15c        22 seconds ago      385MB
+fat-bgenix                     revision-0          0a1d1202a6dd        8 minutes ago       763MB
+fat-bgenix                     force-pkgs-dirs     b693243610ca        21 minutes ago      1.8GB
+fat-bgenix                     latest              de4edd177f03        32 minutes ago      1.81GB
+```
