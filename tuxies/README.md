@@ -232,3 +232,28 @@ which looks like a table:
 ```shell
 update-alternatives --config java
 ```
+
+
+## Plink utils
+
+```bash
+for i in {1..22}; do
+    plink --vcf chr${i}.vcf.gz --keep-allele-order --make-bed --out chr${i}
+done
+
+
+for i in {1..22}; do
+    plink --bfile chr${i} --recode vcf-iid bgz --out chr${i}
+done
+
+ tabix -p vcf 
+for i in {1..22}; do
+    tabix -p vcf chr${i}.vcf.gz
+done
+
+bcftools index *gz
+
+for i in {1..22}; do
+    bcftools index chr${i}.vcf.gz
+done
+```
