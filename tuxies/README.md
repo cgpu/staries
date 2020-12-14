@@ -256,4 +256,12 @@ bcftools index *gz
 for i in {1..22}; do
     bcftools index chr${i}.vcf.gz
 done
+
+
+# https://www.biostars.org/p/306623/
+for i in {1..22}
+do
+echo chr$i >> mergelist.txt
+done
+plink --merge-list mergelist.txt --allow-no-sex --make-bed --out hd_snps
 ```
