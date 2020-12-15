@@ -1,5 +1,12 @@
 # tuxies
 
+
+### Largest files
+ 
+```
+cd ~ && du -ah . | sort -rh | head -n 20
+```
+ 
 ## [Rename files](https://unix.stackexchange.com/questions/33279/how-can-i-rename-multiple-files-by-removing-a-character-or-string)
 
 ```bash
