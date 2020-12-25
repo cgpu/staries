@@ -2,7 +2,8 @@ name: docker
 on:
   pull_request:
     types: [opened, reopened, synchronize, closed]
-    paths: ['./.docker/*']
+    paths:
+    - './.docker/*'
 jobs:
   linux:
 #     if: contains(github.event.head_commit.message, '[build .docker]') == true
