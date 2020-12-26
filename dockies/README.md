@@ -96,7 +96,7 @@ docker run --rm -p 8888:8888  -e JUPYTER_ENABLE_LAB=yes jupyter/datascience-note
 
 # or
 
-docker run -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash  -e GRANT_SUDO=yes  --user root jupyter/datascience-notebook
+docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash  -e GRANT_SUDO=yes  --user root jupyter/datascience-notebook
 ```
 
 ## Build jupyter notebook images
@@ -108,7 +108,7 @@ docker build --rm -t cgpu/sci-note .
 ## Mount working directory for in/out
 
 ```bash
-docker run -v $PWD:$PWD -w $PWD -it lifebitai/samtools bash 
+docker run --rm -v $PWD:$PWD -w $PWD -it lifebitai/samtools bash 
 
 ```
 
@@ -116,7 +116,7 @@ docker run -v $PWD:$PWD -w $PWD -it lifebitai/samtools bash
 
 ```bash
 # https://stackoverflow.com/questions/48432299/mount-local-volume-accessible-to-r-rstudio-in-docker-tidyverse
-docker run -it -e PASSWORD=p@$$ -e ROOT=TRUE -p 8787:8787  -v "$PWD":"$PWD" -w "$PWD"  rocker/r-ver:3.6.1
+docker run --rm -it -e PASSWORD=p@$$ -e ROOT=TRUE -p 8787:8787  -v "$PWD":"$PWD" -w "$PWD"  rocker/r-ver:3.6.1
 ```
 
 ## Include and export files to/from container
@@ -127,7 +127,7 @@ Mount your current directory for input and output:
 </summary>
 
 ```bash
-docker run -it  -v "$PWD":"$PWD" -w "$PWD" broadinstitute/gatk
+docker run --rm -it  -v "$PWD":"$PWD" -w "$PWD" broadinstitute/gatk
 ```
 </details>
 
