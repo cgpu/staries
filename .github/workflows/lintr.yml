@@ -1,24 +1,19 @@
 name: lintr
-on: [push, pull_request]
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+    paths:
+    - '**.R'
+
 jobs:
   linux:
     if: contains(github.event.head_commit.message, '[lint skip]') == false
     strategy:
       matrix:
-        r: [latest]
     runs-on: ubuntu-latest
-    container: rocker/tidyverse:${{ matrix.r }}
+    container: cgpu/lintr
     steps:
-    - uses: actions/checkout@v2
-    - name: Install apt-get dependencies
-      run: |
-        apt-get update
-        apt-get install git ssh curl bzip2 -y
-    - name: Install lintr
-      run: |
-        Rscript -e "install.packages('lintr', repos = 'https://cloud.r-project.org')"
-      shell:
-        bash
+    - uses: actions/checkout@v2.3.4
     - name: Running lintr
       run: |
         Rscript -e "lintr::lint_dir('./Rmdies/R')"
