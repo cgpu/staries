@@ -1,5 +1,9 @@
-on: pull_request
 name: hadolint action
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
 jobs:
   hadolintOnPr:
     name: hadolint on pr
