@@ -1,8 +1,12 @@
 name: get-libs
-on: push
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+    paths:
+    - '**.R'
 jobs:
   linux:
-    if: contains(github.event.head_commit.message, '[get libs]') == true
+    if: contains(github.event.head_commit.message, '[skip libs]') == false
     strategy:
       matrix:
         r: [latest]
