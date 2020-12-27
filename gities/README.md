@@ -134,3 +134,19 @@ git log --date=short --pretty="%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset)
 ```
 git commit --amend --author="cgpu <my-email-name@gmail.com>"
 ```
+
+## Do not track _Changes not staged for commit:_ 
+
+File by file:
+
+```
+git checkout -- <filename>
+```
+  
+  
+## Undo `git add`
+
+```
+git reset HEAD
+```
+
