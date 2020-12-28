@@ -4,9 +4,16 @@ on:
     types: [opened, reopened, synchronize, closed]
     paths:
     - '.docker/*'
+  push:
+    types: [opened, reopened, synchronize, closed]
+    branches: 
+      - master
+      - main
+    paths:
+    - '.docker/*'
 jobs:
   linux:
-#     if: contains(github.event.head_commit.message, '[build .docker]') == true
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       -
