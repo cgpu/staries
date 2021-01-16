@@ -1,5 +1,17 @@
 # NextFlow snippets, patterns or groovy handy functions
 
+## Parameterise config options
+
+```
+params {
+	region = 'eu-west-1'
+}
+
+aws {
+	region = params.region
+} 
+```
+
 
 ## [Weird but noice pattern "repeat until deplete" (ctrl+F `file a from A`)](https://gitter.im/nextflow-io/nextflow?at=5788f40b196179690ede6853)
 
