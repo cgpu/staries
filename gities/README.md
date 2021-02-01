@@ -43,6 +43,9 @@ git commit -amend
 ```
 git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
 
+# If you wrote the upstream with a typo
+git remote rm upstream
+
 # to catch up with latest changes:
 git pull upstream master
 ```
