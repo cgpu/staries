@@ -71,3 +71,62 @@ gcloud config set project one-project-id
 
 for instance in `gcloud compute instances list | awk '{print $1}' | grep -v NAME` ; do gcloud compute instances describe $instance  | grep preemptible; done
 ```
+
+
+## Get metadata
+
+machine-type
+```
+curl "http://169.254.169.254/computeMetadata/v1/instance/${metadata_item}" -H "Metadata-Flavor: Google" | awk -F/ '{print $NF}'
+```
+
+Available metadata item/entity:
+
+```
+cpu-platform
+description
+hostname
+id
+image
+machine-type
+maintenance-event
+name
+preempted
+remaining-cpu-time
+tags
+zone
+```
+
+```
+attributes/startup-script
+disks/?recursive=true&alt=json
+guest-attributes/?recursive=true&alt=json
+legacy-endpoint-access/?recursive=true&alt=json
+licenses/?recursive=true&alt=json
+
+network-interfaces/?recursive=true&alt=json
+curl "http://169.254.169.254/computeMetadata/v1/instance/network-interfaces/0/" -H "Metadata-Flavor: Google"
+access-configs/
+dns-servers
+forwarded-ips/
+gateway
+ip
+ip-aliases/
+mac
+mtu
+network
+subnetmask
+target-instance-ips
+
+scheduling/?recursive=true&alt=json
+service-accounts/?recursive=true&alt=json
+virtual-clock/?recursive=true&alt=json
+```
+
+```
+metadata_item="machine-type"
+curl "http://169.254.169.254/computeMetadata/v1/instance/${metadata_item}" -H "Metadata-Flavor: Google"
+
+# json with all in
+curl "http://169.254.169.254/computeMetadata/v1/instance/?recursive=true&alt=json" -H "Metadata-Flavor: Google"
+```
