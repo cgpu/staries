@@ -1,5 +1,9 @@
 # Day to day gcloud commands
 
+## Publicly available datasets
+
+https://cloud.google.com/life-sciences/docs/resources/public-datasets
+
 ## [Sync gs with s3 (interoperability)](https://cloud.google.com/storage/docs/gsutil/commands/rsync)
 
 Mirror objects present in s3 bucket in gs cloud storage bucket
