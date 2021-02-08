@@ -1,5 +1,12 @@
 # Simple and nifty commands to manage with `conda`
 
+## Find all packages related to ${pattern}
+
+```
+pattern="nvidia"
+conda search -c conda-forge ${pattern} | awk '{print $1}' | sort | uniq
+```
+
 
 ## Try QuantStack mamba 
 
