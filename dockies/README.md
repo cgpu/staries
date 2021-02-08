@@ -67,6 +67,13 @@ fi
 
 ```
 docker run --rm -i hadolint/hadolint < Dockerfile
+
+# better
+alias dockerlint='docker run --rm -i hadolint/hadolint < Dockerfile'
+
+# best 
+image="quay.io/lalauser/poofpoofcontainer:111"
+docker build -t ${image} . && dockerlint
 ```
 
 ## Host your docker images on GitHub packages
