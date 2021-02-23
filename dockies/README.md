@@ -224,6 +224,16 @@ Edit your `~/.docker/config.json`
 RUN echo "alias ontologizer=java -jar /opt/conda/envs/base/Ontologizer.jar" >> ~/.bashrc
 ```
 
+
+## Authenticate with applicattion token (account type: organisation)
+
+```
+# https://docs.quay.io/api/
+$ docker login quay.io
+Username: $oauthtoken
+Password: {{ThisIsTheAccessToken}}
+```
+
 ## Reduce image size for conda based containers
 
 - Official miniconda alpine image: 
