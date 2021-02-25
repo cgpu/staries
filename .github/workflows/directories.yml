@@ -22,7 +22,32 @@ jobs:
       matrix:
         dir: ${{fromJson(needs.directories.outputs.dir)}} # List matrix strategy from directories dynamically
     steps:
-      - uses: actions/checkout@v2
+      - name: Step that prints name of pull request's base branch
+        env:
+            BASE_BRANCH: ${{ github.base_ref }}
+        run: |
+          echo "Pull request's base branch is: ${BASE_BRANCH}"
+        if: github.event_name == 'pull_request'
+      - name: Step that prints name of pull request's github.head_ref
+        env:
+            HEAD_REF: ${{ github.head_ref }}
+        run: |
+          echo "Pull request's github.head_ref branch is: ${HEAD_REF}"
+        if: github.event_name == 'pull_request'        
+      - name: Step that prints name of pull request's github.ref
+        env:
+            REF: ${{ github.ref }}
+        run: |
+          echo "Pull request's github.ref is: ${REF}"
+        if: github.event_name == 'pull_request'
+      - name: check for changes
+        run: |
+          if git diff --exit-code; then
+            echo "::set-env name=changes_exist::true"
+          else
+            echo "::set-env name=changes_exist::false"
+          fi
       - name: List files
+        if: ${{ env.changes_exist == 'true' }}
         run: |
           ls -l ${GITHUB_WORKSPACE}/${{matrix.dir}}
