@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [opened, reopened, synchronize, closed]
     paths:
-    - 'containers/*'
+    - 'containers/**'
 jobs:
   directories: # Job that list subdirectories
     runs-on: ubuntu-latest
