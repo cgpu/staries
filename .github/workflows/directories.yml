@@ -1,9 +1,10 @@
-name: CI
-
+# https://github.com/Slashgear/slashgear.github.io/blob/source/src/pages/how-to-split-test-by-folder-with-github-action/index.md
+name: Iterate over directories
 on:
-  push:
-    branches: [master]
-
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+    paths:
+    - 'containers/*'
 jobs:
   directories: # Job that list subdirectories
     runs-on: ubuntu-latest
@@ -21,4 +22,6 @@ jobs:
       matrix:
         dir: ${{fromJson(needs.directories.outputs.dir)}} # List matrix strategy from directories dynamically
     steps:
-      - run: echo ${{matrix.dir}}
+      - working-directory: ${{matrix.dir}}
+      - run: ls -l 
+
