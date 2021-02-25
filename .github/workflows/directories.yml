@@ -22,6 +22,7 @@ jobs:
       matrix:
         dir: ${{fromJson(needs.directories.outputs.dir)}} # List matrix strategy from directories dynamically
     steps:
-      - working-directory: ${{matrix.dir}}
-      - run: ls -l 
-
+      - uses: actions/checkout@v2
+      - name: List files
+        run: |
+          ls -l ${GITHUB_WORKSPACE}/${{matrix.dir}}
