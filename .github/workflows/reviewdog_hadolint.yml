@@ -3,7 +3,7 @@ name: reviewdog hadolint
 on:
   pull_request:
     types: [opened, reopened, synchronize, closed]
-
+jobs:
   hadolint:
     name: runner / hadolint
     runs-on: ubuntu-latest
