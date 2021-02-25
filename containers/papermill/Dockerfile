@@ -15,7 +15,7 @@ RUN conda install -c conda-forge mamba r-base -y
 
 # Install the conda environment
 COPY environment.yml /
-RUN conda env update --quiet --name ${ENV_NAME} --file /environment.yml && conda clean -a
+RUN conda env update --quiet --name ${ENV_NAME} --file /environment.yml && conda clean --all
 
 # Install R packages that are possibly not available via conda
 COPY bin/install.R /
