@@ -34,7 +34,8 @@ jobs:
         run: |
           echo "Pull request's github.head_ref branch is: ${HEAD_REF}"
         if: github.event_name == 'pull_request'
-      - name: Step stores boolean git diff decision
+      - id: diff
+        name: Step stores boolean git diff decision
         run: |
             git clone https://github.com/$GITHUB_REPOSITORY
             cd ${{ github.event.repository.name }}
@@ -45,6 +46,11 @@ jobs:
                 echo "there ARE changes in the folder between the branches and"
                 echo "changes_exist=true" >> $GITHUB_ENV
             fi
+      - name: Check previous step steps.<step id>.conclusion
+        env:
+            diff_conclusion: ${{ steps.diff.conclusion }}
+        run: |
+                echo "diff_final_status=${diff_conclusion}" >> $GITHUB_ENV
       - name: Echo variable names
         if: ${{ env.changes_exist == 'true' }}
         run: |
