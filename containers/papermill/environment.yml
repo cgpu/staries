@@ -33,7 +33,7 @@ dependencies:
   - r-ggstatsplot
   - r-tidyverse
   - r-gapminder
-  # Only as placeholders to enable pip install via conda
+  # Only as a placeholder to enable pip install via conda
   - pip
   - pip:
     # pip libraries
