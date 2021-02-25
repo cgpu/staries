@@ -38,7 +38,7 @@ jobs:
         run: |
             git clone https://github.com/$GITHUB_REPOSITORY
             cd ${{ github.event.repository.name }}
-            if git diff --quiet origin/${{ github.base_ref }} origin/${{ github.head_ref }} containers/${{matrix.dir}} ; then
+            if git diff --quiet origin/${{ github.base_ref }} origin/${{ github.head_ref }} ${{matrix.dir}} ; then
                 echo "there are NO changes in the folder between the branches and "
                 echo "changes_exist=false" >> $GITHUB_ENV
             else
