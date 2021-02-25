@@ -44,8 +44,9 @@ jobs:
             else
                 echo "there ARE changes in the folder between the branches and"
                 echo "changes_exist=true" >> $GITHUB_ENV
-            fi        
-      - name: List files
+            fi
+      - name: Echo variable names
         if: ${{ env.changes_exist == 'true' }}
         run: |
-          ls -l ${GITHUB_WORKSPACE}/${{matrix.dir}}
+          echo "${{ env.changes_exist == 'true' }}"
+
