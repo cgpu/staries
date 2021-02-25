@@ -2,7 +2,7 @@
 name: Iterate over directories
 on:
   pull_request:
-    types: [opened, reopened, synchronize, closed]
+    types: [opened, edited, reopened, synchronize, closed]
     paths:
     - 'containers/**'
 jobs:
@@ -22,7 +22,30 @@ jobs:
       matrix:
         dir: ${{fromJson(needs.directories.outputs.dir)}} # List matrix strategy from directories dynamically
     steps:
-      - uses: actions/checkout@v2
+      - name: Step that prints name of pull request's base branch
+        env:
+            BASE_BRANCH: ${{ github.base_ref }}
+        run: |
+          echo "Pull request's base branch is: ${BASE_BRANCH}"
+        if: github.event_name == 'pull_request'
+      - name: Step that prints name of pull request's github.head_ref
+        env:
+            HEAD_REF: ${{ github.head_ref }}
+        run: |
+          echo "Pull request's github.head_ref branch is: ${HEAD_REF}"
+        if: github.event_name == 'pull_request'
+      - name: Step stores boolean git diff decision
+        run: |
+            git clone https://github.com/$GITHUB_REPOSITORY
+            cd ${{ github.event.repository.name }}
+            if git diff --quiet origin/${{ github.base_ref }} origin/${{ github.head_ref }} containers/${{matrix.dir}} ; then
+                echo "there are NO changes in the folder between the branches and "
+                echo "changes_exist=false" >> $GITHUB_ENV
+            else
+                echo "there ARE changes in the folder between the branches and"
+                echo "changes_exist=true" >> $GITHUB_ENV
+            fi        
       - name: List files
+        if: ${{ env.changes_exist == 'true' }}
         run: |
           ls -l ${GITHUB_WORKSPACE}/${{matrix.dir}}
