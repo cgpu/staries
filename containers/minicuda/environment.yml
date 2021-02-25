@@ -1,0 +1,8 @@
+name: my-new-env
+channels:
+  - conda-forge
+dependencies:
+  # conda libraries
+  - tensorflow-gpu
+  - cudatoolkit
+  - numba
