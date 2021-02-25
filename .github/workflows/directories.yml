@@ -2,7 +2,7 @@
 name: Iterate over directories
 on:
   pull_request:
-    types: [opened, reopened, synchronize, closed]
+    types: [opened, edited, reopened, synchronize, closed]
     paths:
     - 'containers/**'
 jobs:
