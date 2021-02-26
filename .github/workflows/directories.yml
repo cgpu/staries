@@ -36,8 +36,8 @@ jobs:
         run:  |
           git clone https://github.com/$GITHUB_REPOSITORY
           cd ${{ github.event.repository.name }}
-          echo "::set-output name=selected_dir::$( git diff --dirstat=files,0  origin/${{ github.base_ref }} origin/${{ github.head_ref }} containers | sed -E 's/^[ 0-9.]+% //g'  | sed 's/containers\///g' |  sed 's/\///g')"
-          echo "::set-output name=selected_dir::$( git diff --dirstat=files,0  origin/${{ github.base_ref }} origin/${{ github.head_ref }} containers | sed -E 's/^[ 0-9.]+% //g'  | sed 's/containers\///g' |  sed 's/\///g')"
+          echo "::set-output name=selected_dir::$( git diff --dirstat=files,0  origin/${{ github.base_ref }} origin/${{ github.head_ref }} containers | sed -E 's/^[ 0-9.]+% //g'  | sed 's/containers\///g' |  sed 's/\///g') | jq -R -s -c 'split("\n")[:-1]'"
+          echo "::set-output name=selected_dir::$( git diff --dirstat=files,0  origin/${{ github.base_ref }} origin/${{ github.head_ref }} containers | sed -E 's/^[ 0-9.]+% //g'  | sed 's/containers\///g' |  sed 's/\///g') | jq -R -s -c 'split("\n")[:-1]'"
   loop:
     runs-on: ubuntu-latest
     needs: [selected_directories] # Depends on previous job
