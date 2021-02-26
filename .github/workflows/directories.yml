@@ -43,7 +43,7 @@ jobs:
     needs: [selected_directories] # Depends on previous job
     strategy:
       matrix:
-        dir: ${{fromJson(needs.selected_directories.outputs.selected_dir)}} # List matrix strategy from directories dynamically
+        selected_dir: ${{fromJson(needs.selected_directories.outputs.selected_dir)}} # List matrix strategy from directories dynamically
     steps:
       - name: Step that prints name of pull request's base branch
         env:
