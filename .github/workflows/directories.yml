@@ -57,11 +57,14 @@ jobs:
         run: |
           echo "Pull request's github.head_ref branch is: ${HEAD_REF}"
         if: github.event_name == 'pull_request'
+      - name: List directory
+        run: |
+          echo "${{matrix.selected_dir}}"
       - name: Step stores boolean git diff decision
         run: |
             git clone https://github.com/$GITHUB_REPOSITORY
             cd ${{ github.event.repository.name }}
-            if git diff --quiet origin/${{ github.base_ref }} origin/${{ github.head_ref }} ${{matrix.dir}} ; then
+            if git diff --quiet origin/${{ github.base_ref }} origin/${{ github.head_ref }} ${{matrix.selected_dir}} ; then
                 echo "there are NO changes in the folder between the branches and "
                 echo "changes_exist=false" >> $GITHUB_ENV
             else
