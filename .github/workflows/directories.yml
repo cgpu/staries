@@ -55,3 +55,21 @@ jobs:
             diff_conclusion: ${{ steps.diff.conclusion }}
         run: |
                 echo "diff_final_status=${diff_conclusion}" >> $GITHUB_ENV
+      - name: git diff and set output
+        id: set_output
+        run: |
+          if [[$changes_exist == "true"]]; then
+            echo "::set-output name=run_jobs::true"
+          else
+            echo "::set-output name=run_jobs::false"
+          fi
+  skip_toggle:
+    name: Toggle process to affect status
+    needs: [loop]
+    if:  ${{  needs.loop.outputs.run_jobs == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: the rest jobs
+        run: echo "run the rest jobs"
+
+
