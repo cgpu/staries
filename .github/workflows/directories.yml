@@ -19,6 +19,8 @@ jobs:
         # Define step output named dir base on ls command transformed to JSON thanks to jq
   selected_directories:
     runs-on: ubuntu-latest
+    outputs:
+      selected_dir: ${{ steps.dir-array.outputs.selected_dir }} # generate output name dir by using inner step output
     steps:
       - name: Step that prints name of pull request's base branch
         env:
@@ -33,6 +35,7 @@ jobs:
           echo "Pull request's github.head_ref branch is: ${HEAD_REF}"
         if: github.event_name == 'pull_request'
       - name: Find only subfolders with git diff
+        id: dir-array
         run:  |
           git clone https://github.com/$GITHUB_REPOSITORY
           cd ${{ github.event.repository.name }}
