@@ -1,7 +1,7 @@
 name: docker
 on:
   pull_request:
-    types: [opened, reopened, synchronize, closed]
+    types: [opened, edited, reopened, synchronize, closed]
     paths:
     - '.docker/*'
 jobs:
