@@ -31,9 +31,9 @@ jobs:
       - name: Build and publish image to Quay
         uses: docker/build-push-action@v1
         with:
-          context: ./.docker
+          path: .
           registry: ${{ secrets.QUAY_REGISTRY_SERVER }}
           repository: ${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook
           username: ${{ secrets.QUAY_REGISTRY_USERNAME }}
           password: ${{ secrets.QUAY_REGISTRY_PASSWORD }}
-          tags: ${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
+          tags: latest
