@@ -30,11 +30,10 @@ jobs:
       - name: Build and push to DockerHub
         uses: docker/build-push-action@v2.2.1
         with:
-          context: ./.docker
-          file: ./.docker/Dockerfile
+          path: .
           platforms: linux/amd64,linux/arm64,linux/386
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
-            ${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
+            docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
+            quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
 
