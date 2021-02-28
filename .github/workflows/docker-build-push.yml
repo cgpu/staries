@@ -20,20 +20,20 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Login to Quay
+        uses: docker/login-action@v2.2.1 
+        with:
+          path: .
+          registry: quay.io
+          username: ${{ secrets.QUAY_REGISTRY_NAMESPACE }}
+          password: ${{ secrets.QUAY_REGISTRY_PASSWORD }}
       - name: Build and push to DockerHub
         uses: docker/build-push-action@v2.2.1
         with:
-          context: ./.docker
-          file: ./.docker/Dockerfile
+          path: .
           platforms: linux/amd64,linux/arm64,linux/386
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
-      - name: Build and publish image to Quay
-        uses: docker/build-push-action@v1
-        with:
-          path: .
-          registry: ${{ secrets.QUAY_REGISTRY_SERVER }}
-          repository: ${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook
-          username: ${{ secrets.QUAY_REGISTRY_USERNAME }}
-          password: ${{ secrets.QUAY_REGISTRY_PASSWORD }}
-          tags: latest
+          tags: |
+            docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
+            quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
+
