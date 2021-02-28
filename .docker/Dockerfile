@@ -4,8 +4,17 @@ LABEL authors="cgpu" \
 
 ARG ENV_NAME="base"
 
-# Install bash for Nextflow
-RUN apk --no-cache add bash=5.0.17-r0
+# make sure the package repository is up to date
+RUN apk update \
+ && apk upgrade \
+ && apk --no-cache add bash=5.0.17-r0 \
+ && rm -rf /var/cache/*/* \
+ && echo "" > /root/.ash_history
+
+# Change default shell from ash or sh to bash by soft linking
+# source: https://stackoverflow.com/a/24323271
+RUN ln -sf /bin/bash /bin/ash
+RUN ln -sf /bin/bash /bin/sh
 
 # Install the conda environment
 COPY environment.yml /
