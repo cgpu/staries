@@ -6,15 +6,13 @@ ARG ENV_NAME="base"
 
 # make sure the package repository is up to date
 RUN apk update \
- && apk upgrade \
  && apk --no-cache add bash=5.0.17-r0 \
  && rm -rf /var/cache/*/* \
  && echo "" > /root/.ash_history
 
-# Change default shell from ash or sh to bash by soft linking
-# source: https://stackoverflow.com/a/24323271
-RUN ln -sf /bin/bash /bin/ash
-RUN ln -sf /bin/bash /bin/sh
+# Use bash as the default shell
+# https://github.com/hadolint/hadolint/wiki/DL4005
+SHELL ["/bin/bash", "-c"]
 
 # Install the conda environment
 COPY environment.yml /
