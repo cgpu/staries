@@ -20,5 +20,5 @@ jobs:
       - name: Check container
         uses: docker://cgpu/staries:1.0
         with:
-          args: 'conda env export --name base --no-builds | grep -v "^prefix: "'
+          args: 'conda env export --name base --no-builds'
 
