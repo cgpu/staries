@@ -56,15 +56,15 @@ jobs:
         if: steps.pr-build.outcome == 'success'
         run: |
           docker pull docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr
-          docker images
+          docker images --digests | grep notebook
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:sha-${{ github.sha }}
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:sha-${{ github.sha }}
-          docker images
+          docker images --digests | grep notebook
           git clone https://github.com/$GITHUB_REPOSITORY
           cd ${{ github.event.repository.name }}/.docker/
-          git log -1
+          echo "git log -1 $(git log -1)"
           docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest .
           docker build -t quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest .
           docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:sha-${{ github.sha }} .
