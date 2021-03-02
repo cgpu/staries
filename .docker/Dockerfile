@@ -16,8 +16,7 @@ SHELL ["/bin/bash", "-c"]
 
 # Install the conda environment
 COPY environment.yml /
-RUN conda install --revision 0 && \
-    conda env update --quiet --name ${ENV_NAME} --file /environment.yml && \
+RUN conda env update --quiet --name ${ENV_NAME} --file /environment.yml && \
     conda clean --all --force-pkgs-dirs
 
 # Add conda installation dir to PATH (instead of doing 'conda activate')
