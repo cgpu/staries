@@ -27,7 +27,14 @@ jobs:
           registry: quay.io
           username: ${{ secrets.QUAY_REGISTRY_USERNAME }}
           password: ${{ secrets.QUAY_REGISTRY_PASSWORD }}
+      - name: Build image (dry run, push - false)
+        uses: docker/build-push-action@v2
+        with:
+          context: .docker/
+          platforms: linux/amd64
+          push: false
       - name: Build and push to DockerHub
+        if: github.event.pull_request.merged == true
         uses: docker/build-push-action@v2
         with:
           context: .docker/
@@ -37,6 +44,6 @@ jobs:
             docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
             docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:sha-${{ github.sha }} 
             quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
-            quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:sha-${{ github.sha }} 
+            quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:sha-${{ github.sha }}
             
 
