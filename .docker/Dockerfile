@@ -4,13 +4,19 @@ LABEL authors="cgpu" \
 
 ARG ENV_NAME="base"
 
-# Install bash for Nextflow
-RUN apk --no-cache add bash=5.0.17-r0
+# make sure the package repository is up to date
+RUN apk update \
+ && apk --no-cache add bash=5.0.17-r0 \
+ && rm -rf /var/cache/*/* \
+ && echo "" > /root/.ash_history
+
+# Use bash as the default shell
+# https://github.com/hadolint/hadolint/wiki/DL4005
+SHELL ["/bin/bash", "-c"]
 
 # Install the conda environment
 COPY environment.yml /
-RUN conda install --revision 0 && \
-    conda env update --quiet --name ${ENV_NAME} --file /environment.yml && \
+RUN conda env update --quiet --name ${ENV_NAME} --file /environment.yml && \
     conda clean --all --force-pkgs-dirs
 
 # Add conda installation dir to PATH (instead of doing 'conda activate')
