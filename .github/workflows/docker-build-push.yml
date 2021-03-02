@@ -64,7 +64,6 @@ jobs:
           docker images
           git clone https://github.com/$GITHUB_REPOSITORY
           cd ${{ github.event.repository.name }}/.docker/
-          git checkout ${{ github.sha }}
           git log -1
           docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest .
           docker build -t quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest .
