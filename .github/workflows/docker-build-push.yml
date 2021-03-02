@@ -9,6 +9,16 @@ jobs:
 #     if: contains(github.event.head_commit.message, '[build .docker]') == true
     runs-on: ubuntu-latest
     steps:
+      - name: Docker meta (tag with git commit hash)
+        id: docker_meta
+        uses: crazy-max/ghaction-docker-meta@v1
+        with:
+        # list of Docker images to use as base name for tags
+         images: |
+            docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook
+            quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook
+        # add git short SHA as Docker tag
+         tag-sha: true
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set up QEMU
