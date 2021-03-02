@@ -35,8 +35,8 @@ jobs:
           push: true
           tags: |
             docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
-            docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:sha-${GITHUB_SHA::8}
+            docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:sha-${GITHUB_SHA}
             quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
-            quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:sha-${GITHUB_SHA::8}
+            quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:sha-${GITHUB_SHA}
             
 
