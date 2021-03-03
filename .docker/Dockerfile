@@ -1,3 +1,4 @@
+# Define lighter alpine base miniconda image as base
 FROM continuumio/miniconda3:4.9.2-alpine
 
 # Define metadata
