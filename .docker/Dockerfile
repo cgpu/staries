@@ -1,4 +1,6 @@
 FROM continuumio/miniconda3:4.9.2-alpine
+
+# Define metadata
 LABEL authors="cgpu" \
       description="Smøl docker image containing dependencies for testing GH actions with conda and docker"
 
