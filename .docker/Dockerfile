@@ -25,4 +25,5 @@ ENV PATH /opt/conda/envs/${ENV_NAME}/bin:$PATH
 # Dump the details of the installed packages to a file for posterity
 RUN conda env export --name ${ENV_NAME} > ${ENV_NAME}_exported.yml
 
+# Initialises shell for conda uses
 RUN conda init bash
