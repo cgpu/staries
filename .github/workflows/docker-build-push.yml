@@ -52,9 +52,9 @@ jobs:
           context: .docker/
           platforms: linux/amd64
       - name: Get first 7 digits of commit hash
-        id: git-commit-short
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Set env var SHA_SHORT
+        id: git-commit-short
         run: echo ${{ steps.git-commit-short.outputs.sha_short }}
         env:
           SHA_SHORT: ${{ steps.git-commit-short.outputs.sha_short }}
