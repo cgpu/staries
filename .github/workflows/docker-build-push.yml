@@ -66,12 +66,12 @@ jobs:
         if: steps.pr-build.outcome == 'success'
         run: |
           docker pull docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr --quiet
-          docker images --digests | grep notebook
+          docker images --digests | grep notebook | awk -v OFS="\t" -F " " '{$3=substr($3, 1, 14); print }' | column -t
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${{env.SHA_SHORT}}
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${{env.SHA_SHORT}}
-          docker images --digests | grep notebook
+          docker images --digests | grep notebook | awk -v OFS="\t" -F " " '{$3=substr($3, 1, 14); print }' | column -t
           git clone https://github.com/$GITHUB_REPOSITORY
           cd ${{ github.event.repository.name }}/.docker/
           echo "git log -1: $(git log -1)"
