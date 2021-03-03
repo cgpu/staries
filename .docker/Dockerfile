@@ -2,6 +2,7 @@ FROM continuumio/miniconda3:4.9.2-alpine
 LABEL authors="cgpu" \
       description="Smøl docker image containing dependencies for testing GH actions with conda and docker"
 
+# Parameterise env value
 ARG ENV_NAME="base"
 
 # make sure the package repository is up to date
