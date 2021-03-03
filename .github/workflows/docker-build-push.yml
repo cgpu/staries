@@ -8,6 +8,8 @@ jobs:
   build-push-pr-tag:
 #     if: contains(github.event.head_commit.message, '[build .docker]') == true
     runs-on: ubuntu-latest
+    outputs:
+      sha_short: ${{ steps.git-commit-short.outputs.sha_short }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -52,9 +54,11 @@ jobs:
           context: .docker/
           platforms: linux/amd64
       - name: Get first 7 digits of commit hash
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-      - name: Set env var SHA_SHORT
         id: git-commit-short
+        run:
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+          echo "git rev-parse --short HEAD $(git rev-parse --short HEAD)"
+      - name: Set env var SHA_SHORT
         run: echo ${{ steps.git-commit-short.outputs.sha_short }}
         env:
           SHA_SHORT: ${{ steps.git-commit-short.outputs.sha_short }}
