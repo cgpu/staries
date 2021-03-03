@@ -51,16 +51,22 @@ jobs:
           #load: true
           context: .docker/
           platforms: linux/amd64
-      # list all images, you will see my-ecr-repo/service and my-project/base
-      - name: Look up images
+      - name: Get first 7 digits of commit hash
+        id: git-commit-short
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - name: Set env var SHA_SHORT
+        run: echo ${{ steps.git-commit-short.outputs.sha_short }}
+        env:
+          SHA_SHORT: ${{ steps.git-commit-short.outputs.sha_short }}
+      - name: Re-tag prod images from pr cached and push
         if: steps.pr-build.outcome == 'success'
         run: |
           docker pull docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr --quiet
           docker images --digests | grep notebook
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:sha-${{ github.sha }}
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:sha-${{ github.sha }}
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${SHA_SHORT}
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${SHA_SHORT}
           docker images --digests | grep notebook
           git clone https://github.com/$GITHUB_REPOSITORY
           cd ${{ github.event.repository.name }}/.docker/
@@ -70,10 +76,10 @@ jobs:
           echo "git log -1: $(git log -1)"
           docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest .
           docker build -t quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest .
-          docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:sha-${{ github.sha }} .
-          docker build -t quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:sha-${{ github.sha }} .
+          docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${SHA_SHORT} .
+          docker build -t quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${SHA_SHORT} .
           docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
           docker push quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
-          docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:sha-${{ github.sha }}
-          docker push quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:sha-${{ github.sha }}
+          docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${SHA_SHORT}
+          docker push quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${SHA_SHORT}
 
