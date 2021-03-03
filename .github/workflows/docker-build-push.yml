@@ -56,8 +56,8 @@ jobs:
       - name: Get first 7 digits of commit hash
         id: git-commit-short
         run:
-          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-          echo "git rev-parse --short HEAD $(git rev-parse --short HEAD)"
+          echo "::set-output name=sha_short::$(echo ${{github.sha}} | cut -c -7)"
+          echo "$(echo ${{github.sha}} | cut -c -7) "
       - name: Set env var SHA_SHORT
         run: echo ${{ steps.git-commit-short.outputs.sha_short }}
         env:
