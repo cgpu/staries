@@ -1,9 +1,18 @@
 name: docker
+
 on:
-  pull_request:
-    types: [opened, edited, reopened, synchronize, closed]
+  pull_request_target:
+    branches:
+      - master
+    types:
+      - opened
+      - closed
+      - labeled
+      - unlabeled
+      - edited
     paths:
     - '.docker/*'
+
 jobs:
   build-push-pr-tag:
 #     if: contains(github.event.head_commit.message, '[build .docker]') == true
@@ -64,7 +73,8 @@ jobs:
           echo "SHA_SHORT=${{ steps.git-commit-short.outputs.sha_short }}" >> $GITHUB_ENV
       - name: Re-tag prod images from pr cached and push
         # if: steps.pr-build.outcome == 'success'
-        if: github.event.pull_request.merged == 'true'
+        # if: github.event.pull_request.merged == 'true'
+        if: github.event.pull_request.merged_by != ''
         run: |
           docker pull docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr --quiet
           docker images --digests | grep notebook | awk -v OFS="\t" -F " " '{$3=substr($3, 1, 14); print }' | column -t
