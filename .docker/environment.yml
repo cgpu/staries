@@ -1,8 +1,6 @@
 name: staries
 channels:
   - conda-forge
-  - defaults
-  - r
 dependencies:
   - papermill=2.0.0
-  - mamba
+  - jupytext

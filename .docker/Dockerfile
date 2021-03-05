@@ -1,7 +1,11 @@
+# Define lighter alpine base miniconda image as base
 FROM continuumio/miniconda3:4.9.2-alpine
+
+# Define metadata
 LABEL authors="cgpu" \
       description="Smøl docker image containing dependencies for testing GH actions with conda and docker"
 
+# Parameterise env value
 ARG ENV_NAME="base"
 
 # make sure the package repository is up to date
@@ -17,7 +21,7 @@ SHELL ["/bin/bash", "-c"]
 # Install the conda environment
 COPY environment.yml /
 RUN conda env update --quiet --name ${ENV_NAME} --file /environment.yml && \
-    conda clean --all --force-pkgs-dirs
+    conda clean --all --force-pkgs-dirs -y
 
 # Add conda installation dir to PATH (instead of doing 'conda activate')
 ENV PATH /opt/conda/envs/${ENV_NAME}/bin:$PATH
@@ -25,4 +29,5 @@ ENV PATH /opt/conda/envs/${ENV_NAME}/bin:$PATH
 # Dump the details of the installed packages to a file for posterity
 RUN conda env export --name ${ENV_NAME} > ${ENV_NAME}_exported.yml
 
+# Initialises shell for conda uses
 RUN conda init bash
