@@ -4,3 +4,17 @@
 
 
 https://github.com/settings/tokens/new?scopes=write:packages&description=GITHUB_CR_WRITE_PACKAGES
+
+
+## [Dump github context](https://github.community/t/how-to-trigger-different-action-only-on-merge/18260/2)
+
+```yaml
+  build:
+    name: Testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+```
