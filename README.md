@@ -31,4 +31,6 @@ The *ies. A series of &lt;star>-ies util snippets, scripts or templates that I u
 
 - <a href="https://github.com/cgpu/staries/tree/master/nodies" target="_blank"><img src="https://raw.githubusercontent.com/cgpu/staries/master/assets/logos/node_logo.png?raw=true" alt="drawing" width="24"/></a>
 
-- <a href="https://github.com/cgpu/staries/tree/master/dotties" target="_blank"><img src="https://raw.githubusercontent.com/cgpu/staries/master/assets/logos/dotties.png?raw=true" alt="drawing" width="40"/></a>
+- <a href="https://github.com/cgpu/staries/tree/master/dotties" target="_blank"><img src="https://raw.githubusercontent.com/cgpu/staries/master/assets/logos/dotties.png?raw=true" alt="drawing" width="35"/></a>
+
+- <a href="https://github.com/cgpu/staries/tree/master/brewies" target="_blank"><img src="https://user-images.githubusercontent.com/38183826/110240501-1e6e9780-7f44-11eb-8002-66dbf486efe8.png" alt="drawing" width="25"/></a>
