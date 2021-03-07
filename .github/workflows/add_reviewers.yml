@@ -1,21 +1,11 @@
 name: add-reviewers
 
 on:
-  push:
-    branches:
-    - master
-    paths:
-    - '.docker/*'
-    - 'containers'
-    - './*'
   pull_request_target:
     branches:
       - master
     types:
       - opened
-      - closed
-      - labeled
-      - unlabeled
       - edited
     paths:
     - '.docker/*'
@@ -29,5 +19,5 @@ jobs:
     - name: Add Pull Request Reviewer
       uses: AveryCameronUofR/add-reviewer-gh-action@1.0.3
       with: 
-        reviewers: "gcpu"
+        reviewers: gcpu,gpcu
         token: ${{ secrets.GITHUB_TOKEN }}
