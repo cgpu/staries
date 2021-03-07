@@ -18,3 +18,11 @@ https://github.com/settings/tokens/new?scopes=write:packages&description=GITHUB_
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
 ```
+
+
+## If: push to master
+
+```yaml
+      - name: Re-tag prod images from pr cached and push
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+```
