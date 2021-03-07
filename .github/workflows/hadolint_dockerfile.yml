@@ -1,15 +1,35 @@
 name: hadolint action
 
 on:
-  pull_request:
-    types: [opened, reopened, synchronize, closed]
+  push:
+    branches:
+    - master
+    paths:
+    - '.'
+    - '.docker/*'
+    - '.containers/*'
+    - '.containers/**/*'
+  pull_request_target:
+    branches:
+      - master
+    types:
+      - opened
+      - closed
+      - labeled
+      - unlabeled
+      - edited
+    paths:
+    - '.'
+    - '.docker/*'
+    - '.containers/*'
+    - '.containers/**/*'
 
 jobs:
   hadolintOnPr:
     name: hadolint on pr
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
     - name: hadolint on pr
       uses: burdzwastaken/hadolint-action@master
       env:

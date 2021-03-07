@@ -51,7 +51,7 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr
+            quay.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr
       - name: Set up Docker Buildx with driver - docker
         if: steps.pr-build.outcome == 'success'
         uses: docker/setup-buildx-action@v1

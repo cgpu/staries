@@ -1,8 +1,30 @@
 # From here: https://github.com/reviewdog/action-hadolint
 name: reviewdog hadolint
+
 on:
-  pull_request:
-    types: [opened, reopened, synchronize, closed]
+  push:
+    branches:
+    - master
+    paths:
+    - '.'
+    - '.docker/*'
+    - '.containers/*'
+    - '.containers/**/*'
+  pull_request_target:
+    branches:
+      - master
+    types:
+      - opened
+      - closed
+      - labeled
+      - unlabeled
+      - edited
+    paths:
+    - '.'
+    - '.docker/*'
+    - '.containers/*'
+    - '.containers/**/*'
+
 jobs:
   hadolint:
     name: runner / hadolint
