@@ -1,11 +1,5 @@
 from_owner: 
   - cgpu
 
-required_labels: 
-  - autoapproved
-
-blacklisted_labels:
-  - wip
-
 apply_labels:
   - autoapproved
