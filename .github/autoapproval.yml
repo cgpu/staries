@@ -1,13 +1,11 @@
-_extends: github-settings
-
 from_owner: 
   - cgpu
 
 required_labels: 
-  - dependencies
+  - autoapproved
 
 blacklisted_labels:
   - wip
 
 apply_labels:
-  - merge
+  - autoapproved
