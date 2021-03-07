@@ -1,0 +1,13 @@
+_extends: github-settings
+
+from_owner: 
+  - dependabot-preview[bot]
+
+required_labels: 
+  - dependencies
+
+blacklisted_labels:
+  - wip
+
+apply_labels:
+  - merge
