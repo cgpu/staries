@@ -19,5 +19,5 @@ jobs:
     - name: Add Pull Request Reviewer
       uses: AveryCameronUofR/add-reviewer-gh-action@1.0.3
       with: 
-        reviewers: gcpu,gpcu
+        reviewers: "gcpu,gpcu"
         token: ${{ secrets.GITHUB_TOKEN }}
