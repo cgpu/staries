@@ -15,7 +15,6 @@ dependencies:
 # https://github.com/nteract/papermill/issues/523
   - conda
   - python
-  - r-base
   - r-irkernel=1.1
   - r-devtools=2.2
   - tini=0.18.0
