@@ -1,0 +1,35 @@
+# A similar file can been generated after the environment is successfully installed by running the command:
+# `conda env export --name sbas --no-builds --from-history | grep -v "^prefix: " > environment.yml`
+# This capture the conda environment metadata for reproducibility and reuse.
+name: workshop
+channels:
+  - conda-forge
+  - defaults
+  - bioconda
+  - r
+  - anaconda
+dependencies:
+# Tested combination for running R notebooks with papermill
+# A typical issue solved with this combination of libraries is this one: 
+# `AttributeError: 'AsyncKernelManager' object has no attribute 'cleanup_resources'`
+# https://github.com/nteract/papermill/issues/523
+  - conda
+  - python
+  - r-base
+  - r-irkernel=1.1
+  - r-devtools=2.2
+  - tini=0.18.0
+  - notebook=6.0.3
+  - jupyterhub=1.1.0
+  - jupyterlab=2.0.1
+  - nbdime
+  - papermill
+  - nbval
+  - jupytext
+  - r-snakecase
+  - r-languageserver==0.3.5
+  - conda-forge::nb_conda_kernels
+  # For using the plotting library ggstatsplot
+  - r-ggstatsplot
+  - r-tidyverse
+  - r-gapminder

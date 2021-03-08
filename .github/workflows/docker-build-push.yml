@@ -1,35 +1,106 @@
 name: docker
+
 on:
-  pull_request:
-    types: [opened, reopened, synchronize, closed]
+  push:
+    branches:
+    - master
     paths:
     - '.docker/*'
+  pull_request_target:
+    branches:
+      - master
+    types:
+      - opened
+      - closed
+      - labeled
+      - unlabeled
+      - edited
+    paths:
+    - '.docker/*'
+
 jobs:
-  linux:
+  build-push-pr-tag:
 #     if: contains(github.event.head_commit.message, '[build .docker]') == true
     runs-on: ubuntu-latest
+    outputs:
+      sha_short: ${{ steps.git-commit-short.outputs.sha_short }}
     steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v2.3.4
-      -
-        name: Set up QEMU
-        uses: docker/setup-qemu-action@v1.0.1
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1.0.4
-      -
-        name: Login to DockerHub
-        uses: docker/login-action@v1.8.0
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
         with:
+          registry: docker.io
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Build and push
-        uses: docker/build-push-action@v2.2.1
+      - name: Login to Quay
+        uses: docker/login-action@v1
         with:
-          context: ./.docker
-          file: ./.docker/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/386
+          registry: quay.io
+          username: ${{ secrets.QUAY_REGISTRY_USERNAME }}
+          password: ${{ secrets.QUAY_REGISTRY_PASSWORD }}
+      - name: Build and push with pr tag for testing
+        id: pr-build
+        uses: docker/build-push-action@v2
+        with:
+          context: .docker/
+          platforms: linux/amd64
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
+          tags: |
+            quay.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr
+      - name: Set up Docker Buildx with driver - docker
+        if: steps.pr-build.outcome == 'success'
+        uses: docker/setup-buildx-action@v1
+        with:
+          driver: docker # defaults to "docker-containerized"
+      - name: Build and push image with prod tags
+        if: steps.pr-build.outcome == 'success'
+        id: prod-build
+        uses: docker/build-push-action@v2
+        with:
+          # using "load: true" forces the docker driver
+          # not necessary here, because we set it before
+          #load: true
+          context: .docker/
+          platforms: linux/amd64
+      - name: Get first 7 digits of commit hash
+        id: git-commit-short
+        run: |
+          echo "::set-output name=sha_short::$(echo ${{github.sha}} | cut -c -7)"
+          echo "$(echo ${{github.sha}} | cut -c -7)"
+      - name: Set env var SHA_SHORT
+        run: |
+          echo ${{ steps.git-commit-short.outputs.sha_short }}
+          echo "SHA_SHORT=${{ steps.git-commit-short.outputs.sha_short }}" >> $GITHUB_ENV
+      - name: Re-tag prod images from pr cached and push
+        # if: steps.pr-build.outcome == 'success'
+        # if: github.event.pull_request.merged == 'true'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          echo ${{ github.event_name }}
+          docker pull docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr --quiet
+          docker images --digests | grep notebook | awk -v OFS="\t" -F " " '{$3=substr($3, 1, 14); print }' | column -t
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${{env.SHA_SHORT}}
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${{env.SHA_SHORT}}
+          docker images --digests | grep notebook | awk -v OFS="\t" -F " " '{$3=substr($3, 1, 14); print }' | column -t
+          git clone https://github.com/$GITHUB_REPOSITORY
+          cd ${{ github.event.repository.name }}/.docker/
+          echo "git log -1: $(git log -1)"
+          git checkout ${{ github.head_ref }}
+          echo "git branch: $(git branch)"
+          echo "git log -1: $(git log -1)"
+          docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest .
+          docker build -t quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest .
+          docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${{env.SHA_SHORT}} .
+          docker build -t quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${{env.SHA_SHORT}} .
+          docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
+          docker push quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
+          docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${{env.SHA_SHORT}}
+          docker push quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${{env.SHA_SHORT}}
+

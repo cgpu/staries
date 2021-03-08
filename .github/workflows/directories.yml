@@ -1,0 +1,104 @@
+# https://github.com/Slashgear/slashgear.github.io/blob/source/src/pages/how-to-split-test-by-folder-with-github-action/index.md
+name: Iterate over directories
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize, closed]
+    paths:
+    - 'containers/**'
+jobs:
+  directories: # Job that list subdirectories
+    runs-on: ubuntu-latest
+    outputs:
+      dir: ${{ steps.set-dirs.outputs.dir }} # generate output name dir by using inner step output
+    steps:
+      - uses: actions/checkout@v2
+      - id: set-dirs # Give it an id to handle to get step outputs in the outputs key above
+        run: |
+          echo "::set-output name=dir::$(ls -d containers/*/ | jq -R -s -c 'split("\n")[:-1]')"
+          echo "$(ls -d containers/*/ | jq -R -s -c 'split("\n")[:-1]')"
+        # Define step output named dir base on ls command transformed to JSON thanks to jq
+  selected_directories:
+    runs-on: ubuntu-latest
+    outputs:
+      selected_dir: ${{ steps.dir-array.outputs.selected_dir }} # generate output name dir by using inner step output
+    steps:
+      - name: Step that prints name of pull request's base branch
+        env:
+            BASE_BRANCH: ${{ github.base_ref }}
+        run: |
+          echo "Pull request's base branch is: ${BASE_BRANCH}"
+        if: github.event_name == 'pull_request'
+      - name: Step that prints name of pull request's github.head_ref
+        env:
+            HEAD_REF: ${{ github.head_ref }}
+        run: |
+          echo "Pull request's github.head_ref branch is: ${HEAD_REF}"
+        if: github.event_name == 'pull_request'
+      - name: Find only subfolders with git diff
+        id: dir-array
+        run:  |
+          git clone https://github.com/$GITHUB_REPOSITORY
+          cd ${{ github.event.repository.name }}
+          echo "::set-output name=selected_dir::$( git diff --dirstat=files,0  origin/${{ github.base_ref }} origin/${{ github.head_ref }} containers | sed -E 's/^[ 0-9.]+% //g'  | sed 's/containers\///g' |  sed 's/\///g' | jq -R -s -c 'split("\n")[:-1]')"
+          echo "$( git diff --dirstat=files,0  origin/${{ github.base_ref }} origin/${{ github.head_ref }} containers | sed -E 's/^[ 0-9.]+% //g'  | sed 's/containers\///g' |  sed 's/\///g' | jq -R -s -c 'split("\n")[:-1]')"
+  loop:
+    runs-on: ubuntu-latest
+    needs: [selected_directories] # Depends on previous job
+    strategy:
+      matrix:
+        selected_dir: ${{fromJson(needs.selected_directories.outputs.selected_dir)}} # List matrix strategy from directories dynamically
+    steps:
+      - name: Step that prints name of pull request's base branch
+        env:
+            BASE_BRANCH: ${{ github.base_ref }}
+        run: |
+          echo "Pull request's base branch is: ${BASE_BRANCH}"
+        if: github.event_name == 'pull_request'
+      - name: Step that prints name of pull request's github.head_ref
+        env:
+            HEAD_REF: ${{ github.head_ref }}
+        run: |
+          echo "Pull request's github.head_ref branch is: ${HEAD_REF}"
+        if: github.event_name == 'pull_request'
+      - name: List directory
+        run: |
+          echo "${{matrix.selected_dir}}"
+      - name: Step stores boolean git diff decision
+        run: |
+            git clone https://github.com/$GITHUB_REPOSITORY
+            cd ${{ github.event.repository.name }}
+            if git diff --quiet origin/${{ github.base_ref }} origin/${{ github.head_ref }} ${{matrix.selected_dir}} ; then
+                echo "there are NO changes in the folder between the branches and "
+                echo "changes_exist=false" >> $GITHUB_ENV
+            else
+                echo "there ARE changes in the folder between the branches and"
+                echo "changes_exist=true" >> $GITHUB_ENV
+            fi
+      - id: diff
+        name: Echo variable names
+        if: ${{ env.changes_exist == 'true' }}
+        run: |
+          echo "${{ env.changes_exist == 'true' }}"
+      - name: Check previous step steps.<step id>.conclusion
+        env:
+            diff_conclusion: ${{ steps.diff.conclusion }}
+        run: |
+                echo "diff_final_status=${diff_conclusion}" >> $GITHUB_ENV
+      - name: git diff and set output
+        id: set_output
+        run: |
+          if [[$changes_exist == "true"]]; then
+            echo "::set-output name=run_jobs::true"
+          else
+            echo "::set-output name=run_jobs::false"
+          fi
+  skip_toggle:
+    name: Toggle process to affect status
+    needs: [loop]
+    if:  ${{  needs.loop.outputs.run_jobs == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: the rest jobs
+        run: echo "run the rest jobs"
+
+

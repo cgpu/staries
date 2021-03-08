@@ -1,5 +1,12 @@
 # Day to day awscli commands
 
+## Find a file by pattern search from listing the file in a bucket subfolder
+
+```
+aws s3 ls s3://your-bucket --recursive --summarize --human-readable | grep your-search
+```
+
+
 ## Get info for the instance from the command line
 
 ```

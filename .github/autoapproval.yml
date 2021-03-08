@@ -1,0 +1,7 @@
+from_owner: 
+  - cgpu
+  
+required_labels: []
+
+apply_labels:
+  - autoapproved

@@ -67,6 +67,13 @@ fi
 
 ```
 docker run --rm -i hadolint/hadolint < Dockerfile
+
+# better
+alias dockerlint='docker run --rm -i hadolint/hadolint < Dockerfile'
+
+# best 
+image="quay.io/lalauser/poofpoofcontainer:111"
+docker build -t ${image} . && dockerlint
 ```
 
 ## Host your docker images on GitHub packages
@@ -215,6 +222,16 @@ Edit your `~/.docker/config.json`
 
 ```Dockerfile
 RUN echo "alias ontologizer=java -jar /opt/conda/envs/base/Ontologizer.jar" >> ~/.bashrc
+```
+
+
+## Authenticate with applicattion token (account type: organisation)
+
+```
+# https://docs.quay.io/api/
+$ docker login quay.io
+Username: $oauthtoken
+Password: {{ThisIsTheAccessToken}}
 ```
 
 ## Reduce image size for conda based containers

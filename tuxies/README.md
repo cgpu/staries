@@ -1,5 +1,22 @@
 # tuxies
 
+### [Align tab seperated output with `column-t`]()
+
+```log
+# docker images --digests | grep sha | awk -v OFS="\t" -F " " '{$3=substr($3, 1, 14); print }' | column -t
+cgpu/notebook                          latest                 sha256:e0095d2  e7c4481bed7d  6   hours   ago  970MB
+hadolint/hadolint                      latest                 sha256:d3489ac  60ce59bdda63  5   days    ago  8.98MB
+```
+
+vs
+
+```log
+# docker images --digests | grep sha | awk -v OFS="\t" -F " " '{$3=substr($3, 1, 14); print }' 
+cgpu/notebook   latest  sha256:e0095d2  e7c4481bed7d    6       hours   ago     970MB
+hadolint/hadolint       latest  sha256:d3489ac  60ce59bdda63    5       days    ago     8.98MB
+```
+
+
 
 ### Largest files
  
