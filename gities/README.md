@@ -153,3 +153,32 @@ git checkout -- <filename>
 git reset HEAD
 ```
 
+## Rename old branch, push new name and delete old named branch in local and remote
+
+```bash
+prefix="adds-"
+suffix="-data"
+
+for i in $(git branch --all \
+| cut -d "/" -f 3 \
+| grep ${prefix} \
+| grep -v HEAD \
+); \
+do \
+echo  $i \
+| sed "s/${prefix}//" \
+| sed "s/${suffix}//" \
+| grep -v "\*" \
+>> branches.txt \
+;
+done 
+
+for i in $(cat branches.txt \
+| uniq) \
+; \
+do git checkout ${prefix}${i}${suffix} && \
+git branch -m $i && \
+git push origin -u $i && \
+git push origin --delete  ${prefix}${i}${suffix} ; \
+done
+```
