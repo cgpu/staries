@@ -103,4 +103,21 @@ jobs:
           docker push quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
           docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${{env.SHA_SHORT}}
           docker push quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${{env.SHA_SHORT}}
-
+      - name: Push README to Quay.io
+        uses: christian-korneck/update-container-description-action@v1
+        env:
+          DOCKER_APIKEY: ${{ secrets.QUAY_APIKEY }}
+        with:
+          destination_container_repo:  quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook
+          provider: quay
+          readme_file: '.docker/README.md'
+      - name: Push README to Dockerhub
+        uses: christian-korneck/update-container-description-action@v1
+        env:
+          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
+        with:
+          destination_container_repo: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook
+          provider: dockerhub
+          short_description: 'my short description 😊'
+          readme_file: '.docker/README.md'
