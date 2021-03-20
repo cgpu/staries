@@ -12,6 +12,15 @@ aws {
 } 
 ```
 
+## Find current workdiir (groovy)
+
+```groovy
+//groovy-ish
+def pwd = System.properties['user.dir']
+//java-ish
+def pwd = System.getProperty("user.dir")
+```
+
 
 ## [Weird but noice pattern "repeat until deplete" (ctrl+F `file a from A`)](https://gitter.im/nextflow-io/nextflow?at=5788f40b196179690ede6853)
 
