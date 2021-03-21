@@ -103,6 +103,10 @@ jobs:
           docker push quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
           docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${{env.SHA_SHORT}}
           docker push quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${{env.SHA_SHORT}}
+      - name: Create container registry description (DockerHub)
+        run: |
+          echo "$(head ./.docker/README.md | grep "^*" | sed -z 's/*//g')"
+          echo "CONTAINER_REGISTRY_DESCRIPTION=$(head ./.docker/README.md | grep "^*" | sed -z 's/*//g')" >> $GITHUB_ENV     
       - name: Push README to Quay.io
         uses: christian-korneck/update-container-description-action@v1
         env:
@@ -119,5 +123,5 @@ jobs:
         with:
           destination_container_repo: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook
           provider: dockerhub
-          short_description: 'my short description 😊'
+          short_description: ${{env.CONTAINER_REGISTRY_DESCRIPTION}}
           readme_file: '.docker/README.md'
