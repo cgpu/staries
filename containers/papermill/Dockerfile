@@ -18,7 +18,7 @@ COPY environment.yml /
 RUN conda env update --quiet --name ${ENV_NAME} --file /environment.yml && conda clean --all
 
 # Install R packages that are possibly not available via conda
-COPY bin/install.R /
+COPY install.R /
 RUN Rscript /install.R
 
 # Add conda installation dir to PATH (instead of doing 'conda activate')
