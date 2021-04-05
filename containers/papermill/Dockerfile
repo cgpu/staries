@@ -18,7 +18,7 @@ COPY environment.yml /
 RUN conda env update --quiet --name ${ENV_NAME} --file /environment.yml && conda clean --all
 
 # Install R packages that are possibly not available via conda
-COPY bin/install.R /
+COPY install.R /
 RUN Rscript /install.R
 
 # Add conda installation dir to PATH (instead of doing 'conda activate')
@@ -29,6 +29,6 @@ RUN mamba env export --name ${ENV_NAME} > ${ENV_NAME}_exported.yml
 
 # Copy additional scripts from bin and add to PATH
 RUN mkdir /opt/bin
-COPY bin/* /opt/bin/
+COPY *.R /opt/bin/
 RUN chmod +x /opt/bin/*
 ENV PATH="$PATH:/opt/bin/"
