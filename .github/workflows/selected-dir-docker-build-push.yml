@@ -1,0 +1,168 @@
+name: docker
+
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'containers/**'
+  pull_request_target:
+    branches:
+      - master
+    types:
+      - opened
+      - closed
+      - labeled
+      - unlabeled
+      - edited
+    paths:
+    - 'containers/**'
+
+# https://github.com/Slashgear/slashgear.github.io/blob/source/src/pages/how-to-split-test-by-folder-with-github-action/index.md
+jobs:
+  directories: # Job that list subdirectories
+    runs-on: ubuntu-latest
+    outputs:
+      dir: ${{ steps.set-dirs.outputs.dir }} # generate output name dir by using inner step output
+    steps:
+      - uses: actions/checkout@v2
+      - id: set-dirs # Give it an id to handle to get step outputs in the outputs key above
+        run: |
+          echo "::set-output name=dir::$(ls -d containers/*/ | jq -R -s -c 'split("\n")[:-1]')"
+          echo "$(ls -d containers/*/ | jq -R -s -c 'split("\n")[:-1]')"
+        # Define step output named dir base on ls command transformed to JSON thanks to jq
+  selected_directories:
+    runs-on: ubuntu-latest
+    outputs:
+      selected_dir: ${{ steps.dir-array.outputs.selected_dir }} # generate output name dir by using inner step output
+    steps:
+      - name: Step that prints name of pull request's base branch
+        env:
+            BASE_BRANCH: ${{ github.base_ref }}
+        run: |
+          echo "Pull request's base branch is: ${BASE_BRANCH}"
+        if: github.event_name == 'pull_request'
+      - name: Step that prints name of pull request's github.head_ref
+        env:
+            HEAD_REF: ${{ github.head_ref }}
+        run: |
+          echo "Pull request's github.head_ref branch is: ${HEAD_REF}"
+        if: github.event_name == 'pull_request'
+      - name: Find only subfolders with git diff
+        id: dir-array
+        run:  |
+          git clone https://github.com/$GITHUB_REPOSITORY
+          cd ${{ github.event.repository.name }}
+          echo "::set-output name=selected_dir::$( git diff --dirstat=files,0  origin/${{ github.base_ref }} origin/${{ github.head_ref }} containers | sed -E 's/^[ 0-9.]+% //g'  | sed 's/containers\///g' |  sed 's/\///g' | jq -R -s -c 'split("\n")[:-1]')"
+          echo "$( git diff --dirstat=files,0  origin/${{ github.base_ref }} origin/${{ github.head_ref }} containers | sed -E 's/^[ 0-9.]+% //g'  | sed 's/containers\///g' |  sed 's/\///g' | jq -R -s -c 'split("\n")[:-1]')"
+
+  build-push-pr-tag:
+#     if: contains(github.event.head_commit.message, '[build .docker]') == true
+    needs: [selected_directories] # Depends on previous job
+    strategy:
+      matrix:
+        selected_dir: ${{fromJson(needs.selected_directories.outputs.selected_dir)}} # List matrix strategy from directories dynamically
+    runs-on: ubuntu-latest
+    outputs:
+      sha_short: ${{ steps.git-commit-short.outputs.sha_short }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Login to Quay
+        uses: docker/login-action@v1
+        with:
+          registry: quay.io
+          username: ${{ secrets.QUAY_REGISTRY_USERNAME }}
+          password: ${{ secrets.QUAY_REGISTRY_PASSWORD }}
+      - name: Build and push with pr tag for testing
+        id: pr-build
+        uses: docker/build-push-action@v2
+        with:
+          context: containers/${{matrix.selected_dir}}/
+          platforms: linux/amd64
+          push: true
+          tags: |
+            quay.io/${{ secrets.DOCKERHUB_USERNAME }}/${{matrix.selected_dir}}:pr
+      - name: Set up Docker Buildx with driver - docker
+        if: steps.pr-build.outcome == 'success'
+        uses: docker/setup-buildx-action@v1
+        with:
+          driver: docker # defaults to "docker-containerized"
+      - name: Build and push image with prod tags
+        if: steps.pr-build.outcome == 'success'
+        id: prod-build
+        uses: docker/build-push-action@v2
+        with:
+          # using "load: true" forces the docker driver
+          # not necessary here, because we set it before
+          #load: true
+          context: containers/${{matrix.selected_dir}}/
+          platforms: linux/amd64
+      - name: Get first 7 digits of commit hash
+        id: git-commit-short
+        run: |
+          echo "::set-output name=sha_short::$(echo ${{github.sha}} | cut -c -7)"
+          echo "$(echo ${{github.sha}} | cut -c -7)"
+      - name: Set env var SHA_SHORT
+        run: |
+          echo ${{ steps.git-commit-short.outputs.sha_short }}
+          echo "SHA_SHORT=${{ steps.git-commit-short.outputs.sha_short }}" >> $GITHUB_ENV
+      - name: Re-tag prod images from pr cached and push
+        # if: steps.pr-build.outcome == 'success'
+        # if: github.event.pull_request.merged == 'true'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          echo ${{ github.event_name }}
+          docker pull docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr --quiet
+          docker images --digests | grep notebook | awk -v OFS="\t" -F " " '{$3=substr($3, 1, 14); print }' | column -t
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${{env.SHA_SHORT}}
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/notebook:pr quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${{env.SHA_SHORT}}
+          docker images --digests | grep notebook | awk -v OFS="\t" -F " " '{$3=substr($3, 1, 14); print }' | column -t
+          git clone https://github.com/$GITHUB_REPOSITORY
+          cd ${{ github.event.repository.name }}/containers/${{matrix.selected_dir}}/
+          echo "git log -1: $(git log -1)"
+          git checkout ${{ github.head_ref }}
+          echo "git branch: $(git branch)"
+          echo "git log -1: $(git log -1)"
+          docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest .
+          docker build -t quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest .
+          docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${{env.SHA_SHORT}} .
+          docker build -t quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${{env.SHA_SHORT}} .
+          docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:latest
+          docker push quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:latest
+          docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook:gh-commit-${{env.SHA_SHORT}}
+          docker push quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook:gh-commit-${{env.SHA_SHORT}}
+      - name: Create container registry description (DockerHub)
+        run: |
+          echo "$(head ./containers/${{matrix.selected_dir}}/README.md | grep "^*" | sed -z 's/*//g')"
+          echo "CONTAINER_REGISTRY_DESCRIPTION=$(head ./containers/${{matrix.selected_dir}}/README.md | grep "^*" | sed -z 's/*//g')" >> $GITHUB_ENV     
+      - name: Push README to Quay.io
+        uses: christian-korneck/update-container-description-action@v1
+        env:
+          DOCKER_APIKEY: ${{ secrets.APIKEY__QUAY_IO }}
+        with:
+          destination_container_repo:  quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook
+          provider: quay
+          readme_file: containers/${{matrix.selected_dir}}/README.md
+      - name: Push README to Dockerhub
+        uses: christian-korneck/update-container-description-action@v1
+        env:
+          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASS: ${{ secrets.DOCKERHUB_PASS }}
+        with:
+          destination_container_repo: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook
+          provider: dockerhub
+          short_description: ${{env.CONTAINER_REGISTRY_DESCRIPTION}}
+          readme_file: containers/${{matrix.selected_dir}}/README.md
