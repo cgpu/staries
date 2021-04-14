@@ -16,6 +16,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run get_libs
       run: |
-        Rscript -e "scripts <- list.files('.', pattern = '.R|.Rmd|.ipynb', recursive = TRUE); dput(unique(unlist(lapply(scripts, Rclean::get_libs))))"
+        Rscript -e "scripts <- list.files('.', pattern = '.R|.Rmd', recursive = TRUE); dput(unique(unlist(lapply(scripts, Rclean::get_libs))))"
       shell:
         bash
