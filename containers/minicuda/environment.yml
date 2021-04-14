@@ -6,3 +6,4 @@ dependencies:
   - tensorflow-gpu
   - cudatoolkit
   - numba
+  - numpy
