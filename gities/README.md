@@ -85,6 +85,12 @@ git reset HEAD^ # remove commit locally
 git push origin +HEAD # force-push the new HEAD commit
 ```
 
+## [`git reset HEAD^` leaves behind untracked files (how to get rid of them)](https://stackoverflow.com/questions/4327708/git-reset-hard-head-leaves-untracked-files-behind)
+
+```
+git reset --hard && git clean -dfx
+```
+
 ## [Change remote repo](https://stackoverflow.com/questions/2432764/how-to-change-the-uri-url-for-a-remote-git-repository)
 
 ```sh

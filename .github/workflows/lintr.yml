@@ -12,6 +12,12 @@ jobs:
     container: cgpu/lintr
     steps:
     - uses: actions/checkout@v2.3.4
+    - name: Installing processx >= 3.5.0
+      run: |
+        Rscript -e "options(repos = "https://cloud.r-project.org/"); install.packages('remotes')"
+        Rscript -e "options(repos = "https://cloud.r-project.org/"); remotes::install_version('processx', version = '>= 3.5.0')"
+      shell:
+        bash
     - name: Running lintr
       run: |
         Rscript -e "lintr::lint_dir('./Rmdies/R')"
