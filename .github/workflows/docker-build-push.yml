@@ -125,3 +125,6 @@ jobs:
           provider: dockerhub
           short_description: ${{env.CONTAINER_REGISTRY_DESCRIPTION}}
           readme_file: '.docker/README.md'
+      - name: Setup tmate session
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
