@@ -23,3 +23,6 @@ jobs:
         Rscript -e "lintr::lint_dir('./Rmdies/R')"
       shell:
         bash
+    - name: Setup tmate session
+      if: ${{ failure() }}
+      uses: mxschmitt/action-tmate@v3
