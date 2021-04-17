@@ -1,5 +1,11 @@
 # Simple and nifty commands to manage with `conda`
 
+## Avoid conda init?
+
+```
+conda config --set auto_activate_base true
+```
+
 ## Find all packages related to ${pattern}
 
 ```
