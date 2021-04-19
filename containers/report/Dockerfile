@@ -18,7 +18,7 @@ RUN conda env export --name ${ENV_NAME} > ${ENV_NAME}_exported.yml
 # Initialise bash for conda
 RUN conda init bash
 
-# Copy additonal scripts
+additional
 RUN mkdir /opt/bin
 COPY bin/* /opt/bin/
 RUN chmod +x /opt/bin/*
