@@ -1,0 +1,15 @@
+name: conda-env-name
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - anaconda
+dependencies:
+  - r-base=4.0.3
+  - r-magrittr
+  - r-dt
+  - r-htmltools
+  - r-stringr
+  - r-dplyr
+  - r-kableextra
+  - fonts-anaconda
