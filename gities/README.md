@@ -1,6 +1,17 @@
 # gities
 Useful snippets for dangerous git missions :sunglasses:
 
+## [`git cherry-pit`](https://sethrobertson.github.io/GitFixUm/fixup.html) (how to spit out an intermediate commit from your branh)
+
+```
+# Assuming that:
+# 1. SHA you want to remove is this one e798989acda5d2d40f9d41dd0b5299da8746eda8
+# 2. you are on a branch named my-feat-branch
+
+git rebase -p --onto e798989acda5d2d40f9d41dd0b5299da8746eda8^ e798989acda5d2d40f9d41dd0b5299da8746eda8
+git push --force origin my-feat-branch
+```
+
 ## [Visualise git diff range .. or ...](https://stackoverflow.com/questions/7251477/what-are-the-differences-between-double-dot-and-triple-dot-in-git-dif/7256391#7256391)
 
 ## [Delete local and remote branch](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
