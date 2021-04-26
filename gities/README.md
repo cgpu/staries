@@ -1,6 +1,12 @@
 # gities
 Useful snippets for dangerous git missions :sunglasses:
 
+## Create GitHub PAT
+
+[https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow&description=R:GITHUB_PAT](https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow&description=R:GITHUB_PAT)
+
+
+
 ## [`git cherry-pit`](https://sethrobertson.github.io/GitFixUm/fixup.html) (how to spit out an intermediate commit from your branh)
 
 ```
