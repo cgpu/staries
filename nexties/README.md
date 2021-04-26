@@ -1,5 +1,13 @@
 # NextFlow snippets, patterns or groovy handy functions
 
+## Use google-lifesciences
+
+```bash
+export NXF_VER=20.01.0
+export NXF_MODE=google
+export GOOGLE_APPLICATION_CREDENTIALS="gproject-ha-sh.json"
+```
+
 ## Parameterise config options
 
 ```
