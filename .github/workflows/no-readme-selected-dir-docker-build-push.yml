@@ -149,5 +149,3 @@ jobs:
         run: |
           echo "$(head ./containers/${{matrix.selected_dir}}/README.md | grep "^*" | sed -z 's/*//g')"
           echo "CONTAINER_REGISTRY_DESCRIPTION=$(head ./containers/${{matrix.selected_dir}}/README.md | grep "^*" | sed -z 's/*//g')" >> $GITHUB_ENV     
-
-
