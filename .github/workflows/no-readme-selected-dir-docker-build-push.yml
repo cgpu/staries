@@ -149,21 +149,5 @@ jobs:
         run: |
           echo "$(head ./containers/${{matrix.selected_dir}}/README.md | grep "^*" | sed -z 's/*//g')"
           echo "CONTAINER_REGISTRY_DESCRIPTION=$(head ./containers/${{matrix.selected_dir}}/README.md | grep "^*" | sed -z 's/*//g')" >> $GITHUB_ENV     
-      - name: Push README to Quay.io
-        uses: christian-korneck/update-container-description-action@v1
-        env:
-          DOCKER_APIKEY: ${{ secrets.APIKEY__QUAY_IO }}
-        with:
-          destination_container_repo:  quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook
-          provider: quay
-          readme_file: containers/${{matrix.selected_dir}}/README.md
-      - name: Push README to Dockerhub
-        uses: christian-korneck/update-container-description-action@v1
-        env:
-          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKER_PASS: ${{ secrets.DOCKERHUB_PASS }}
-        with:
-          destination_container_repo: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook
-          provider: dockerhub
-          short_description: ${{env.CONTAINER_REGISTRY_DESCRIPTION}}
-          readme_file: containers/${{matrix.selected_dir}}/README.md
+
+
