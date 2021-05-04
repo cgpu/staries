@@ -1,0 +1,5 @@
+Sys.setenv(TAR = '/bin/tar')
+options(repos = 'https://cloud.r-project.org/')
+install.packages('remotes')
+remotes::install_version('processx', version = '>= 3.5.0')
+install.packages('lintr')
