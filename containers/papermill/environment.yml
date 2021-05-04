@@ -27,7 +27,6 @@ dependencies:
   - nbval
   - jupytext
   - r-snakecase
-  - r-languageserver==0.3.5
   - conda-forge::nb_conda_kernels
   # For using the plotting library ggstatsplot
   - r-ggstatsplot

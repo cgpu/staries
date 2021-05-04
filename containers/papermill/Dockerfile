@@ -1,14 +1,10 @@
-# https://github.com/nf-core style template for Dockerfile
-# build time: ~ 3min in a 4cpu machine
-FROM continuumio/miniconda3:4.8.2
-LABEL description="Base docker image containing util software requirements for Nextflow and conda"
+FROM continuumio/miniconda3@sha256:a2e6aa4cd0b6dd696ae9e3e5732943250a977ab3a42b2fe5fb7ef0c19d2d9f16
+LABEL description="Minimal Dockerfile with alpine, bash and dependencies for papermill" \
+      author="@cgpu"
+
 ARG ENV_NAME="base"
 
-# Install procps so that Nextflow can poll CPU usage and
-# deep clean the apt cache to reduce image/layer size
-RUN apt-get update \
- && apt-get install -y procps \
- && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache bash=5.0.17-r0 procps=3.3.16-r0 libxt-dev=1.2.0-r0
 
 # Install mamba for faster installation in the subsequent step
 RUN conda install -c conda-forge mamba r-base -y
@@ -25,10 +21,4 @@ RUN Rscript /install.R
 ENV PATH /opt/conda/envs/${ENV_NAME}/bin:$PATH
 
 # Dump the details of the installed packages to a file for posterity
-RUN mamba env export --name ${ENV_NAME} > ${ENV_NAME}_exported.yml
-
-# Copy additional scripts from bin and add to PATH
-RUN mkdir /opt/bin
-COPY *.R /opt/bin/
-RUN chmod +x /opt/bin/*
-ENV PATH="$PATH:/opt/bin/"
+RUN conda env export --name ${ENV_NAME} > ${ENV_NAME}_exported.yml
