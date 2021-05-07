@@ -3,7 +3,7 @@
 ## Find a file by pattern search from listing the file in a bucket subfolder
 
 ```
-aws s3 ls s3://your-bucket --recursive --summarize --human-readable | grep your-search
+aws s3 ls s3://your-bucket --recursive --summarize --human-readable --no-sign-request| grep your-search
 ```
 
 
