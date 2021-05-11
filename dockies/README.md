@@ -1,6 +1,20 @@
 # dockies
 Useful scripts, snippets and guidelines for common tasks related to docker
 
+## Permission denied Docker daemon socket at `unix:///var/run/docker.sock`
+
+```console
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock
+```
+
+```bash
+# https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket
+sudo chmod 666 /var/run/docker.sock
+
+# login
+docker login
+```
+
 ## List docker images, descending order by size]
 
 ```zsh
