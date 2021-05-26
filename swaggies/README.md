@@ -1,6 +1,24 @@
 # <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" alt="drawing" width="26"/>  swaggies
 Awesome markdown trix and misc. snippets for docs-writing swag. 
 
+## [Github markdown swag](https://stackoverflow.com/questions/11509830/how-to-add-color-to-githubs-readme-md-file)
+
+### a. Using git diff color coding
+
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
+
+### b. Using a placeholder image service
+
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `#c5f015`
+- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `#1589F0`
+
 
 ## Sup and Sub 
 
