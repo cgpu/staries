@@ -1,6 +1,10 @@
 # The Staries :sparkles:
 The *ies. A series of &lt;star>-ies util snippets, scripts or templates that I use day to day.
 
+[![Contributors](https://img.shields.io/github/contributors/cgpu/staries.svg?color=9cf)](https://github.com/cgpu/staries/graphs/contributors)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/cgpu/staries.svg?color=yellowgreen)](https://github.com/cgpu/staries/commits/master)
+[![Last commit](https://img.shields.io/github/last-commit/cgpu/staries.svg?color=ff69b4)](https://github.com/cgpu/staries/commits/master)
+
 <br>
 
 > ##  <a href="https://www.yodaspeak.co.uk/index.php" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUV7eB7H6rROCZSd8pAj353ramq-c-4puIuPSIvq3sCznS_aEb" alt="drawing" width="70"/></a>  [_Remain undocumented, nothing should._](http://starlogs.net/#cgpu/staries)
