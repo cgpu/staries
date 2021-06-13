@@ -1,0 +1,7 @@
+- label: "Setup"
+  message: "Completed"
+  color: "green"
+- label: "PR Size"
+  message: "Large"
+  color: "red"
+  when: "$additions > 20"
