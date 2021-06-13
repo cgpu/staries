@@ -5,3 +5,7 @@
   message: "Large"
   color: "red"
   when: "$additions > 20"
+- label: "Missing"
+  message: "Important section!"
+  color: "#ff0000"
+  when: "$payload.pull_request.body.includes('Important section') === false"
