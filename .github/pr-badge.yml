@@ -1,7 +1,25 @@
-- label: "Setup"
-  message: "Completed"
-  color: "green"
+# Issues must start with JIRA ticket id, eg "DEL-114 Adds awesome tool container"
+# See here convetion: https://pullrequestbadge.com/#naming-convention
+- label: "JIRA"
+  message: "$issuePrefix"
+  color: "#0052CC"
+  url: "https://cgpu.atlassian.net/browse/$issuePrefix"
+  when: "$issuePrefix"
+  
+# Nudges when PR is too large
 - label: "PR Size"
   message: "Large"
   color: "red"
-  when: "$additions > 20"
+  when: "$additions > 200"
+
+# Nudges when the docker run example is missing
+- label: "Missing"
+  message: "Exotic section"
+  color: "#ff0000"
+  when: "$payload.pull_request.body.includes('Exotic section') === false"
+  
+# Nudges when JIRA ticket is missing
+- label: "Missing"
+  message: "JIRA ticket"
+  color: "#ff0000"
+  when: "$payload.pull_request.body.includes('DEL-') === false"
