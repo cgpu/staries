@@ -13,10 +13,19 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "gcpu",
+      "name": "gcpu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80222819?v=4",
+      "profile": "https://github.com/gcpu",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 8,
-  "projectName": "actions-template-sync",
+  "projectName": "staries",
   "projectOwner": "cgpu",
   "repoType": "github",
   "repoHost": "https://github.com",
