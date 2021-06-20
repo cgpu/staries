@@ -51,6 +51,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/cgpu"><img src="https://avatars0.githubusercontent.com/u/38183826?v=4?s=35" width="35px;" alt=""/><br /><sub><b>cgpu</b></sub></a><br /><a href="https://github.com/cgpu/staries/commits?author=cgpu" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/gcpu"><img src="https://avatars.githubusercontent.com/u/80222819?v=4?s=35" width="35px;" alt=""/><br /><sub><b>gcpu</b></sub></a><br /><a href="https://github.com/cgpu/staries/pulls?q=is%3Apr+reviewed-by%3Agcpu" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/gpcu"><img src="https://avatars.githubusercontent.com/u/80228193?v=4?s=35" width="35px;" alt=""/><br /><sub><b>gpcu</b></sub></a><br /><a href="https://github.com/cgpu/staries/pulls?q=is%3Apr+reviewed-by%3Agpcu" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
