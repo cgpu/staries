@@ -22,6 +22,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "gpcu",
+      "name": "gpcu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80228193?v=4",
+      "profile": "https://github.com/gpcu",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 8,
