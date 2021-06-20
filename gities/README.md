@@ -1,6 +1,25 @@
 # gities
 Useful snippets for dangerous git missions :sunglasses:
 
+
+## Retrieve the files from a repo
+
+### [List files of specific folder of repo of the latest commit of the default branch](https://stackoverflow.com/a/27433218)
+
+```bash
+svn ls https://github.com/cgpu/templates/trunk/inst/templates/nextflow/
+```
+
+### [Copy in the current working directory the files of specific folder of repo of the latest commit of the default branch](https://stackoverflow.com/a/27433218)
+
+```bash
+svn export --force  https://github.com/cgpu/templates/trunk/inst/templates/nextflow/ .
+```
+
+### Specific pypi lib to download specific files
+
+http://githubdl.seso.io/
+
 ## Create GitHub PAT
 
 [https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow&description=R:GITHUB_PAT](https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow&description=R:GITHUB_PAT)
