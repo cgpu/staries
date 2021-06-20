@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 35,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "cgpu",
+      "name": "cgpu",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/38183826?v=4",
+      "profile": "https://github.com/cgpu",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 8,
+  "projectName": "actions-template-sync",
+  "projectOwner": "cgpu",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
