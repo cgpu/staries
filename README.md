@@ -38,3 +38,27 @@ The *ies. A series of &lt;star>-ies util snippets, scripts or templates that I u
 - <a href="https://github.com/cgpu/staries/tree/master/dotties" target="_blank"><img src="https://raw.githubusercontent.com/cgpu/staries/master/assets/logos/dotties.png?raw=true" alt="drawing" width="35"/></a>
 
 - <a href="https://github.com/cgpu/staries/tree/master/brewies" target="_blank"><img src="https://user-images.githubusercontent.com/38183826/110240501-1e6e9780-7f44-11eb-8002-66dbf486efe8.png" alt="drawing" width="25"/></a>
+
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/cgpu"><img src="https://avatars.githubusercontent.com/u/38183826" width="35px;" alt=""/><br /><sub><b>cgpu</b></sub></a><br /><a href="https://github.com/cgpu/commits?author=cgpu" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)
+specification. Contributions of any kind welcome!
+
+[enabling-debug-logging]: https://docs.github.com/en/actions/managing-workflow-runs/enabling-debug-logging
