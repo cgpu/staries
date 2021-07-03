@@ -17,6 +17,8 @@ hostname
 ami-id
 instance-type
 
+document
+
 ami-launch-index
 ami-manifest-path
 instance-id
@@ -44,6 +46,7 @@ identity-credentials/
 ```bash
 # [i]
  aws s3 ls s3://my-bucket/some-object/ --recursive --human-readable --summarize | awk '{$1=$1}1' | tail -n 2
+ 
 
 ```
 
