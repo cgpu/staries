@@ -24,7 +24,7 @@ http://githubdl.seso.io/
 
 [https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow&description=R:GITHUB_PAT](https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow&description=R:GITHUB_PAT)
 
-
+## [`git cherry-pick` from other repo (hint: `remote add`)](https://coderwall.com/p/sgpksw/git-cherry-pick-from-another-repository)
 
 ## [`git cherry-pit`](https://sethrobertson.github.io/GitFixUm/fixup.html) (how to spit out an intermediate commit from your branh)
 
