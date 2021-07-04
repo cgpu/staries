@@ -6,6 +6,12 @@
 aws s3 ls s3://your-bucket --recursive --summarize --human-readable --no-sign-request| grep your-search
 ```
 
+## [No credentials with `--no-sign-request` for public files](https://github.com/aws/aws-cli/issues/904#issuecomment-54903882)
+
+```
+aws s3 cp s3://this-bucket/that-file.txt . --no-sign-request
+aws s3 sync s3://this-bucket/that-folder/ . --no-sign-request
+```
 
 ## Get info for the instance from the command line
 
