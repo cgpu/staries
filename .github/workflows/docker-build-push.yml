@@ -6,9 +6,7 @@ on:
     - master
     paths:
     - '.docker/*'
-  pull_request_target:
-    branches:
-      - master
+  pull_request:
     types:
       - opened
       - closed
