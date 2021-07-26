@@ -6,9 +6,7 @@ on:
     - master
     paths:
     - '.docker/*'
-  pull_request_target:
-    branches:
-      - master
+  pull_request:
     types:
       - opened
       - closed
@@ -114,16 +112,6 @@ jobs:
         with:
           destination_container_repo:  quay.io/${{ secrets.QUAY_REGISTRY_NAMESPACE }}/notebook
           provider: quay
-          readme_file: '.docker/README.md'
-      - name: Push README to Dockerhub
-        uses: christian-korneck/update-container-description-action@v1
-        env:
-          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKER_PASS: ${{ secrets.DOCKERHUB_PASS }}
-        with:
-          destination_container_repo: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/notebook
-          provider: dockerhub
-          short_description: ${{env.CONTAINER_REGISTRY_DESCRIPTION}}
           readme_file: '.docker/README.md'
       - name: Setup tmate session
         if: ${{ failure() }}
