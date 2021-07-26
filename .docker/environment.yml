@@ -2,7 +2,6 @@ name: staries
 channels:
   - conda-forge
 dependencies:
-  - papermill=2.0.0
   - nano
   - gh
   - htop
