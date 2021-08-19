@@ -5,6 +5,7 @@ on:
     types: [opened, edited, reopened, synchronize, closed]
     paths:
     - 'containers/**'
+  workflow_dispatch:
 jobs:
   directories: # Job that list subdirectories
     runs-on: ubuntu-latest
