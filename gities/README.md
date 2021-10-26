@@ -224,3 +224,12 @@ git push origin -u $i && \
 git push origin --delete  ${prefix}${i}${suffix} ; \
 done
 ```
+
+## Create and delete tag
+
+
+```
+TAG="my-tag"
+git tag -d $TAG && git push --delete origin $TAG
+git tag $TAG && git push origin $TAG
+```
