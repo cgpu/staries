@@ -142,6 +142,22 @@ git remote set-url origin https://github.com/cgpu/staries.git
 |  full hash|`git log --graph` |<img src="https://user-images.githubusercontent.com/38183826/77443201-d2821b80-6de2-11ea-8969-811d6a84515f.png" alt="drawing" width="400"/></a>|
 
 
+## [The shortest possible output from git log containing author and date](https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date)
+
+```bash
+git log --pretty=format:"%h%x09%an%x09%ad%x09%s"
+```
+
+## Get the user that created an org repo by proxy (initial commit author)
+
+```
+# if you want to verify it's the initial commit
+git log --reverse --pretty=format:"%an%x09%s" | grep "Initial commit"| head -1 | cut -f1
+
+# if you trust git log deeply
+git log --reverse --pretty=format:"%an" | head -1
+```
+
 # Bonus edition: TIL
 
 ## [TIL what a foxtrot merge is (and why one shouldn't do it)](https://bit-booster.blogspot.com/2016/02/no-foxtrots-allowed.html)
