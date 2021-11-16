@@ -4,6 +4,7 @@ on:
     types: [opened, reopened, synchronize, closed]
     paths:
     - '**.R'
+  workflow_dispatch:
 jobs:
   linux:
     if: contains(github.event.head_commit.message, '[skip libs]') == false
