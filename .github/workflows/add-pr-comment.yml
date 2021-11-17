@@ -22,7 +22,7 @@ jobs:
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v1
         with:
-          issue-number: steps.findPr.outputs.issue-or-pr-number
+          issue-number: ${{ steps.findPr.outputs.issue-or-pr-number }}
           body: |
             This is a multi-line test comment
           reactions: '+1'
