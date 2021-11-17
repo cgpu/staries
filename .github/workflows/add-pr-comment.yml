@@ -1,0 +1,15 @@
+name: Test comment
+on:
+  pull_request:
+jobs:
+  demo-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test create comment
+        uses: ./
+        id: couc
+        with:
+          issue-number: ${{ needs.build.outputs.issue-number }}
+          body: |
+            This is a multi-line test comment
+          reactions: '+1'
