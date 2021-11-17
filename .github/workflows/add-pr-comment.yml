@@ -5,6 +5,8 @@ jobs:
   demo-issue:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@main
       - name: Test create comment
         uses: ./
         id: couc
