@@ -18,7 +18,7 @@ jobs:
       - run: echo "Your PR is ${PR}"
         if: success() && steps.findPr.outputs.issue-or-pr-number
         env:
-          PR: ${{ steps.findPr.outputs.issue-or-pr-number }}
+          PR: $PR
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v1
         with:
