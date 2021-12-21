@@ -3,26 +3,13 @@ on:
   pull_request:
 jobs:
   demo-issue:
-    outputs:
-      issue-or-pr-number: ${{ steps.vars.outputs.issue-or-pr-number }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      # Find the PR associated with this push, if there is one.
-      - uses: jwalton/gh-find-current-pr@v1
-        id: findPr
-        with:
-          # Can be "open", "closed", or "all".  Defaults to "open".
-          state: open
-      # This will echo "Your PR is 7", or be skipped if there is no current PR.
-      - run: echo "Your PR is ${PR}"
-        if: success() && steps.findPr.outputs.issue-or-pr-number
-        env:
-          PR: $PR
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v1
         with:
-          issue-number: ${{ steps.findPr.outputs.issue-or-pr-number }}
+          issue-number: ${{github.event.number}}
           body: |
-            This is a multi-line test comment
+            This is a multi-line test comment in PR with Number ${{github.event.number}}
           reactions: '+1'
