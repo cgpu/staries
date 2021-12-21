@@ -1,0 +1,17 @@
+# ideas found here https://github.com/actions/checkout/issues/58
+name: Echo variables
+
+on:
+  pull_request:
+  
+jobs:
+  echo_this:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Any Name Bash Test Step
+        shell: bash
+        run: |
+          PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+          echo "PR_NUMBER from GITHUB_REF parsing: $PR_NUMBER"
+          echo "github.event.number: ${{github.event.number}}"
+ 
