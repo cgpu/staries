@@ -1,0 +1,15 @@
+name: Test comment
+on:
+  pull_request:
+jobs:
+  demo-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{github.event.number}}
+          body: |
+            This is a multi-line test comment in PR with Number ${{github.event.number}}
+          reactions: '+1'
