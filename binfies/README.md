@@ -1,6 +1,20 @@
 # binfies
 
-Dya to day commands for binfies 101 tasks
+Day to day commands for binfies 101 tasks
+
+## Split plink .{bed,bim,fam} files to chromosomes
+
+```
+# get test data
+wget https://www.staff.ncl.ac.uk/heather.cordell/quantfamdata.bed
+wget https://www.staff.ncl.ac.uk/heather.cordell/quantfamdata.bim
+wget https://www.staff.ncl.ac.uk/heather.cordell/quantfamdata.fam
+
+# try the plink command
+BFILE=quantfamdata
+for i in $(seq 22); do plink --silent --bfile ${BFILE} --make-bed   --chr $i --out ${BFILE}.chr$i; done
+```
+
 
 ## Split file in chunks of L lines (linux)
 
