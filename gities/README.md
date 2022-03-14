@@ -244,8 +244,16 @@ done
 ## Create and delete tag
 
 
+If the tag exists:
+
 ```
 TAG="my-tag"
 git tag -d $TAG && git push --delete origin $TAG
 git tag $TAG && git push origin $TAG
+```
+
+If the tag does not exist yet:
+
+```
+TAG="my-tag" ; git tag $TAG && git push origin $TAG
 ```
