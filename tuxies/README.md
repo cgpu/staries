@@ -289,3 +289,13 @@ echo chr$i >> mergelist.txt
 done
 plink --merge-list mergelist.txt --allow-no-sex --make-bed --out hd_snps
 ```
+
+# For BQ tables exported in partitions, if concatenation of partitions back to the original table is needed:
+
+`awk` command found here: https://stackoverflow.com/a/16890695
+
+```
+for dir in *; do
+    awk 'FNR==1 && NR!=1{next;}{print}' ${dir}/*.csv > ${dir}.csv
+done
+```
