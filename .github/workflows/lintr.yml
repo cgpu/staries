@@ -27,7 +27,7 @@ jobs:
         bash
     - name: Setup tmate session
       if: ${{ failure() }}
-      uses: seemethere/action-tmate@f708e7bca76af1b52bb8c8e5fe790ef5e01a4fc8
+      uses: seemethere/action-tmate@18c3652e863e41474701cc45349bfc24a902636e
       with:
         sudo: false
         install_dependencies: false
