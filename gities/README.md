@@ -6,13 +6,13 @@ Useful snippets for dangerous git missions :sunglasses:
 
 ### [List files of specific folder of repo of the latest commit of the default branch](https://stackoverflow.com/a/27433218)
 
-```bash
+```shell
 svn ls https://github.com/cgpu/templates/trunk/inst/templates/nextflow/
 ```
 
 ### [Copy in the current working directory the files of specific folder of repo of the latest commit of the default branch](https://stackoverflow.com/a/27433218)
 
-```bash
+```shell
 svn export --force  https://github.com/cgpu/templates/trunk/inst/templates/nextflow/ .
 ```
 
@@ -28,7 +28,7 @@ http://githubdl.seso.io/
 
 ## [`git cherry-pit`](https://sethrobertson.github.io/GitFixUm/fixup.html) (how to spit out an intermediate commit from your branh)
 
-```
+```shell
 # Assuming that:
 # 1. SHA you want to remove is this one e798989acda5d2d40f9d41dd0b5299da8746eda8
 # 2. you are on a branch named my-feat-branch
@@ -37,11 +37,22 @@ git rebase -p --onto e798989acda5d2d40f9d41dd0b5299da8746eda8^ e798989acda5d2d40
 git push --force origin my-feat-branch
 ```
 
+## Purge changes if you regretted a cherry-pick
+
+![](http://g.recordit.co/VHxk8lJJLJ.gif)
+
+```shell
+# git version 2.30.2
+git restore --staged .
+git restore .
+```
+
+
 ## [Visualise git diff range .. or ...](https://stackoverflow.com/questions/7251477/what-are-the-differences-between-double-dot-and-triple-dot-in-git-dif/7256391#7256391)
 
 ## [Delete local and remote branch](https://www.freecodecamp.org/news/how-to-delete-a-git-branch-both-locally-and-remotely/)
 
-```
+```shell
 # local
 git branch -d feature-branch-name
 
@@ -51,7 +62,7 @@ git push origin --delete feature-branch-name
 
 ## Hash of latest commit
 
-```
+```shell
 git rev-parse HEAD
 ```
 
@@ -74,9 +85,10 @@ git config --global core.editor nano
 git commit -amend
 
 ```
+
 ## Sync your fork with upstream
 
-```
+```shell
 git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
 
 # If you wrote the upstream with a typo
@@ -110,26 +122,26 @@ git pull upstream master
 
 ## [PR from `unrelated-histories` (eg. template repo)](https://github.community/t5/How-to-use-Git-and-GitHub/How-to-deal-with-quot-refusing-to-merge-unrelated-histories-quot/td-p/12619)
 
-```bash
+```shell
 git pull --allow-unrelated-histories
 ```
 
 ## [ "Peel off" latest commit](https://stackoverflow.com/questions/8225125/remove-last-commit-from-remote-git-repository/8225166)
 
-```bash
+```shell
 git reset HEAD^ # remove commit locally
 git push origin +HEAD # force-push the new HEAD commit
 ```
 
 ## [`git reset HEAD^` leaves behind untracked files (how to get rid of them)](https://stackoverflow.com/questions/4327708/git-reset-hard-head-leaves-untracked-files-behind)
 
-```
+```shell
 git reset --hard && git clean -dfx
 ```
 
 ## [Change remote repo](https://stackoverflow.com/questions/2432764/how-to-change-the-uri-url-for-a-remote-git-repository)
 
-```sh
+```shell
 git remote set-url origin https://github.com/cgpu/staries.git
 ```
 
@@ -144,13 +156,13 @@ git remote set-url origin https://github.com/cgpu/staries.git
 
 ## [The shortest possible output from git log containing author and date](https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date)
 
-```bash
+```shell
 git log --pretty=format:"%h%x09%an%x09%ad%x09%s"
 ```
 
 ## Get the user that created an org repo by proxy (initial commit author)
 
-```
+```shell
 # if you want to verify it's the initial commit
 git log --reverse --pretty=format:"%an%x09%s" | grep "Initial commit"| head -1 | cut -f1
 
@@ -168,7 +180,7 @@ git log --reverse --pretty=format:"%an" | head -1
 
 ## [Ultra shallow git clone (1 commit)](https://www.techiedelight.com/clone-git-repository-with-specific-revision/)
 
-```
+```shell
 mkdir staries-shallow
 cd staries-shallow
 git init
@@ -180,7 +192,7 @@ git reset --hard FETCH_HEAD
 
 ## Follow specific files git history
 
-```
+```shell
 git log --pretty=oneline  --follow -- jupyter/figure3.ipynb  
 #or  
 git log  --follow -- jupyter/figure3.ipynb
@@ -192,7 +204,7 @@ git log --date=short --pretty="%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset)
 
 ## Update author if an EC2 user
 
-```
+```shell
 git commit --amend --author="cgpu <my-email-name@gmail.com>"
 ```
 
@@ -200,20 +212,20 @@ git commit --amend --author="cgpu <my-email-name@gmail.com>"
 
 File by file:
 
-```
+```shell
 git checkout -- <filename>
 ```
   
   
 ## Undo `git add`
 
-```
+```shell
 git reset HEAD
 ```
 
 ## Rename old branch, push new name and delete old named branch in local and remote
 
-```bash
+```shell
 prefix="adds-"
 suffix="-data"
 
@@ -246,7 +258,7 @@ done
 
 If the tag exists:
 
-```
+```shell
 TAG="my-tag"
 git tag -d $TAG && git push --delete origin $TAG
 git tag $TAG && git push origin $TAG
@@ -254,6 +266,6 @@ git tag $TAG && git push origin $TAG
 
 If the tag does not exist yet:
 
-```
+```shell
 TAG="my-tag" ; git tag $TAG && git push origin $TAG
 ```
