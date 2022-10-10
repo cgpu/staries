@@ -24,7 +24,7 @@ jobs:
       sha_short: ${{ steps.git-commit-short.outputs.sha_short }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx

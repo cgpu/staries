@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     container: cgpu/lintr
     steps:
-    - uses: actions/checkout@v2.3.4
+    - uses: actions/checkout@v3.1.0
     - name: Installing processx >= 3.5.0
       run: |
         Rscript -e "Sys.setenv(TAR = '/bin/tar'); options(repos = 'https://cloud.r-project.org/'); install.packages('remotes')"
