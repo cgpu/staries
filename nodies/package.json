@@ -20,7 +20,7 @@
     "nodejs-mysql": "0.1.3",
     "papaparse": "5.2.0",
     "promised-mongo": "1.2.0",
-    "request": "2.81.0",
+    "request": "2.88.2",
     "request-promise": "4.2.1",
     "vagrant": "file:mongodb"
   }
