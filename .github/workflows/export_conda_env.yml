@@ -21,4 +21,9 @@ jobs:
         uses: docker://cgpu/staries:1.0
         with:
           args: 'conda env export --name base --no-builds'
+      - name: gitboard
+        uses: gitboard-io/gitboard-action@main
+        with:
+          username: cgpu
+          key: ${{ secrets.GITBOARD_SECRET_KEY }}
 
