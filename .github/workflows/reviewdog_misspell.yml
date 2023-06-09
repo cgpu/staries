@@ -14,3 +14,8 @@ jobs:
         uses: reviewdog/action-misspell@master
         with:
           github_token: ${{ secrets.github_token }}
+      - name: gitboard
+        uses: gitboard-io/gitboard-action@main
+        with:
+          username: cgpu
+          key: ${{ secrets.GITBOARD_SECRET_KEY }}
