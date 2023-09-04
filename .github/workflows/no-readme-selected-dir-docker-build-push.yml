@@ -25,7 +25,7 @@ jobs:
     outputs:
       dir: ${{ steps.set-dirs.outputs.dir }} # generate output name dir by using inner step output
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - id: set-dirs # Give it an id to handle to get step outputs in the outputs key above
         run: |
           echo "::set-output name=dir::$(ls -d containers/*/ | jq -R -s -c 'split("\n")[:-1]')"
@@ -67,7 +67,7 @@ jobs:
       sha_short: ${{ steps.git-commit-short.outputs.sha_short }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
